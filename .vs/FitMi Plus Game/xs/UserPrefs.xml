@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RepeatingBackground.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ScrollingObject.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/ScrollingObject.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scenes/RepeatingBackground.cs" Line="10" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3a8ffc31-7180-4012-8192-62f7c8058ce3" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
