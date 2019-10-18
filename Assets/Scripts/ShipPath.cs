@@ -17,6 +17,12 @@ public class ShipPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D cannonball)
+    {
+        Destroy(cannonball.gameObject);
+        Destroy(gameObject);
     }
 }
