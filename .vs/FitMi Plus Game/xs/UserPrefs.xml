@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cannon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FireCannon.cs">
     <Files>
-      <File FileName="Assets/Scripts/ScrollingObject.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/ShipPath.cs" />
-      <File FileName="Assets/Scripts/FlowingWaves.cs" />
-      <File FileName="Assets/Scripts/RepeatingBackground.cs" />
-      <File FileName="Assets/Scripts/Cannon.cs" Line="18" Column="9" />
+      <File FileName="Assets/Scripts/Drop.cs" Line="33" Column="43" />
+      <File FileName="Assets/Scripts/CannonShot.cs" Line="35" Column="71" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="16" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +11,7 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Cannon.cs" selected="True" />
+                <Node name="FireCannon.cs" selected="True" />
               </Node>
             </Node>
           </Node>
