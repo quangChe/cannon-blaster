@@ -13,9 +13,9 @@ public class ScaleBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x < 3f)
+        if (transform.localScale.x < 0.5f)
         {
-            transform.localScale = new Vector3(transform.localScale.x + 0.012f, transform.localScale.y + 0.012f);
+            transform.localScale = new Vector3(transform.localScale.x + 0.0025f, transform.localScale.y + 0.0025f);
         }
     }
 }

@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindTop : MonoBehaviour
+public class Parachute : MonoBehaviour
 {
-    AreaEffector2D windConfig;
+    [SerializeField] GameObject parachute;
 
     // Start is called before the first frame update
     void Start()
     {
-        windConfig = GetComponent<AreaEffector2D>();
     }
 
-    public void SetWind(float m)
+    public void SetLiftForce(float n)
     {
-        windConfig.forceMagnitude = m;
+        parachute.GetComponent<Rigidbody2D>().drag = n;
     }
 }

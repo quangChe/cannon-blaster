@@ -19,7 +19,7 @@ public class FireCannon : MonoBehaviour
         {
             Instantiate(
                 cannonBall,
-                new Vector2(transform.position.x + 0.47f, transform.position.y + 2.76f),
+                new Vector2(transform.position.x + 0.387f, transform.position.y + 1.748f),
                 Quaternion.identity
             );
         }

@@ -6,13 +6,20 @@ using UnityEngine;
 public class CannonShot : MonoBehaviour
 {
     [SerializeField] GameObject parachuteBall;
+    [SerializeField] float parachuteLiftForce;
+
     protected float Animation;
     Vector2 startPos;
+
+    System.Random random = new System.Random();
+    
+    WindTop wind1;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = new Vector2(transform.position.x, transform.position.y);
+        wind1 = FindObjectOfType<WindTop>();
     }
 
     // Update is called once per frame
@@ -23,11 +30,18 @@ public class CannonShot : MonoBehaviour
 
     private void RenderBallWithParachute(Vector3 p, Quaternion r)
     {
-        //Debug.Log(p);
-        //Debug.Log(r);
+        ConfigureWindSpeeds(parachuteLiftForce);
         Destroy(gameObject);
-        Instantiate(parachuteBall, p, r);
-        Destroy(GetComponent<CannonShot>());
+        GameObject parachutedBall = Instantiate(parachuteBall, p, r);
+        parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
+    }
+
+    private void ConfigureWindSpeeds(float speed)
+    {
+        
+        float direction = random.Next(0, 2) * 2 - 1;
+        float velocity = direction * (speed);
+        wind1.SetWind(velocity);
     }
 
 
@@ -36,13 +50,10 @@ public class CannonShot : MonoBehaviour
         Animation += Time.deltaTime;
         Animation = Animation % 5;
         float previousHeight = transform.position.y;
-        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 6f);
+        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 2f);
         float newHeight = transform.position.y;
-        Debug.Log(transform.position);
         if (previousHeight > newHeight && transform.position.y < 5f)
         {
-            Debug.Log("HELLO?");
-            Debug.Log(transform.position);
             RenderBallWithParachute(transform.position, transform.rotation);
         }
     }
