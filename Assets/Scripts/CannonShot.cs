@@ -7,19 +7,15 @@ public class CannonShot : MonoBehaviour
 {
     [SerializeField] GameObject parachuteBall;
     [SerializeField] float parachuteLiftForce;
-
     protected float Animation;
     Vector2 startPos;
-
-    System.Random random = new System.Random();
-    
-    WindTop wind1;
+    Wind wind;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = new Vector2(transform.position.x, transform.position.y);
-        wind1 = FindObjectOfType<WindTop>();
+        wind = FindObjectOfType<Wind>();
     }
 
     // Update is called once per frame
@@ -28,34 +24,26 @@ public class CannonShot : MonoBehaviour
         TravelParabolicTrajectory();
     }
 
-    private void RenderBallWithParachute(Vector3 p, Quaternion r)
-    {
-        ConfigureWindSpeeds(parachuteLiftForce);
-        Destroy(gameObject);
-        GameObject parachutedBall = Instantiate(parachuteBall, p, r);
-        parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
-    }
-
-    private void ConfigureWindSpeeds(float speed)
-    {
-        
-        float direction = random.Next(0, 2) * 2 - 1;
-        float velocity = direction * (speed);
-        wind1.SetWind(velocity);
-    }
-
-
     private void TravelParabolicTrajectory()
     {
         Animation += Time.deltaTime;
         Animation = Animation % 5;
         float previousHeight = transform.position.y;
-        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 2f);
+        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 5f);
         float newHeight = transform.position.y;
+
         if (previousHeight > newHeight && transform.position.y < 5f)
         {
-            RenderBallWithParachute(transform.position, transform.rotation);
+            OpenParachute(transform.position, transform.rotation);
         }
+    }
+
+    private void OpenParachute(Vector3 p, Quaternion r)
+    {
+        wind.SetWind(parachuteLiftForce);
+        Destroy(gameObject);
+        GameObject parachutedBall = Instantiate(parachuteBall, p, r);
+        parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
     }
 
 
