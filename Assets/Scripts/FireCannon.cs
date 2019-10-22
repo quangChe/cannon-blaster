@@ -16,13 +16,11 @@ public class FireCannon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject projectile = Instantiate(
+            Instantiate(
                 cannonBall,
                 new Vector2(transform.position.x + 0.47f, transform.position.y + 2.76f),
                 Quaternion.identity
             );
-
-            Debug.Log(projectile.transform.position);
         }
     }
 }

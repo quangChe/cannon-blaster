@@ -7,7 +7,6 @@ public class CannonShot : MonoBehaviour
 {
     [SerializeField] GameObject parachuteBall;
     protected float Animation;
-    bool openParachute = false;
     Vector2 startPos;
 
     // Start is called before the first frame update
@@ -19,15 +18,15 @@ public class CannonShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (openParachute) { RenderBallWithParachute(); }
-        else { TravelParabolicTrajectory(); }
+        TravelParabolicTrajectory();
     }
 
-    private void RenderBallWithParachute()
+    private void RenderBallWithParachute(Vector3 p, Quaternion r)
     {
+        //Debug.Log(p);
+        //Debug.Log(r);
         Destroy(gameObject);
-
-        Instantiate(parachuteBall, transform.position, transform.rotation);
+        Instantiate(parachuteBall, p, r);
         Destroy(GetComponent<CannonShot>());
     }
 
@@ -37,13 +36,15 @@ public class CannonShot : MonoBehaviour
         Animation += Time.deltaTime;
         Animation = Animation % 5;
         float previousHeight = transform.position.y;
-        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 10f);
+        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 6f);
         float newHeight = transform.position.y;
+        Debug.Log(transform.position);
         if (previousHeight > newHeight && transform.position.y < 5f)
         {
-            openParachute = true;
+            Debug.Log("HELLO?");
+            Debug.Log(transform.position);
+            RenderBallWithParachute(transform.position, transform.rotation);
         }
-        Debug.Log(transform.position);
     }
 
 

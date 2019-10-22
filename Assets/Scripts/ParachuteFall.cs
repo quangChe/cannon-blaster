@@ -13,37 +13,38 @@ public class ParachuteFall : MonoBehaviour
     void Start()
     {
         fallingObj = GetComponent<Rigidbody2D>();
-        fallingObj.velocity = new Vector2(0.4f, dropSpeed);
-        
+        fallingObj.velocity = new Vector2(0, dropSpeed);
+        transform.Rotate(0f, 0f, 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //FallDown();
         DragObject();
-        FallDown();
     }
 
     private void DragObject()
     {
-        if (fallingObj.velocity.x > 0)
-        {
-            transform.Rotate(0f, 0f, 0.1f);
-        } else if (fallingObj.velocity.x < 0)
+        if (Math.Round(transform.rotation.z, 2) >= 0.18)
         {
             transform.Rotate(0f, 0f, -0.1f);
         }
-    }
-
-    private void FallDown()
-    {
-        if (Math.Round(transform.rotation.z, 2) >= 0.20)
-        {
-            fallingObj.velocity = new Vector2(-0.4f, dropSpeed);
-        }
         else if (Math.Round(transform.rotation.z, 2) <= -0.20)
         {
-            fallingObj.velocity = new Vector2(0.4f, dropSpeed);
+            transform.Rotate(0f, 0f, 0.1f);
         }
     }
+
+    //private void FallDown()
+    //{
+    //    if (transform.position.x > 2)
+    //    {
+    //        fallingObj.velocity = new Vector2(-0.4f, dropSpeed);
+    //    }
+    //    else if (transform.position.y < -3)
+    //    {
+    //        fallingObj.velocity = new Vector2(0.4f, dropSpeed);
+    //    }
+    //}
 }

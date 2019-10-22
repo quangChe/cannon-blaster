@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScaleBall : MonoBehaviour
+public class Wind : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,9 +13,6 @@ public class ScaleBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x < 3f)
-        {
-            transform.localScale = new Vector3(transform.localScale.x + 0.012f, transform.localScale.y + 0.012f);
-        }
+        
     }
 }
