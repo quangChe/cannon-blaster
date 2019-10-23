@@ -26,7 +26,6 @@ public class Wind : MonoBehaviour
     {
         float direction = random.Next(0, 2) * 2 - 1;
         float velocity = direction * (m / 1.5f);
-        Debug.Log(velocity);
         windConfigA.forceMagnitude = velocity;
         windConfigB.forceMagnitude = -velocity;
         windConfigC.forceMagnitude = velocity;
