@@ -25,10 +25,13 @@ public class Wind : MonoBehaviour
     public void SetWind(float m)
     {
         float direction = random.Next(0, 2) * 2 - 1;
-        float velocity = direction * (m / 2);
+        float velocity = direction * (m / 1.5f);
+        Debug.Log(velocity);
         windConfigA.forceMagnitude = velocity;
         windConfigB.forceMagnitude = -velocity;
         windConfigC.forceMagnitude = velocity;
-
+        windConfigA.forceVariation = velocity / 5;
+        windConfigB.forceVariation = velocity / 5;
+        windConfigC.forceVariation = velocity / 5;
     }
 }
