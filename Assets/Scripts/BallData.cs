@@ -5,7 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class BallData
 {
-    float fallSpeed;
-    string exercise;
-    float maxTimeDelay;
+    /*
+        Shortened exercise values:
+
+        "LS": "light switch",
+        "CUP": "pouring cup",
+        "DK": "door knob",
+        "ZIP": "zipper",
+    */
+    public float fallDelay;
+    public string exercise;
+    public float timeDelay;
 }
