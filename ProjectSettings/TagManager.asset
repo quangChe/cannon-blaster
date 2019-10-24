@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Wind
+  - Parachute Object
   - 
   - 
   - 
@@ -49,4 +49,10 @@ TagManager:
     locked: 0
   - name: Cannonball
     uniqueID: 2315470681
+    locked: 0
+  - name: Activity
+    uniqueID: 3293493573
+    locked: 0
+  - name: Explosion
+    uniqueID: 3234361811
     locked: 0
