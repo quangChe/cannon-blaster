@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonShot : MonoBehaviour
+public class CannonBallPhysics : MonoBehaviour
 {
     [SerializeField] GameObject parachuteBall;
     [SerializeField] float parachuteLiftForce;
+
     protected float Animation;
     Vector2 startPos;
     Wind wind;
