@@ -5,17 +5,26 @@ using UnityEngine;
 
 public class CannonBallPhysics : MonoBehaviour
 {
-    [SerializeField] GameObject parachuteBall;
-    [SerializeField] float parachuteLiftForce;
+    System.Random random = new System.Random();
 
-    protected float Animation;
+    [SerializeField] GameObject parachuteBall;
+    BallConfigurations ballConfigs;
+
+    float parachuteLiftForce;
+    protected float ParabolicPath;
+
     Vector2 startPos;
+    float endPositionX;
+
     Wind wind;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = new Vector2(transform.position.x, transform.position.y);
+        endPositionX = random.Next(5, 18);
+        ballConfigs = GetComponent<BallConfigurations>();
+        parachuteLiftForce = ballConfigs.GetParachuteLift();
         wind = FindObjectOfType<Wind>();
     }
 
@@ -27,10 +36,10 @@ public class CannonBallPhysics : MonoBehaviour
 
     private void TravelParabolicTrajectory()
     {
-        Animation += Time.deltaTime;
-        Animation = Animation % 5;
+        ParabolicPath += Time.deltaTime;
+        ParabolicPath = ParabolicPath % 5;
         float previousHeight = transform.position.y;
-        transform.position = ParabolaFormula(startPos, new Vector2(10f, 0), 4f, Animation / 5f);
+        transform.position = ParabolaFormula(startPos, new Vector2(endPositionX, 0), 4f, ParabolicPath / 5f);
         float newHeight = transform.position.y;
 
         if (previousHeight > newHeight && transform.position.y < 5f)
@@ -41,10 +50,12 @@ public class CannonBallPhysics : MonoBehaviour
 
     private void OpenParachute(Vector3 p, Quaternion r)
     {
-        wind.SetWind(parachuteLiftForce);
+        wind.SetWind();
+        Sprite exerciseSprite = ballConfigs.GetExerciseSprite();
         Destroy(gameObject);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
+        parachutedBall.GetComponent<RenderExercise>().SetExerciseSprite(exerciseSprite);
     }
 
 
