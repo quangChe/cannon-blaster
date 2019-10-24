@@ -22,10 +22,10 @@ public class Wind : MonoBehaviour
         windConfigC = windC.GetComponent<AreaEffector2D>();
     }
 
-    public void SetWind(float m)
+    public void SetWind()
     {
         float direction = random.Next(0, 2) * 2 - 1;
-        float velocity = direction * (m / 1.5f);
+        float velocity = direction * 20f;
         windConfigA.forceMagnitude = velocity;
         windConfigB.forceMagnitude = -velocity;
         windConfigC.forceMagnitude = velocity;
