@@ -1,0 +1,10 @@
+{
+    "balls": [
+        {"fallDelay": 20, "exercise": "LS", "timeDelay": 10},
+        {"fallDelay": 140, "exercise": "CUP", "timeDelay": 10},
+        {"fallDelay": 60, "exercise": "DK", "timeDelay": 10},
+        {"fallDelay": 60, "exercise": "ZIP", "timeDelay": 10},
+        {"fallDelay": 20, "exercise": "LS", "timeDelay": 10},
+        {"fallDelay": 20, "exercise": "DK", "timeDelay": 10}
+    ]
+}
