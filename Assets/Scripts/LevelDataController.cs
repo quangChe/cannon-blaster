@@ -8,9 +8,13 @@ public class LevelDataController : MonoBehaviour
     private BallData[] levelBalls;
     private string levelDataFileName = "data.json";
 
-    private void Start()
+
+    private void Awake()
     {
         LoadLevelData();
+    }
+    private void Start()
+    {
     }
 
     private void Update()
@@ -26,7 +30,6 @@ public class LevelDataController : MonoBehaviour
         {
             string dataAsJson = File.ReadAllText(filePath);
             LevelData loadedData = JsonUtility.FromJson<LevelData>(dataAsJson);
-
             levelBalls = loadedData.balls;
         }
         else

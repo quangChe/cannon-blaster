@@ -6,14 +6,15 @@ public class FireCannon : MonoBehaviour
 {
     [SerializeField] GameObject shotBall;
     [SerializeField] Sprite targetExercise;
-    public LevelDataController levelData;
+    public LevelDataController levelControl;
     public BallData[] balls;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelData = FindObjectOfType<LevelDataController>();
-        balls = levelData.GetBalls();
+        levelControl = FindObjectOfType<LevelDataController>();
+        balls = levelControl.GetBalls();
+        Debug.Log(balls);
     }
 
     // Update is called once per frame
