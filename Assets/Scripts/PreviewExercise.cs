@@ -8,16 +8,16 @@ public class PreviewExercise : MonoBehaviour
     public GameObject previewImage;
 
     LevelDataController levelControl;
+    ExerciseSprites exerciseSprites;
     BallData[] ballData;
 
-    Dictionary<string, Sprite> imageDict = new Dictionary<string, Sprite>();
     
     // Start is called before the first frame update
     void Start()
     {
         levelControl = FindObjectOfType<LevelDataController>();
+        exerciseSprites = FindObjectOfType<ExerciseSprites>();
         ballData = levelControl.GetBalls();
-        BuildImageDictionary();
         RenderPreviewObjects();
     }
 
@@ -29,20 +29,14 @@ public class PreviewExercise : MonoBehaviour
             GameObject previewObject = Instantiate(previewImage, new Vector3(0, 0, 0), Quaternion.identity);
             RectTransform objDimensions = previewObject.GetComponent<RectTransform>();
             objDimensions.SetParent(gameObject.transform);
-            previewObject.GetComponent<Image>().sprite = imageDict[ballData[i].exercise];
+            previewObject.GetComponent<Image>().sprite = exerciseSprites.GetSprite(ballData[i].exercise);
             objDimensions.localPosition = new Vector3(0, positionY, 0);
             objDimensions.localScale = new Vector3(1, 1, 0);
             positionY += 165f;
         }
     }
 
-    private void BuildImageDictionary()
-    {
-        imageDict.Add("LS", Resources.Load<Sprite>("lightswitch"));
-        imageDict.Add("DK", Resources.Load<Sprite>("doorknob"));
-        imageDict.Add("ZP", Resources.Load<Sprite>("zipper"));
-        imageDict.Add("CP", Resources.Load<Sprite>("cups"));
-    }
+    
 
     public void UpdatePreview()
     {

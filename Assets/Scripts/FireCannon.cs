@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireCannon : MonoBehaviour
 {
     [SerializeField] GameObject shotBall;
-    [SerializeField] Sprite targetExercise;
+    [SerializeField] Sprite exerciseSprite;
     public LevelDataController levelControl;
     public BallData[] balls;
 
@@ -14,7 +14,7 @@ public class FireCannon : MonoBehaviour
     {
         levelControl = FindObjectOfType<LevelDataController>();
         balls = levelControl.GetBalls();
-        Debug.Log(balls);
+       
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class FireCannon : MonoBehaviour
         BallConfigurations ballConfigs = cannonBall.GetComponent<BallConfigurations>();
 
         // Need to set this
-        ballConfigs.SetExercise(targetExercise);
+        ballConfigs.SetExercise(exerciseSprite);
 
         return ballConfigs;
     }
