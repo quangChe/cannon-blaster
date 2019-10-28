@@ -93,6 +93,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac4ad52ff61246628c84c4884e8d874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotBall: {fileID: 5794621576188530807, guid: b8739b69f295843c58e81656377079d6,
+  shotBall: {fileID: 5794621576188530807, guid: cde91c376230b4ef08631338ce6dd285,
     type: 3}
-  targetExercise: {fileID: 21300000, guid: cb5ffe347a3884671b95645500237d2b, type: 3}

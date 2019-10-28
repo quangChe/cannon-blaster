@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CannonBallPhysics.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Wind.cs">
     <Files>
-      <File FileName="Assets/Scripts/FireCannon.cs" Line="19" Column="38" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="17" Column="50" />
       <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="113" />
-      <File FileName="Assets/Scripts/Parachute.cs" Line="49" Column="10" />
+      <File FileName="Assets/Scripts/Parachute.cs" Line="15" Column="6" />
       <File FileName="Assets/Scripts/BallConfigurations.cs" Line="27" Column="28" />
       <File FileName="Assets/Scripts/BallExplosion.cs" Line="23" Column="37" />
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/BallData.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/LevelData.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="11" Column="5" />
+      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="28" Column="10" />
       <File FileName="Assets/Scripts/RenderExercise.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="9" Column="15" />
+      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="23" Column="6" />
       <File FileName="Assets/Scripts/LevelDataController.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="10" Column="25" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="7" Column="35" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="26" Column="61" />
+      <File FileName="Assets/Scripts/Wind.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +23,7 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CannonBallPhysics.cs" selected="True" />
+                <Node name="Wind.cs" selected="True" />
               </Node>
             </Node>
           </Node>
