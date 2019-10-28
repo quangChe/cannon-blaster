@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class LevelSpawnController : MonoBehaviour
 {
+    [Header("Referenced Scripts")]
     public ExerciseSpriteDictionary exerciseSprites;
     public LevelDataController levelData;
     public FireCannon fireCannon;
+    public PreviewExercise previewPanel;
+
     List<BallData> ballData = new List<BallData>();
     //List<ActiveGameBalls> gameBalls
 
@@ -36,11 +39,19 @@ public class LevelSpawnController : MonoBehaviour
 
     private void SpawnBall()
     {
-        int last = ballData.Count - 1;
-        Debug.Log(last);
-        Sprite exercise = exerciseSprites.GetSprite(ballData[last].exercise);
-        //ballData.RemoveAt(last);
-        fireCannon.NewBall(ballData[last].fallDelay, exercise);
+        if (ballData.Count > 0)
+        {
+            int last = ballData.Count - 1;
+            Sprite exercise = exerciseSprites.GetSprite(ballData[last].exercise);
+            fireCannon.NewBall(ballData[last].fallDelay, exercise);
+            ballData.RemoveAt(last);
+            previewPanel.UpdatePreview();
+        }
+        else
+        {
+            Debug.Log("DONE!");
+        }
+        
     }
 
 }
