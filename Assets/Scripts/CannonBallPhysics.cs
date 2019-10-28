@@ -7,7 +7,7 @@ public class CannonBallPhysics : MonoBehaviour
 {
     System.Random random = new System.Random();
 
-    [SerializeField] GameObject parachuteBall;
+    public GameObject parachuteBall;
     BallConfigurations ballConfigs;
 
     float parachuteLiftForce;

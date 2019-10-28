@@ -7,16 +7,15 @@ public class PreviewExercise : MonoBehaviour
 {
     public GameObject previewImage;
 
-    LevelDataController levelData;
-    ExerciseSpriteDictionary exerciseSprites;
+    [Header("Referenced Scripts")]
+    public LevelDataController levelData;
+    public ExerciseSpriteDictionary exerciseSprites;
+
     BallData[] ballData;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelData = FindObjectOfType<LevelDataController>();
-        exerciseSprites = FindObjectOfType<ExerciseSpriteDictionary>();
-
         ballData = levelData.GetBalls();
         RenderPreviewObjects();
     }
