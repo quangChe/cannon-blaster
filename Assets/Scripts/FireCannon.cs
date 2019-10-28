@@ -6,38 +6,20 @@ public class FireCannon : MonoBehaviour
 {
     [SerializeField] GameObject shotBall;
     [SerializeField] Sprite exerciseSprite;
-    public LevelDataController levelControl;
-    public BallData[] balls;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelControl = FindObjectOfType<LevelDataController>();
-        balls = levelControl.GetBalls();
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             BallConfigurations ballConfigs = InstantiateCannonBall();
             ballConfigs.SetParachuteLift(20);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            BallConfigurations ballConfigs = InstantiateCannonBall();
-            ballConfigs.SetParachuteLift(60);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            BallConfigurations ballConfigs = InstantiateCannonBall();
-            ballConfigs.SetParachuteLift(140);
-        }
-
     }
 
     private BallConfigurations InstantiateCannonBall()
