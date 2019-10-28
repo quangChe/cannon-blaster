@@ -8,7 +8,7 @@ public class PreviewExercise : MonoBehaviour
     public GameObject previewImage;
 
     LevelDataController levelControl;
-    ExerciseSprites exerciseSprites;
+    ExerciseSpriteDictionary exerciseSprites;
     BallData[] ballData;
 
     
@@ -16,7 +16,7 @@ public class PreviewExercise : MonoBehaviour
     void Start()
     {
         levelControl = FindObjectOfType<LevelDataController>();
-        exerciseSprites = FindObjectOfType<ExerciseSprites>();
+        exerciseSprites = FindObjectOfType<ExerciseSpriteDictionary>();
         ballData = levelControl.GetBalls();
         RenderPreviewObjects();
     }
@@ -36,11 +36,34 @@ public class PreviewExercise : MonoBehaviour
         }
     }
 
-    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //StartCoroutine(UpdatePreview());
+            UpdatePreview();
+        }
+    }
 
+
+    //public IEnumerator UpdatePreview()
     public void UpdatePreview()
     {
+        //float scrollTime = 5f;
+        //float currentTime = 0f;
+        //float normalizedValue;
+        //float scrollIncrementY = 0f;
+        //int counter = 1;
         RectTransform rt = GetComponent<RectTransform>();
-        rt.localPosition = new Vector3(0, (rt.localPosition.y - 165f), 0);
+        rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y - 165f, 0);
+        //while (currentTime <= scrollTime)
+        //{
+        //    Debug.Log(counter);
+        //    counter++;
+        //    currentTime += Time.deltaTime;
+        //    normalizedValue = currentTime / scrollTime;
+        //    rt.localPosition = Vector3.Lerp(rt.localPosition, new Vector3(rt.localPosition.x, (rt.localPosition.y - 165f), 0), normalizedValue);
+        //    yield return null;
+        //}
     }
 }

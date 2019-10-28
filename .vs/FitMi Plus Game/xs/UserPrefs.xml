@@ -1,20 +1,17 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NewMonoBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ExerciseSprites.cs">
     <Files>
-      <File FileName="Assets/Scripts/CannonShot.cs" Line="45" Column="51" />
-      <File FileName="Assets/Scripts/FireCannon.cs" Line="9" Column="45" />
-      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="113" />
-      <File FileName="Assets/Scripts/WindTop.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/Parachute.cs" Line="49" Column="10" />
-      <File FileName="Assets/Scripts/BallConfigurations.cs" Line="9" Column="5" />
-      <File FileName="Assets/Scripts/ParachutedBall.cs" Line="7" Column="48" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="53" Column="47" />
+      <File FileName="Assets/Scripts/ScaleBall.cs" />
+      <File FileName="Assets/Scripts/Parachute.cs" />
+      <File FileName="Assets/Scripts/BallConfigurations.cs" />
       <File FileName="Assets/Scripts/BallExplosion.cs" Line="22" Column="114" />
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/BallData.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/LevelData.cs" Line="43" Column="27" />
-      <File FileName="Assets/Scripts/LevelData.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="45" Column="6" />
-      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="32" Column="73" />
+      <File FileName="Assets/Scripts/RenderExercise.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,20 +19,17 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="NewMonoBehaviour.cs" selected="True" />
+                <Node name="ExerciseSprites.cs" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3a8ffc31-7180-4012-8192-62f7c8058ce3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="41df65ce-bea5-47d4-80ac-4cfc06b6f266" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

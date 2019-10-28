@@ -391,6 +391,36 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 713582466}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -0.27858925
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 24.220528
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 24.494036
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_text
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660475520324756556, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8c075d529f42b39256b471a8db0a2, type: 3}
 --- !u!1001 &2716644487062409630
