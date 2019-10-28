@@ -4,25 +4,43 @@ using UnityEngine;
 
 public class LevelSpawnController : MonoBehaviour
 {
+    public ExerciseSpriteDictionary exerciseSprites;
     public LevelDataController levelData;
-    BallData[] levelGameBalls;
+    public FireCannon fireCannon;
+    List<BallData> ballData = new List<BallData>();
+    //List<ActiveGameBalls> gameBalls
 
     // Start is called before the first frame update
     void Start()
     {
-        levelGameBalls = CompileBalls();
+        CompileBallData();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnBall();
+        }
     }
 
-    private BallData[] CompileBalls()
+    private void CompileBallData()
     {
-        BallData[] levelGameBalls = levelData.GetBalls();
+        BallData[] data = levelData.GetBalls();
+        for (int i = data.Length - 1; i > -1; i--)
+        {
+            ballData.Add(data[i]);
+        }
+    }
 
+    private void SpawnBall()
+    {
+        int last = ballData.Count - 1;
+        Debug.Log(last);
+        Sprite exercise = exerciseSprites.GetSprite(ballData[last].exercise);
+        //ballData.RemoveAt(last);
+        fireCannon.NewBall(ballData[last].fallDelay, exercise);
     }
 
 }

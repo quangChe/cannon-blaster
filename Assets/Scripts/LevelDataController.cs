@@ -17,11 +17,6 @@ public class LevelDataController : MonoBehaviour
     {
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void LoadLevelData()
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, levelDataFileName);
