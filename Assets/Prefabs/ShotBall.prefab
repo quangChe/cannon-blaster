@@ -321,7 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parachuteBall: {fileID: 5794621576188530807, guid: b326557aeb890426391c75536c599701,
     type: 3}
-  wind: {fileID: 8467133959517721542, guid: 1e342d115dc22475da46ef80826321f5, type: 3}
 --- !u!114 &7925789941903043645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +460,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5794621576229260898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

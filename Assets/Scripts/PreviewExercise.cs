@@ -36,14 +36,6 @@ public class PreviewExercise : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            UpdatePreview();
-        }
-    }
-
     public void UpdatePreview()
     {
         RectTransform rt = GetComponent<RectTransform>();

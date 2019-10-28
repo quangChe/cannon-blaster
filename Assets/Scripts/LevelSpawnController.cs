@@ -10,7 +10,7 @@ public class LevelSpawnController : MonoBehaviour
     public FireCannon fireCannon;
     public PreviewExercise previewPanel;
 
-    List<BallData> ballData = new List<BallData>();
+    List<BallData> ballQueue = new List<BallData>();
     //List<ActiveGameBalls> gameBalls
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class LevelSpawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             SpawnBall();
         }
@@ -33,18 +33,18 @@ public class LevelSpawnController : MonoBehaviour
         BallData[] data = levelData.GetBalls();
         for (int i = data.Length - 1; i > -1; i--)
         {
-            ballData.Add(data[i]);
+            ballQueue.Add(data[i]);
         }
     }
 
     private void SpawnBall()
     {
-        if (ballData.Count > 0)
+        if (ballQueue.Count > 0)
         {
-            int last = ballData.Count - 1;
-            Sprite exercise = exerciseSprites.GetSprite(ballData[last].exercise);
-            fireCannon.NewBall(ballData[last].fallDelay, exercise);
-            ballData.RemoveAt(last);
+            int last = ballQueue.Count - 1;
+            Sprite exercise = exerciseSprites.GetSprite(ballQueue[last].exercise);
+            fireCannon.NewBall(ballQueue[last].fallDelay, exercise);
+            ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
         }
         else
