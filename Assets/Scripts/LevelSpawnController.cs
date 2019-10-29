@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,21 +11,30 @@ public class LevelSpawnController : MonoBehaviour
     public FireCannon fireCannon;
     public PreviewExercise previewPanel;
 
+    string[] AllExercises = {"LS", "DK", "ZP", "CP"};
     List<BallData> ballQueue = new List<BallData>();
+    Dictionary<string, List<ActiveBallData>> activeQueue = new Dictionary<string, List<ActiveBallData>>();
+
     //List<ActiveGameBalls> gameBalls
 
     // Start is called before the first frame update
     void Start()
     {
         CompileBallData();
+        CompileActiveQueueLists();
+        SpawnGameBalls();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnGameBalls()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        StartCoroutine(SpawnBall(5f));
+    }
+
+    private void CompileActiveQueueLists()
+    {
+        foreach (string e in AllExercises)
         {
-            SpawnBall();
+            activeQueue.Add(e, new List<ActiveBallData>());
         }
     }
 
@@ -37,21 +47,34 @@ public class LevelSpawnController : MonoBehaviour
         }
     }
 
-    private void SpawnBall()
+    private IEnumerator SpawnBall(float delay)
     {
-        if (ballQueue.Count > 0)
+        yield return new WaitForSeconds(delay);
+
+        while (ballQueue.Count > 0)
         {
             int last = ballQueue.Count - 1;
-            Sprite exercise = exerciseSprites.GetSprite(ballQueue[last].exercise);
-            fireCannon.NewBall(ballQueue[last], exercise);
+            BallData lastBall = ballQueue[last];
+            Debug.Log(lastBall.exercise);
+            Sprite exerSprite = exerciseSprites.GetSprite(lastBall.exercise);
+            GameObject cannonBall = fireCannon.NewBall(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
-        }
-        else
-        {
-            Debug.Log("DONE!");
+            yield return new WaitForSeconds(lastBall.timeDelay);
+           //SetActiveObject(cannonBall, ballQueue[last]);
+
         }
         
+        Debug.Log("DONE!");
     }
+
+    private void SetActiveObject(GameObject gObj, BallData data)
+    {
+        //if ()
+    }
+}
+
+public class ActiveBallData
+{
 
 }

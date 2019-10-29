@@ -6,7 +6,7 @@ public class ExerciseSpriteDictionary : MonoBehaviour
 {
     Dictionary<string, Sprite> imageDict = new Dictionary<string, Sprite>();
 
-    void Start()
+    void Awake()
     {
         BuildImageDictionary();
     }

@@ -8,7 +8,7 @@ public class FireCannon : MonoBehaviour
     public GameObject shotBall;
     public GameObject explosion;
 
-    public void NewBall(BallData d, Sprite exercise)
+    public GameObject NewBall(BallData d, Sprite exercise)
     {
         GameObject cannonBall = Instantiate(
                 shotBall,
@@ -20,6 +20,8 @@ public class FireCannon : MonoBehaviour
         ballConfigs.data = d;
         ballConfigs.SetExercise(exercise);
         ballConfigs.SetParachuteLift(d.fallDelay);
+
+        return cannonBall;
     }
 }
 
