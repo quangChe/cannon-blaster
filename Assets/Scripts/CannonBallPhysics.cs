@@ -52,13 +52,14 @@ public class CannonBallPhysics : MonoBehaviour
     private void OpenParachute(Vector3 p, Quaternion r)
     {
         wind.SetWind();
-        Sprite exerciseSprite = ballConfigs.GetExerciseSprite();
         Destroy(gameObject);
-        Destroy(this);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
         InputMapper.MountScript(parachutedBall, explosion, ballConfigs.data.exercise);
+        BallConfigurations newBallConfigs = parachutedBall.GetComponent<BallConfigurations>();
+        newBallConfigs.data = ballConfigs.data;
+        newBallConfigs.SetExercise(ballConfigs.targetExercise);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
-        parachutedBall.GetComponent<RenderExercise>().SetExerciseSprite(exerciseSprite);
+        
     }
 
 

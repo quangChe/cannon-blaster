@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BallConfigurations : MonoBehaviour
 {
-    [SerializeField] GameObject ExerciseObject;
+    public GameObject ExerciseObject;
+    public BallData data;
+    public Sprite targetExercise;
 
-    Sprite targetExercise;
     float parachuteLiftForce;
-    float points;
+    //float points;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +37,5 @@ public class BallConfigurations : MonoBehaviour
     {
         targetExercise = exercise;
         ExerciseObject.GetComponent<SpriteRenderer>().sprite = exercise;
-    }
-
-    public Sprite GetExerciseSprite()
-    {
-        return targetExercise;
     }
 }
