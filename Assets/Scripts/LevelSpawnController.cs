@@ -43,7 +43,7 @@ public class LevelSpawnController : MonoBehaviour
         {
             int last = ballQueue.Count - 1;
             Sprite exercise = exerciseSprites.GetSprite(ballQueue[last].exercise);
-            fireCannon.NewBall(ballQueue[last].fallDelay, exercise);
+            fireCannon.NewBall(ballQueue[last], exercise);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
         }

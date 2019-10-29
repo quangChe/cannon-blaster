@@ -1,30 +1,32 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Wind.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LightswitchInput.cs">
     <Files>
-      <File FileName="Assets/Scripts/FireCannon.cs" Line="17" Column="50" />
-      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="113" />
-      <File FileName="Assets/Scripts/Parachute.cs" Line="15" Column="6" />
-      <File FileName="Assets/Scripts/BallConfigurations.cs" Line="27" Column="28" />
-      <File FileName="Assets/Scripts/BallExplosion.cs" Line="23" Column="37" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="19" Column="88" />
+      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="79" />
+      <File FileName="Assets/Scripts/Parachute.cs" Line="21" Column="6" />
+      <File FileName="Assets/Scripts/BallConfigurations.cs" Line="9" Column="1" />
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/BallData.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/LevelData.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="28" Column="10" />
+      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="38" Column="1" />
       <File FileName="Assets/Scripts/RenderExercise.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="23" Column="6" />
+      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="16" Column="9" />
       <File FileName="Assets/Scripts/LevelDataController.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="7" Column="35" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="26" Column="61" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="46" Column="47" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="57" Column="23" />
       <File FileName="Assets/Scripts/Wind.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LightswitchInput.cs" Line="20" Column="14" />
+      <File FileName="Assets/Scripts/ZipperInput.cs" Line="20" Column="123" />
+      <File FileName="Assets/Scripts/CupInput.cs" Line="20" Column="13" />
+      <File FileName="Assets/Scripts/DoorknobInput.cs" Line="19" Column="10" />
+      <File FileName="Assets/Scripts/InputMapper.cs" Line="24" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Wind.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
