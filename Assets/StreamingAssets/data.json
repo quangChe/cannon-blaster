@@ -1,6 +1,6 @@
 {
     "balls": [
-        {"fallDelay": 20, "exercise": "LS", "timeDelay": 10, "next": null, "isUp": true},
+        {"fallDelay": 300, "exercise": "LS", "timeDelay": 10, "next": null, "isUp": true},
         {"fallDelay": 140, "exercise": "CP", "timeDelay": 10, "next": null, "isUp": true},
         {"fallDelay": 60, "exercise": "DK", "timeDelay": 10, "next": null, "isUp": true},
         {"fallDelay": 60, "exercise": "ZP", "timeDelay": 10, "next": null, "isUp": true},

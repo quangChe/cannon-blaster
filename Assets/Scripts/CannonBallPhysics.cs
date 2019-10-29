@@ -8,6 +8,7 @@ public class CannonBallPhysics : MonoBehaviour
     System.Random random = new System.Random();
 
     public GameObject parachuteBall;
+    public GameObject explosion;
     BallConfigurations ballConfigs;
 
     float parachuteLiftForce;
@@ -53,7 +54,9 @@ public class CannonBallPhysics : MonoBehaviour
         wind.SetWind();
         Sprite exerciseSprite = ballConfigs.GetExerciseSprite();
         Destroy(gameObject);
+        Destroy(this);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
+        InputMapper.MountScript(parachutedBall, explosion, ballConfigs.data.exercise);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
         parachutedBall.GetComponent<RenderExercise>().SetExerciseSprite(exerciseSprite);
     }
