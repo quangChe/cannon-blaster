@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parachuteBall: {fileID: 5794621576188530807, guid: b326557aeb890426391c75536c599701,
     type: 3}
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 --- !u!114 &7925789941903043645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExerciseObject: {fileID: 5794621576229260898}
+  data:
+    fallDelay: 0
+    exercise: 
+    timeDelay: 0
 --- !u!1 &5794621576229260898
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +350,6 @@ GameObject:
   - component: {fileID: 5794621576229260903}
   - component: {fileID: 5794621576229260900}
   - component: {fileID: 7107892185475486842}
-  - component: {fileID: 6246612969254406280}
   - component: {fileID: 6751935366242889661}
   - component: {fileID: 6710949676534280827}
   m_Layer: 10
@@ -439,20 +443,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6246612969254406280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794621576229260898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b4de35d6b65415c97ee4217258d41f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  parachutedBall: {fileID: 5794621576188530807}
 --- !u!58 &6751935366242889661
 CircleCollider2D:
   m_ObjectHideFlags: 0
