@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5100848961897877512
+--- !u!1 &5109963791177651721
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5100848961897877518}
-  - component: {fileID: 9204393054219962333}
+  - component: {fileID: 5109963791177651727}
+  - component: {fileID: 5109963791177651724}
+  - component: {fileID: 5109963791177651726}
   m_Layer: 0
   m_Name: Level Controller
   m_TagString: Untagged
@@ -17,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5100848961897877518
+--- !u!4 &5109963791177651727
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100848961897877512}
+  m_GameObject: {fileID: 5109963791177651721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.7508844, y: -0.024566919, z: -4.9419656}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,15 +32,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9204393054219962333
+--- !u!114 &5109963791177651724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100848961897877512}
+  m_GameObject: {fileID: 5109963791177651721}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e237010b6f904e36899501a3888adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5109963791177651726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109963791177651721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad33b0865b0a7406f97dc176c1e2877e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  exerciseSprites: {fileID: 0}
+  levelData: {fileID: 5109963791177651724}
+  fireCannon: {fileID: 0}
+  previewPanel: {fileID: 0}
