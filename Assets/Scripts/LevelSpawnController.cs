@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelSpawnController : MonoBehaviour
 {
+    public GameObject explosion;
+
     [Header("Referenced Scripts")]
     public ExerciseSpriteDictionary exerciseSprites;
     public LevelDataController levelData;
@@ -13,7 +16,7 @@ public class LevelSpawnController : MonoBehaviour
 
     string[] AllExercises = {"LS", "DK", "ZP", "CP"};
     List<BallData> ballQueue = new List<BallData>();
-    Dictionary<string, List<ActiveBallData>> activeQueue = new Dictionary<string, List<ActiveBallData>>();
+    public Dictionary<string, ActiveBallQueue> activeQueue = new Dictionary<string, ActiveBallQueue>();
 
     //List<ActiveGameBalls> gameBalls
 
@@ -34,7 +37,10 @@ public class LevelSpawnController : MonoBehaviour
     {
         foreach (string e in AllExercises)
         {
-            activeQueue.Add(e, new List<ActiveBallData>());
+            ActiveBallQueue queue = new ActiveBallQueue();
+            queue.isFiring = false;
+            queue.instances = new List<ActiveBall>();
+            activeQueue.Add(e, queue);
         }
     }
 
@@ -55,7 +61,6 @@ public class LevelSpawnController : MonoBehaviour
         {
             int last = ballQueue.Count - 1;
             BallData lastBall = ballQueue[last];
-            Debug.Log(lastBall.exercise);
             Sprite exerSprite = exerciseSprites.GetSprite(lastBall.exercise);
             GameObject cannonBall = fireCannon.NewBall(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
@@ -63,21 +68,57 @@ public class LevelSpawnController : MonoBehaviour
             SetActiveObject(cannonBall, lastBall);
             yield return new WaitForSeconds(lastBall.timeDelay);
         }
-        
+
+        // Do something here to end level
         Debug.Log("DONE!");
     }
 
     private void SetActiveObject(GameObject gObj, BallData data)
     {
-        ActiveBallData newBall = new ActiveBallData();
+        ActiveBall newBall = new ActiveBall();
         newBall.data = data;
         newBall.gameObject = gObj;
-        activeQueue[data.exercise].Add(newBall);
+        activeQueue[data.exercise].instances.Add(newBall);
+    }
+
+    public void UpdateActiveObject(GameObject newObj, BallData d)
+    {
+        ActiveBall target = activeQueue[d.exercise].instances.First(x => x.data.id == d.id);
+        Debug.Log(target);
+        target.gameObject = newObj;
+    }
+
+    public void DestroyActiveObject(BallData d)
+    {
+        ActiveBallQueue queue = activeQueue[d.exercise];
+        if (!queue.isFiring && queue.instances[0].data.id == d.id)
+        {
+            StartCoroutine(AnimateAndRemove(queue));
+        }
+    }
+
+    private IEnumerator AnimateAndRemove(ActiveBallQueue q)
+    {
+        q.isFiring = true;
+        ActiveBall target = q.instances[0];
+        Rigidbody2D ball = target.gameObject.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
+        Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
+        Destroy(target.gameObject);
+        yield return new WaitForSeconds(0.05f);
+        q.instances.RemoveAt(0);
+        q.isFiring = false;
     }
 }
 
-public class ActiveBallData
+public struct ActiveBallQueue
 {
-    public BallData data { get; set; }
-    public GameObject gameObject { get; set; }
+    public List<ActiveBall> instances;
+    public bool isFiring;
+}
+
+
+public class ActiveBall
+{
+    public BallData data;
+    public GameObject gameObject;
 }

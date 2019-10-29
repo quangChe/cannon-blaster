@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class InputMapper
 {
-    public static void MountScript(GameObject ball, GameObject explosion, string exercise)
+    public static void MountScript(GameObject ball, BallData d)
     {
-        if (exercise == "LS")
+        if (d.exercise == "LS")
         {
             LightswitchInput script = ball.AddComponent<LightswitchInput>();
-            script.SetGameObjects(ball, explosion);
+            script.StoreObjectData(d);
         }
-        else if (exercise == "DK")
+        else if (d.exercise == "DK")
         {
             DoorknobInput script = ball.AddComponent<DoorknobInput>();
-            script.SetGameObjects(ball, explosion);
+            script.StoreObjectData(d);
         }
-        else if (exercise == "ZP")
+        else if (d.exercise == "ZP")
         {
             ZipperInput script = ball.AddComponent<ZipperInput>();
-            script.SetGameObjects(ball, explosion);
+            script.StoreObjectData(d);
         }
-        else if (exercise == "CP")
+        else if (d.exercise == "CP")
         {
             CupInput script = ball.AddComponent<CupInput>();
-            script.SetGameObjects(ball, explosion);
+            script.StoreObjectData(d);
         }
     }
 }

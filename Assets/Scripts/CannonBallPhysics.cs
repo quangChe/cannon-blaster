@@ -9,6 +9,8 @@ public class CannonBallPhysics : MonoBehaviour
 
     public GameObject parachuteBall;
     public GameObject explosion;
+
+    LevelSpawnController spawnCtrl;
     BallConfigurations ballConfigs;
 
     float parachuteLiftForce;
@@ -22,11 +24,13 @@ public class CannonBallPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        wind = FindObjectOfType<Wind>();
+        spawnCtrl = FindObjectOfType<LevelSpawnController>();
+
         startPos = new Vector2(transform.position.x, transform.position.y);
         endPositionX = random.Next(5, 18);
         ballConfigs = GetComponent<BallConfigurations>();
         parachuteLiftForce = ballConfigs.GetParachuteLift();
-        wind = FindObjectOfType<Wind>();
     }
 
     // Update is called once per frame
@@ -54,11 +58,12 @@ public class CannonBallPhysics : MonoBehaviour
         wind.SetWind();
         Destroy(gameObject);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
-        InputMapper.MountScript(parachutedBall, explosion, ballConfigs.data.exercise);
+        InputMapper.MountScript(parachutedBall, ballConfigs.data);
         BallConfigurations newBallConfigs = parachutedBall.GetComponent<BallConfigurations>();
         newBallConfigs.data = ballConfigs.data;
         newBallConfigs.SetExercise(ballConfigs.targetExercise);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
+        spawnCtrl.UpdateActiveObject(parachutedBall, ballConfigs.data);
         
     }
 

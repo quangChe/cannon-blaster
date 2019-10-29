@@ -1,10 +1,10 @@
 {
     "balls": [
-        {"fallDelay": 300, "exercise": "LS", "timeDelay": 1, "next": null, "isUp": true},
-        {"fallDelay": 140, "exercise": "LS", "timeDelay": 1, "next": null, "isUp": true},
-        {"fallDelay": 60, "exercise": "LS", "timeDelay": 1, "next": null, "isUp": true},
-        {"fallDelay": 60, "exercise": "LS", "timeDelay": 1, "next": null, "isUp": true},
-        {"fallDelay": 20, "exercise": "LS", "timeDelay": 1, "next": null, "isUp": true},
-        {"fallDelay": 20, "exercise": "DK", "timeDelay": 1, "next": null, "isUp": true}
+        {"id": 1, "fallDelay": 300, "exercise": "LS", "timeDelay": 1},
+        {"id": 2, "fallDelay": 140, "exercise": "LS", "timeDelay": 1},
+        {"id": 3, "fallDelay": 60, "exercise": "LS", "timeDelay": 1},
+        {"id": 4, "fallDelay": 60, "exercise": "LS", "timeDelay": 1},
+        {"id": 5, "fallDelay": 20, "exercise": "LS", "timeDelay": 1},
+        {"id": 6, "fallDelay": 20, "exercise": "DK", "timeDelay": 1}
     ]
 }

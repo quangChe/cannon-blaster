@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class DoorknobInput : MonoBehaviour
 {
-    public GameObject explosion;
-    public GameObject gameBall;
+    BallData data;
+    LevelSpawnController spawnCtrl;
 
-    public void SetGameObjects(GameObject g, GameObject e)
+    private void Start()
     {
-        gameBall = g;
-        explosion = e;
+        spawnCtrl = FindObjectOfType<LevelSpawnController>();
+    }
+
+    public void StoreObjectData(BallData d)
+    {
+        data = d;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            Rigidbody2D ball = gameBall.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
-            Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
-            Destroy(gameBall);
+            spawnCtrl.DestroyActiveObject(data);
         }
     }
 

@@ -13,6 +13,7 @@ public class BallData
         "DK": "door knob",
         "ZIP": "zipper",
     */
+    public int id;
     public float fallDelay;
     public string exercise;
     public float timeDelay;

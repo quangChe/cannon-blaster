@@ -15,7 +15,7 @@ public class FireCannon : MonoBehaviour
                 new Vector2(transform.position.x + 0.387f, transform.position.y + 1.748f),
                 transform.rotation
             );
-        InputMapper.MountScript(cannonBall, explosion, d.exercise);
+        InputMapper.MountScript(cannonBall, d);
         BallConfigurations ballConfigs = cannonBall.GetComponent<BallConfigurations>();
         ballConfigs.data = d;
         ballConfigs.SetExercise(exercise);
