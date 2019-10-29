@@ -27,7 +27,7 @@ public class LevelSpawnController : MonoBehaviour
 
     private void SpawnGameBalls()
     {
-        StartCoroutine(SpawnBall(5f));
+        StartCoroutine(SpawnBall(1f));
     }
 
     private void CompileActiveQueueLists()
@@ -60,9 +60,8 @@ public class LevelSpawnController : MonoBehaviour
             GameObject cannonBall = fireCannon.NewBall(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
+            SetActiveObject(cannonBall, lastBall);
             yield return new WaitForSeconds(lastBall.timeDelay);
-           //SetActiveObject(cannonBall, ballQueue[last]);
-
         }
         
         Debug.Log("DONE!");
@@ -70,11 +69,15 @@ public class LevelSpawnController : MonoBehaviour
 
     private void SetActiveObject(GameObject gObj, BallData data)
     {
-        //if ()
+        ActiveBallData newBall = new ActiveBallData();
+        newBall.data = data;
+        newBall.gameObject = gObj;
+        activeQueue[data.exercise].Add(newBall);
     }
 }
 
 public class ActiveBallData
 {
-
+    public BallData data { get; set; }
+    public GameObject gameObject { get; set; }
 }
