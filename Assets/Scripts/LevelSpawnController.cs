@@ -119,7 +119,7 @@ public struct ActiveBallQueue
 }
 
 
-public class ActiveBall
+public struct ActiveBall
 {
     public BallData data;
     public GameObject gameObject;

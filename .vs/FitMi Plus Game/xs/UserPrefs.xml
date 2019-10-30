@@ -1,25 +1,26 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ExerciseSpriteDictionary.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Example/ScannerTest/ScannerTestScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/FireCannon.cs" Line="11" Column="41" />
-      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="79" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="16" Column="55" />
+      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="115" />
       <File FileName="Assets/Scripts/Parachute.cs" Line="21" Column="6" />
       <File FileName="Assets/Scripts/BallConfigurations.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/BallData.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/BallData.cs" Line="16" Column="19" />
       <File FileName="Assets/Scripts/LevelData.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PreviewExercise.cs" Line="38" Column="1" />
-      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="7" Column="5" />
-      <File FileName="Assets/Scripts/LevelDataController.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="16" Column="5" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="54" Column="24" />
+      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="9" Column="15" />
+      <File FileName="Assets/Scripts/LevelDataController.cs" Line="33" Column="10" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="126" Column="2" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="48" Column="107" />
       <File FileName="Assets/Scripts/Wind.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LightswitchInput.cs" Line="20" Column="13" />
-      <File FileName="Assets/Scripts/ZipperInput.cs" Line="22" Column="31" />
-      <File FileName="Assets/Scripts/CupInput.cs" Line="22" Column="31" />
-      <File FileName="Assets/Scripts/DoorknobInput.cs" Line="22" Column="31" />
-      <File FileName="Assets/Scripts/InputMapper.cs" Line="24" Column="26" />
-      <File FileName="Assets/Example/ScannerTest/ScannerTestScript.cs" Line="13" Column="10" />
+      <File FileName="Assets/Scripts/LightswitchInput.cs" Line="22" Column="41" />
+      <File FileName="Assets/Scripts/ZipperInput.cs" Line="22" Column="39" />
+      <File FileName="Assets/Scripts/CupInput.cs" Line="22" Column="39" />
+      <File FileName="Assets/Scripts/DoorknobInput.cs" Line="24" Column="32" />
+      <File FileName="Assets/Example/SimpleTest/SimpleTest.cs" Line="57" Column="8" />
+      <File FileName="Assets/Example/ScannerTest/ScannerTestScript.cs" Line="34" Column="31" />
+      <File FileName="Assets/Example/ScannerTest/ScannedItemScript.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +28,16 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Example" expanded="True">
-                <Node name="ScannerTest" expanded="True" />
+                <Node name="BluetoothLETest" expanded="True">
+                  <Node name="Central" expanded="True" />
+                  <Node name="Peripheral" expanded="True" />
+                </Node>
+                <Node name="ScannerTest" expanded="True">
+                  <Node name="ScannerTestScript.cs" selected="True" />
+                </Node>
+                <Node name="SimpleTest" expanded="True" />
               </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="ExerciseSpriteDictionary.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
