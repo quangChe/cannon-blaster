@@ -454,8 +454,7 @@ MonoBehaviour:
   parachuteBall: {fileID: 5794621576188530807, guid: b326557aeb890426391c75536c599701,
     type: 3}
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  spawnCtrl: {fileID: 2235734024447040511, guid: de7735f1190174be68cf4ab0d27dafc2,
-    type: 3}
+  parachute: {fileID: 8300000, guid: 5c009689732dc444eb773d2dc4a0d23f, type: 3}
 --- !u!114 &9208282904476232359
 MonoBehaviour:
   m_ObjectHideFlags: 0

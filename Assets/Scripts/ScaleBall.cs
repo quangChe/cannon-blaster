@@ -15,7 +15,7 @@ public class ScaleBall : MonoBehaviour
     {
         if (transform.localScale.x < 0.5f)
         {
-            transform.localScale = new Vector3(transform.localScale.x + 0.0025f, transform.localScale.y + 0.0025f);
+            transform.localScale = new Vector3(transform.localScale.x + 0.00417f, transform.localScale.y + 0.00417f);
         }
     }
 }

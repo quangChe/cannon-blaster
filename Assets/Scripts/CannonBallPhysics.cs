@@ -9,6 +9,7 @@ public class CannonBallPhysics : MonoBehaviour
 
     public GameObject parachuteBall;
     public GameObject explosion;
+    public AudioClip parachute;
 
     LevelSpawnController spawnCtrl;
     BallConfigurations ballConfigs;
@@ -44,7 +45,7 @@ public class CannonBallPhysics : MonoBehaviour
         ParabolicPath += Time.deltaTime;
         ParabolicPath = ParabolicPath % 5;
         float previousHeight = transform.position.y;
-        transform.position = ParabolaFormula(startPos, new Vector2(endPositionX, 0), 4f, ParabolicPath / 5f);
+        transform.position = ParabolaFormula(startPos, new Vector2(endPositionX, 0), 4f, ParabolicPath / 3f);
         float newHeight = transform.position.y;
 
         if (previousHeight > newHeight && transform.position.y < 5f)
@@ -63,8 +64,8 @@ public class CannonBallPhysics : MonoBehaviour
         newBallConfigs.data = ballConfigs.data;
         newBallConfigs.SetExercise(ballConfigs.targetExercise);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
+        AudioSource.PlayClipAtPoint(parachute, Camera.main.transform.position, 0.7f);
         spawnCtrl.UpdateActiveObject(parachutedBall, ballConfigs.data);
-        
     }
 
 

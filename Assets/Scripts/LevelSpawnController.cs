@@ -7,6 +7,7 @@ using UnityEngine;
 public class LevelSpawnController : MonoBehaviour
 {
     public GameObject explosion;
+    public AudioClip boom;
 
     [Header("Referenced Scripts")]
     public ExerciseSpriteDictionary exerciseSprites;
@@ -104,6 +105,7 @@ public class LevelSpawnController : MonoBehaviour
         Rigidbody2D ball = target.gameObject.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
         Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
         Destroy(target.gameObject);
+        AudioSource.PlayClipAtPoint(boom, Camera.main.transform.position, 0.7f);
         yield return new WaitForSeconds(0.05f);
         q.instances.RemoveAt(0);
         q.isFiring = false;

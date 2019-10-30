@@ -93,5 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac4ad52ff61246628c84c4884e8d874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotBall: {fileID: 5794621576188530807, guid: cde91c376230b4ef08631338ce6dd285,
+  shotBall: {fileID: 5814706103603321082, guid: cde91c376230b4ef08631338ce6dd285,
     type: 3}
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  projectile: {fileID: 8300000, guid: 7c11fb6aaa285478aa6a39e1a7a78f4e, type: 3}

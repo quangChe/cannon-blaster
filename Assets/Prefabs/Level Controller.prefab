@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  boom: {fileID: 8300000, guid: 33bcd0c03e14d465ea58e7e119ffe79b, type: 3}
   exerciseSprites: {fileID: 0}
   levelData: {fileID: 5109963791177651724}
   fireCannon: {fileID: 0}
