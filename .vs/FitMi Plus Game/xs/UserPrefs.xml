@@ -1,43 +1,45 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Example/ScannerTest/ScannerTestScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameObjectShredder.cs">
     <Files>
       <File FileName="Assets/Scripts/FireCannon.cs" Line="16" Column="55" />
-      <File FileName="Assets/Scripts/ScaleBall.cs" Line="18" Column="115" />
-      <File FileName="Assets/Scripts/Parachute.cs" Line="21" Column="6" />
-      <File FileName="Assets/Scripts/BallConfigurations.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/BallData.cs" Line="16" Column="19" />
-      <File FileName="Assets/Scripts/LevelData.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="38" Column="1" />
-      <File FileName="Assets/Scripts/ExerciseSprites.cs" Line="9" Column="15" />
-      <File FileName="Assets/Scripts/LevelDataController.cs" Line="33" Column="10" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="126" Column="2" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="48" Column="107" />
-      <File FileName="Assets/Scripts/Wind.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LightswitchInput.cs" Line="22" Column="41" />
-      <File FileName="Assets/Scripts/ZipperInput.cs" Line="22" Column="39" />
-      <File FileName="Assets/Scripts/CupInput.cs" Line="22" Column="39" />
-      <File FileName="Assets/Scripts/DoorknobInput.cs" Line="24" Column="32" />
-      <File FileName="Assets/Example/SimpleTest/SimpleTest.cs" Line="57" Column="8" />
-      <File FileName="Assets/Example/ScannerTest/ScannerTestScript.cs" Line="34" Column="31" />
+      <File FileName="Assets/Scripts/ScaleBall.cs" />
+      <File FileName="Assets/Scripts/Parachute.cs" />
+      <File FileName="Assets/Scripts/BallConfigurations.cs" />
+      <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" />
+      <File FileName="Assets/Scripts/BallData.cs" />
+      <File FileName="Assets/Scripts/LevelData.cs" />
+      <File FileName="Assets/Scripts/PreviewExercise.cs" />
+      <File FileName="Assets/Scripts/LevelDataController.cs" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" />
+      <File FileName="Assets/Scripts/Wind.cs" />
+      <File FileName="Assets/Scripts/LightswitchInput.cs" />
+      <File FileName="Assets/Scripts/ZipperInput.cs" />
+      <File FileName="Assets/Scripts/CupInput.cs" />
+      <File FileName="Assets/Scripts/DoorknobInput.cs" />
+      <File FileName="Assets/Example/SimpleTest/SimpleTest.cs" />
       <File FileName="Assets/Example/ScannerTest/ScannedItemScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Example/ScannerTest/ScannerTestScript.cs" Line="9" Column="2" />
+      <File FileName="Assets/Scripts/Bluetooth.cs" Line="20" Column="40" />
+      <File FileName="Assets/Scripts/GameObjectShredder.cs" Line="9" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Editor" expanded="True" />
               <Node name="Example" expanded="True">
                 <Node name="BluetoothLETest" expanded="True">
                   <Node name="Central" expanded="True" />
                   <Node name="Peripheral" expanded="True" />
                 </Node>
-                <Node name="ScannerTest" expanded="True">
-                  <Node name="ScannerTestScript.cs" selected="True" />
-                </Node>
+                <Node name="ScannerTest" expanded="True" />
                 <Node name="SimpleTest" expanded="True" />
               </Node>
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="GameObjectShredder.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -46,7 +48,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="41df65ce-bea5-47d4-80ac-4cfc06b6f266" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ad90bc25-867d-444d-834c-f97c7e34d907" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
