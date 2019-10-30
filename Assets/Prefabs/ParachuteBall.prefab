@@ -119,7 +119,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.0024166591, y: -2.5364196}
-  m_ConnectedAnchor: {x: 0.0024166584, y: 0.9448644}
+  m_ConnectedAnchor: {x: 0.0024166577, y: 0.9448644}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 5794621576188530808}
   - component: {fileID: 6670735228172271471}
   - component: {fileID: 4396568156444338065}
+  - component: {fileID: 5588029444761389071}
   m_Layer: 10
   m_Name: ParachuteBall
   m_TagString: Untagged
@@ -298,7 +299,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5794621576188530807}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0027186368, w: 0.99999636}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0027227562, w: 0.99999636}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -337,9 +338,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExerciseObject: {fileID: 5794621576229260898}
   data:
+    id: 0
     fallDelay: 0
     exercise: 
     timeDelay: 0
+  targetExercise: {fileID: 0}
+--- !u!60 &5588029444761389071
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794621576188530807}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7009489, y: 0.35912293}
+      - {x: 0.56070447, y: 0.48144788}
+      - {x: 0.24743088, y: 0.59401083}
+      - {x: -0.020765396, y: 0.6252671}
+      - {x: -0.30370805, y: 0.5916283}
+      - {x: -0.62963754, y: 0.4438979}
+      - {x: -0.78844374, y: 0.29385543}
+      - {x: -0.85837, y: 0.13371846}
+      - {x: -0.88639796, y: -0.01758536}
+      - {x: -0.82355917, y: -0.017001005}
+      - {x: -0.6609162, y: -0.21380155}
+      - {x: -0.45118055, y: -0.43537465}
+      - {x: -0.27598527, y: -0.6076383}
+      - {x: -0.5221744, y: -0.7254964}
+      - {x: -0.7381135, y: -0.9018399}
+      - {x: -0.87451136, y: -1.0989562}
+      - {x: -0.9715929, y: -1.3166418}
+      - {x: -0.9998021, y: -1.5202621}
+      - {x: -0.98387367, y: -1.7396513}
+      - {x: -0.94185126, y: -1.9135311}
+      - {x: -0.8665517, y: -2.0906894}
+      - {x: -0.7641325, y: -2.231676}
+      - {x: -0.5576498, y: -2.4167223}
+      - {x: -0.34556445, y: -2.5284128}
+      - {x: -0.15483758, y: -2.5713532}
+      - {x: 0.11211642, y: -2.5821984}
+      - {x: 0.37041518, y: -2.5181465}
+      - {x: 0.6490201, y: -2.358238}
+      - {x: 0.86911315, y: -2.101549}
+      - {x: 0.99393106, y: -1.783462}
+      - {x: 1.0142009, y: -1.6076224}
+      - {x: 0.9643616, y: -1.2283136}
+      - {x: 0.70632434, y: -0.8221462}
+      - {x: 0.26604968, y: -0.61395204}
+      - {x: 0.6730464, y: -0.19269873}
+      - {x: 0.8550198, y: -0.0035189078}
+      - {x: 0.86824816, y: -0.0036461484}
+      - {x: 0.8441203, y: 0.15977557}
 --- !u!1 &5794621576229260898
 GameObject:
   m_ObjectHideFlags: 0

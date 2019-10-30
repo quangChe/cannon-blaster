@@ -85,7 +85,6 @@ public class LevelSpawnController : MonoBehaviour
     public void UpdateActiveObject(GameObject newObj, BallData d)
     {
         ActiveBall target = activeQueue[d.exercise].instances.First(x => x.data.id == d.id);
-        Debug.Log(target);
         target.gameObject = newObj;
     }
 
