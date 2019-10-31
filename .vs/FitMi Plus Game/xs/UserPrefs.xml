@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameObjectShredder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bluetooth.cs">
     <Files>
       <File FileName="Assets/Scripts/FireCannon.cs" Line="16" Column="55" />
       <File FileName="Assets/Scripts/ScaleBall.cs" />
@@ -10,18 +10,15 @@
       <File FileName="Assets/Scripts/LevelData.cs" />
       <File FileName="Assets/Scripts/PreviewExercise.cs" />
       <File FileName="Assets/Scripts/LevelDataController.cs" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="87" Column="93" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="53" Column="33" />
       <File FileName="Assets/Scripts/Wind.cs" />
       <File FileName="Assets/Scripts/LightswitchInput.cs" />
       <File FileName="Assets/Scripts/ZipperInput.cs" />
       <File FileName="Assets/Scripts/CupInput.cs" />
       <File FileName="Assets/Scripts/DoorknobInput.cs" />
-      <File FileName="Assets/Example/SimpleTest/SimpleTest.cs" />
-      <File FileName="Assets/Example/ScannerTest/ScannedItemScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Example/ScannerTest/ScannerTestScript.cs" Line="9" Column="2" />
-      <File FileName="Assets/Scripts/Bluetooth.cs" Line="20" Column="40" />
-      <File FileName="Assets/Scripts/GameObjectShredder.cs" Line="9" Column="14" />
+      <File FileName="Assets/Scripts/GameObjectShredder.cs" Line="12" Column="1" />
+      <File FileName="Assets/Scripts/Bluetooth.cs" Line="142" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,16 +26,9 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Editor" expanded="True" />
-              <Node name="Example" expanded="True">
-                <Node name="BluetoothLETest" expanded="True">
-                  <Node name="Central" expanded="True" />
-                  <Node name="Peripheral" expanded="True" />
-                </Node>
-                <Node name="ScannerTest" expanded="True" />
-                <Node name="SimpleTest" expanded="True" />
-              </Node>
+              <Node name="Plugins" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="GameObjectShredder.cs" selected="True" />
+                <Node name="Bluetooth.cs" selected="True" />
               </Node>
             </Node>
           </Node>
