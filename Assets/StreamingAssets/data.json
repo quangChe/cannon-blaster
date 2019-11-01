@@ -1,19 +1,19 @@
 {
     "balls": [
-        {"id": 1, "fallDelay": 300, "exercise": "LS", "timeDelay": 5},
-        {"id": 2, "fallDelay": 140, "exercise": "LS", "timeDelay": 5},
-        {"id": 3, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 4, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 5, "fallDelay": 20, "exercise": "LS", "timeDelay": 5},
-        {"id": 6, "fallDelay": 300, "exercise": "LS", "timeDelay": 5},
-        {"id": 7, "fallDelay": 140, "exercise": "LS", "timeDelay": 5},
-        {"id": 8, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 9, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 10, "fallDelay": 20, "exercise": "LS", "timeDelay": 5},
-        {"id": 11, "fallDelay": 300, "exercise": "LS", "timeDelay": 5},
-        {"id": 12, "fallDelay": 140, "exercise": "LS", "timeDelay": 5},
-        {"id": 13, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 14, "fallDelay": 60, "exercise": "LS", "timeDelay": 5},
-        {"id": 15, "fallDelay": 20, "exercise": "LS", "timeDelay": 5}
+        {"id": 1, "fallDelay": 300, "exercise": "LS", "timeDelay": 2},
+        {"id": 2, "fallDelay": 140, "exercise": "LS", "timeDelay": 2},
+        {"id": 3, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 4, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 5, "fallDelay": 20, "exercise": "LS", "timeDelay": 2},
+        {"id": 6, "fallDelay": 300, "exercise": "LS", "timeDelay": 2},
+        {"id": 7, "fallDelay": 140, "exercise": "LS", "timeDelay": 2},
+        {"id": 8, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 9, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 10, "fallDelay": 20, "exercise": "LS", "timeDelay": 2},
+        {"id": 11, "fallDelay": 300, "exercise": "LS", "timeDelay": 2},
+        {"id": 12, "fallDelay": 140, "exercise": "LS", "timeDelay": 2},
+        {"id": 13, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 14, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
+        {"id": 15, "fallDelay": 20, "exercise": "LS", "timeDelay": 2}
     ]
 }

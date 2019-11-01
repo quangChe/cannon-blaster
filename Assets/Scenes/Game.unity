@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1835363365991983621, guid: 35d8c075d529f42b39256b471a8db0a2,
+        type: 3}
+      propertyPath: spawnCtrl
+      value: 
+      objectReference: {fileID: 1343999244}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8c075d529f42b39256b471a8db0a2, type: 3}
 --- !u!1001 &2716644487062409630
