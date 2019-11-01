@@ -6,31 +6,19 @@ using UnityEngine;
 public class Bluetooth : MonoBehaviour
 {
     private string DeviceName = "fitmi-puck";
-    public string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
-    public string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
-    public string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
+    private string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+    private string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
+    private string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
 
-    string FullUUID(string uuid)
-    {
-        string fullUUID = uuid;
-        if (fullUUID.Length == 4)
-            fullUUID = "6e40" + uuid + "-b5a3-f393-e0a9-e50e24dcca9e";
-
-        return fullUUID;
-    }
 
     private string _deviceAddress;
     private bool _connected = false;
     private bool _foundTXUUID = false;
     private bool _foundRXUUID = false;
-    private bool _rssiOnly = false;
+    //private bool _rssiOnly = false;
     private int _rssi = 0;
     private float _timeout;
-    private float _startScanTimeout = 10f;
-    private float _startScanDelay = 0.5f;
-    private bool _startScan = true;
-
-    private Dictionary<string, ScannedItemScript> _scannedItems;
+    public int ButtonCode = -1;
 
     enum States
     {
@@ -114,11 +102,6 @@ public class Bluetooth : MonoBehaviour
                     case States.Subscribe:
                         SubscribeToTargetDevice();
                         break;
-
-                    case States.Disconnect:
-                        DisconnectFromDevice();
-                        break;
-
                 }
             }
         }
@@ -167,12 +150,66 @@ public class Bluetooth : MonoBehaviour
 
     private void SubscribeToTargetDevice()
     {
-        throw new NotImplementedException();
+        BluetoothLEHardwareInterface.Log("Subscribing to characteristics...");
+
+        BluetoothLEHardwareInterface.SubscribeCharacteristicWithDeviceAddress(_deviceAddress, ServiceUUID, TXUUID, (notifyAddress, notifyCharacteristic) =>
+        {
+            BluetoothLEHardwareInterface.Log("Waiting for user action (1)...");
+            _state = States.None;
+
+            // read the initial state of the button
+            BluetoothLEHardwareInterface.ReadCharacteristic(_deviceAddress, ServiceUUID, TXUUID, (characteristic, bytes) =>
+            {
+                StartCoroutine(ProcessButton(bytes));
+            });
+
+        }, (address, characteristicUUID, bytes) =>
+        {
+            if (_state != States.None)
+            {
+                // some devices do not properly send the notification state change which calls
+                // the lambda just above this one so in those cases we don't have a great way to
+                // set the state other than waiting until we actually got some data back.
+                // The esp32 sends the notification above, but if yuor device doesn't you would have
+                // to send data like pressing the button on the esp32 as the sketch for this demo
+                // would then send data to trigger this.
+                _state = States.None;
+            }
+
+            // we received some data from the device
+            StartCoroutine(ProcessButton(bytes));
+        });
     }
 
     private void DisconnectFromDevice()
     {
         throw new NotImplementedException();
+    }
+
+    private IEnumerator ProcessButton(byte[] bytes)
+    {
+        ButtonCode = (int)bytes[0];
+        //if ButtonCode == 1: spwnController.destroyActiveObject();
+        Debug.Log("??????" + ButtonCode.GetType());
+        yield return new WaitForSeconds(0.05f);
+        //Debug.Log("Puck message: " + bytes[0]);
+        //Debug.Log("Puck color: " + bytes[1]);
+        //Debug.Log("Puck message type: " + bytes[2]);
+        //Debug.Log("Puck byte length: " + bytes[3]);
+        //if (bytes[0] == 2)
+        //{
+        //    SendByte((byte)0x02);
+        //}
+        ButtonCode = -1;
+    }
+
+    string FullUUID(string uuid)
+    {
+        string fullUUID = uuid;
+        if (fullUUID.Length == 4)
+            fullUUID = "6e40" + uuid + "-b5a3-f393-e0a9-e50e24dcca9e";
+
+        return fullUUID;
     }
 
     private bool IsEqual(string uuid1, string uuid2)
@@ -185,5 +222,13 @@ public class Bluetooth : MonoBehaviour
         return (uuid1.ToUpper().Equals(uuid2.ToUpper()));
     }
 
-   
+    void SendByte(byte value)
+    {
+        byte[] data = { value, (byte)0x0, (byte)0x2, (byte)0x1 };
+        //byte[] data = { value };
+        BluetoothLEHardwareInterface.WriteCharacteristic(_deviceAddress, ServiceUUID, RXUUID, data, data.Length, true, (characteristicUUID) =>
+        {
+            BluetoothLEHardwareInterface.Log("Write Succeeded with characteristic: " + characteristicUUID);
+        });
+    }
 }

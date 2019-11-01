@@ -66,7 +66,7 @@ public class LevelSpawnController : MonoBehaviour
             GameObject cannonBall = fireCannon.NewBall(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
-            SetActiveObject(cannonBall, lastBall);
+            CreateActiveObject(cannonBall, lastBall);
             yield return new WaitForSeconds(lastBall.timeDelay);
         }
 
@@ -74,7 +74,7 @@ public class LevelSpawnController : MonoBehaviour
         Debug.Log("DONE!");
     }
 
-    private void SetActiveObject(GameObject gObj, BallData data)
+    private void CreateActiveObject(GameObject gObj, BallData data)
     {
         ActiveBall newBall = new ActiveBall();
         newBall.data = data;
@@ -97,6 +97,15 @@ public class LevelSpawnController : MonoBehaviour
         }
     }
 
+    public void RemoveFromActive(GameObject ballObj, BallData ballData)
+    {
+        ActiveBallQueue queue = activeQueue[ballData.exercise];
+        ActiveBall target = new ActiveBall();
+        target.gameObject = ballObj;
+        target.data = ballData;
+        queue.instances.Remove(target);
+    }
+
     private IEnumerator AnimateAndRemove(ActiveBallQueue q)
     {
         q.isFiring = true;
@@ -117,8 +126,7 @@ public struct ActiveBallQueue
     public bool isFiring;
 }
 
-
-public struct ActiveBall
+public class ActiveBall
 {
     public BallData data;
     public GameObject gameObject;

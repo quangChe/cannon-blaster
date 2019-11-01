@@ -50,7 +50,6 @@ public class CannonBallPhysics : MonoBehaviour
 
         if (previousHeight > newHeight && transform.position.y < 5f)
         {
-            Destroy(gameObject);
             OpenParachute(transform.position, transform.rotation);
         }
     }
@@ -58,14 +57,15 @@ public class CannonBallPhysics : MonoBehaviour
     private void OpenParachute(Vector3 p, Quaternion r)
     {
         wind.SetWind();
+        Destroy(gameObject);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
-        InputMapper.MountScript(parachutedBall, ballConfigs.data);
+        //InputMapper.MountScript(parachutedBall, ballConfigs.data);
         BallConfigurations newBallConfigs = parachutedBall.GetComponent<BallConfigurations>();
         newBallConfigs.data = ballConfigs.data;
         newBallConfigs.SetExercise(ballConfigs.targetExercise);
         parachutedBall.GetComponent<Parachute>().SetLiftForce(parachuteLiftForce);
+        spawnCtrl.UpdateActiveObject(parachutedBall, newBallConfigs.data);
         AudioSource.PlayClipAtPoint(parachute, Camera.main.transform.position, 0.7f);
-        spawnCtrl.UpdateActiveObject(parachutedBall, ballConfigs.data);
     }
 
 

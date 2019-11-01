@@ -6,10 +6,12 @@ public class LightswitchInput : MonoBehaviour
 {
     BallData data;
     LevelSpawnController spawnCtrl;
+    Bluetooth Controller;
 
     private void Start()
     {
         spawnCtrl = FindObjectOfType<LevelSpawnController>();
+        Controller = FindObjectOfType<Bluetooth>();
     }
 
     public void StoreObjectData(BallData d)
@@ -19,7 +21,8 @@ public class LightswitchInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        //if (Input.GetKeyDown(KeyCode.L))
+        if (Controller.ButtonCode == (int)1)
         {
             spawnCtrl.DestroyActiveObject(data);
         }

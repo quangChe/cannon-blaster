@@ -1,24 +1,26 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bluetooth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/BluetoothHardwareInterface.cs">
     <Files>
-      <File FileName="Assets/Scripts/FireCannon.cs" Line="16" Column="55" />
+      <File FileName="Assets/Scripts/FireCannon.cs" Line="20" Column="50" />
       <File FileName="Assets/Scripts/ScaleBall.cs" />
       <File FileName="Assets/Scripts/Parachute.cs" />
       <File FileName="Assets/Scripts/BallConfigurations.cs" />
-      <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" />
+      <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BallData.cs" />
       <File FileName="Assets/Scripts/LevelData.cs" />
-      <File FileName="Assets/Scripts/PreviewExercise.cs" />
+      <File FileName="Assets/Scripts/PreviewExercise.cs" Line="38" Column="1" />
       <File FileName="Assets/Scripts/LevelDataController.cs" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="87" Column="93" />
-      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="53" Column="33" />
+      <File FileName="Assets/Scripts/LevelSpawnController.cs" Line="127" Column="2" />
+      <File FileName="Assets/Scripts/CannonBallPhysics.cs" Line="62" Column="69" />
       <File FileName="Assets/Scripts/Wind.cs" />
-      <File FileName="Assets/Scripts/LightswitchInput.cs" />
+      <File FileName="Assets/Scripts/LightswitchInput.cs" Line="24" Column="43" />
       <File FileName="Assets/Scripts/ZipperInput.cs" />
       <File FileName="Assets/Scripts/CupInput.cs" />
-      <File FileName="Assets/Scripts/DoorknobInput.cs" />
-      <File FileName="Assets/Scripts/GameObjectShredder.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/Bluetooth.cs" Line="142" Column="1" />
+      <File FileName="Assets/Scripts/DoorknobInput.cs" Line="24" Column="32" />
+      <File FileName="Assets/Scripts/GameObjectShredder.cs" />
+      <File FileName="Assets/Scripts/Bluetooth.cs" Line="192" Column="68" />
+      <File FileName="Assets/Scripts/InputMapper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="243" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,10 +28,10 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Editor" expanded="True" />
-              <Node name="Plugins" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="Bluetooth.cs" selected="True" />
+              <Node name="Plugins" expanded="True">
+                <Node name="BluetoothHardwareInterface.cs" selected="True" />
               </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -38,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ad90bc25-867d-444d-834c-f97c7e34d907" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3436be17-d728-4180-861e-e9a0bf8919a6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

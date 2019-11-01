@@ -17,7 +17,7 @@ public class FireCannon : MonoBehaviour
                 transform.rotation
             );
         AudioSource.PlayClipAtPoint(projectile, Camera.main.transform.position, 0.5f);
-        InputMapper.MountScript(cannonBall, d);
+        //InputMapper.MountScript(cannonBall, d);
         BallConfigurations ballConfigs = cannonBall.GetComponent<BallConfigurations>();
         ballConfigs.data = d;
         ballConfigs.SetExercise(exercise);
