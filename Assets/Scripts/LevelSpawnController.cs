@@ -17,7 +17,7 @@ public class LevelSpawnController : MonoBehaviour
 
     string[] AllExercises = {"LS", "DK", "ZP", "CP"};
     List<BallData> ballQueue = new List<BallData>();
-    public Dictionary<string, ActiveBallQueue> activeQueue = new Dictionary<string, ActiveBallQueue>();
+    public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
     //List<ActiveGameBalls> gameBalls
 
@@ -38,9 +38,7 @@ public class LevelSpawnController : MonoBehaviour
     {
         foreach (string e in AllExercises)
         {
-            ActiveBallQueue queue = new ActiveBallQueue();
-            queue.isFiring = false;
-            queue.instances = new List<ActiveBall>();
+            List<ActiveBall> queue = new List<ActiveBall>();
             activeQueue.Add(e, queue);
         }
     }
@@ -79,51 +77,41 @@ public class LevelSpawnController : MonoBehaviour
         ActiveBall newBall = new ActiveBall();
         newBall.data = data;
         newBall.gameObject = gObj;
-        activeQueue[data.exercise].instances.Add(newBall);
+        activeQueue[data.exercise].Add(newBall);
     }
 
     public void UpdateActiveObject(GameObject newObj, BallData d)
     {
-        ActiveBall target = activeQueue[d.exercise].instances.First(x => x.data.id == d.id);
+        ActiveBall target = activeQueue[d.exercise].First(x => x.data.id == d.id);
         target.gameObject = newObj;
     }
 
-    public void DestroyActiveObject(BallData d)
+    public void DestroyActiveObject(string exercise)
     {
-        ActiveBallQueue queue = activeQueue[d.exercise];
-        if (!queue.isFiring && queue.instances[0].data.id == d.id)
+        List<ActiveBall> q = activeQueue[exercise];
+        //if (!queue.isFiring && queue.instances[0].data.id == d.id)
+        if (q.Count > 0)
         {
-            StartCoroutine(AnimateAndRemove(queue));
+            ActiveBall target = q[0];
+            Rigidbody2D ball = target.gameObject.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
+            Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
+            Destroy(target.gameObject);
+            AudioSource.PlayClipAtPoint(boom, Camera.main.transform.position, 0.7f);
+            q.RemoveAt(0);
         }
     }
 
-    public void RemoveFromActive(GameObject ballObj, BallData ballData)
+    public void RemoveFromActive(BallData data)
     {
-        ActiveBallQueue queue = activeQueue[ballData.exercise];
-        ActiveBall target = new ActiveBall();
-        target.gameObject = ballObj;
-        target.data = ballData;
-        queue.instances.Remove(target);
-    }
-
-    private IEnumerator AnimateAndRemove(ActiveBallQueue q)
-    {
-        q.isFiring = true;
-        ActiveBall target = q.instances[0];
-        Rigidbody2D ball = target.gameObject.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
-        Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
-        Destroy(target.gameObject);
-        AudioSource.PlayClipAtPoint(boom, Camera.main.transform.position, 0.7f);
-        yield return new WaitForSeconds(0.05f);
-        q.instances.RemoveAt(0);
-        q.isFiring = false;
+        List<ActiveBall> q = activeQueue[data.exercise];
+        ActiveBall target = q.Single(t => t.data.id == data.id);
+        q.Remove(target);
     }
 }
 
 public struct ActiveBallQueue
 {
     public List<ActiveBall> instances;
-    public bool isFiring;
 }
 
 public class ActiveBall

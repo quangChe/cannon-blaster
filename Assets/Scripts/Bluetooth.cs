@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bluetooth : MonoBehaviour
 {
+    public LevelSpawnController spawnCtrl;
+
     private string DeviceName = "fitmi-puck";
     private string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
     private string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
@@ -134,6 +136,7 @@ public class Bluetooth : MonoBehaviour
             if (IsEqual(serviceUUID, ServiceUUID))
             {
                 BluetoothLEHardwareInterface.Log("Connected to Puck UUID: " + serviceUUID);
+
                 _foundTXUUID = _foundTXUUID || IsEqual(characteristicUUID, TXUUID);
                 _foundRXUUID = _foundRXUUID || IsEqual(characteristicUUID, RXUUID);
 
@@ -142,7 +145,7 @@ public class Bluetooth : MonoBehaviour
                 if (_foundTXUUID && _foundRXUUID)
                 {
                     _connected = true;
-                    SetState(States.Subscribe, 1f);
+                    SetState(States.Subscribe, 2f);
                 }
             }
         });
@@ -160,24 +163,16 @@ public class Bluetooth : MonoBehaviour
             // read the initial state of the button
             BluetoothLEHardwareInterface.ReadCharacteristic(_deviceAddress, ServiceUUID, TXUUID, (characteristic, bytes) =>
             {
-                StartCoroutine(ProcessButton(bytes));
+                ProcessButton(bytes);
             });
 
         }, (address, characteristicUUID, bytes) =>
         {
             if (_state != States.None)
-            {
-                // some devices do not properly send the notification state change which calls
-                // the lambda just above this one so in those cases we don't have a great way to
-                // set the state other than waiting until we actually got some data back.
-                // The esp32 sends the notification above, but if yuor device doesn't you would have
-                // to send data like pressing the button on the esp32 as the sketch for this demo
-                // would then send data to trigger this.
                 _state = States.None;
-            }
 
             // we received some data from the device
-            StartCoroutine(ProcessButton(bytes));
+            ProcessButton(bytes);
         });
     }
 
@@ -186,20 +181,14 @@ public class Bluetooth : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    private IEnumerator ProcessButton(byte[] bytes)
+    private void ProcessButton(byte[] bytes)
     {
         ButtonCode = (int)bytes[0];
-        //if ButtonCode == 1: spwnController.destroyActiveObject();
-        Debug.Log("??????" + ButtonCode.GetType());
-        yield return new WaitForSeconds(0.05f);
-        //Debug.Log("Puck message: " + bytes[0]);
-        //Debug.Log("Puck color: " + bytes[1]);
-        //Debug.Log("Puck message type: " + bytes[2]);
-        //Debug.Log("Puck byte length: " + bytes[3]);
-        //if (bytes[0] == 2)
-        //{
-        //    SendByte((byte)0x02);
-        //}
+        if (bytes[0] == 1)
+        {
+            Debug.Log("CLICKED");
+            spawnCtrl.DestroyActiveObject("LS");
+        }
         ButtonCode = -1;
     }
 
