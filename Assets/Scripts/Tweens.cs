@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class tweens : MonoBehaviour {
+public class Tweens : MonoBehaviour {
 
-	// Use this for initialization
-
+	Vector3 startPos;
+	public  Tweenbuttons buttonTween;
 	public enum Tweenbuttons{
 	 
 		inGameEndScroller,
-		slideToLeftSide,
-		slideToRightSide,
-		bringToTop,
-		bringToDown
+		slideFromLeft,
+		slideFromRight,
+		slideFromTop,
+		slideFromBottom
 
 	}
-	public  Tweenbuttons buttonTween;
-	Vector3 startPos   ;
+
 	void OnEnable () {
 
 
@@ -23,14 +22,14 @@ public class tweens : MonoBehaviour {
 		switch(buttonTween)
 		{
 
-		case Tweenbuttons.slideToRightSide:
+		case Tweenbuttons.slideFromRight:
 
 			transform.Translate(20,0,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 
 			break;
 
-		case Tweenbuttons.slideToLeftSide:
+		case Tweenbuttons.slideFromLeft:
 			 
 			transform.Translate(-20,0,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
@@ -39,14 +38,14 @@ public class tweens : MonoBehaviour {
 			break;
 
 
-		case Tweenbuttons.bringToTop:
+		case Tweenbuttons.slideFromTop:
 			transform.Translate(0,40,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 			
 
 
 			break;
-		case Tweenbuttons.bringToDown:
+		case Tweenbuttons.slideFromBottom:
 			transform.Translate(0,-40,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 			
