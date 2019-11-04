@@ -250,8 +250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewImage: {fileID: 1749110461155401679, guid: e153ce07c4d2949f6b1221036a4ad50d,
     type: 3}
-  levelData: {fileID: 0}
-  exerciseSprites: {fileID: 0}
 --- !u!1 &5898432733539444696
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +380,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 25.053257, y: 0, z: 23.661306, w: 0}
+  m_margin: {x: 24.220528, y: -0.27858925, z: 24.494036, w: 0}
   m_textInfo:
     textComponent: {fileID: 8096513961385278380}
     characterCount: 4
