@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bluetooth : MonoBehaviour
 {
-    public LevelSpawnController spawnCtrl;
+    private LevelSpawnController spawnCtrl;
 
     private string DeviceName = "fitmi-puck";
     private string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
@@ -15,12 +15,12 @@ public class Bluetooth : MonoBehaviour
 
     private string _deviceAddress;
     private bool _connected = false;
+    private bool _gameInitialized = false;
     private bool _foundTXUUID = false;
     private bool _foundRXUUID = false;
     //private bool _rssiOnly = false;
     private int _rssi = 0;
     private float _timeout;
-    public int ButtonCode = -1;
 
     enum States
     {
@@ -60,6 +60,12 @@ public class Bluetooth : MonoBehaviour
     void Update()
     {
         RunBluetoothSequence();
+    }
+
+    public void MountToLevel(LevelSpawnController controller)
+    {
+        spawnCtrl = controller;
+        _gameInitialized = true;
     }
 
     private void InitializeBluetooth()
@@ -127,7 +133,7 @@ public class Bluetooth : MonoBehaviour
 
     private void ConnectToTargetDevice()
     {
-        BluetoothLEHardwareInterface.Log("Connecting to other device...");
+        BluetoothLEHardwareInterface.Log("Connecting to " + DeviceName);
         _foundTXUUID = false;
         _foundRXUUID = false;
 
@@ -176,20 +182,20 @@ public class Bluetooth : MonoBehaviour
         });
     }
 
-    private void DisconnectFromDevice()
-    {
-        throw new NotImplementedException();
-    }
-
     private void ProcessButton(byte[] bytes)
     {
-        ButtonCode = (int)bytes[0];
-        if (bytes[0] == 1)
+        if (_gameInitialized)
         {
-            Debug.Log("CLICKED");
-            spawnCtrl.DestroyActiveObject("LS");
+            if (bytes[0] == 1)
+            {
+                Debug.Log("CLICKED");
+                spawnCtrl.DestroyActiveObject("LS");
+            }
         }
-        ButtonCode = -1;
+        else
+        {
+            Debug.LogError("Game has not started yet!");
+        }
     }
 
     string FullUUID(string uuid)

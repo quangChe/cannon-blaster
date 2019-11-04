@@ -6,22 +6,28 @@ using UnityEngine;
 
 public class LevelSpawnController : MonoBehaviour
 {
+    private ExerciseSpriteDictionary exerciseSprites;
+    private Bluetooth bt;
+
     public GameObject explosion;
     public AudioClip boom;
 
     [Header("Referenced Scripts")]
-    public ExerciseSpriteDictionary exerciseSprites;
     public LevelDataController levelData;
     public FireCannon fireCannon;
     public PreviewExercise previewPanel;
 
+    
     string[] AllExercises = {"LS", "DK", "ZP", "CP"};
     List<BallData> ballQueue = new List<BallData>();
     public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
-    //List<ActiveGameBalls> gameBalls
+    private void Awake()
+    {
+        bt = FindObjectOfType<Bluetooth>();
+        bt.MountToLevel(this);
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         CompileBallData();
@@ -31,6 +37,7 @@ public class LevelSpawnController : MonoBehaviour
 
     private void SpawnGameBalls()
     {
+        exerciseSprites = GetComponent<ExerciseSpriteDictionary>();
         StartCoroutine(SpawnBall(1f));
     }
 

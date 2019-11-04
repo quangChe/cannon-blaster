@@ -8,14 +8,15 @@ public class PreviewExercise : MonoBehaviour
     public GameObject previewImage;
 
     [Header("Referenced Scripts")]
+
     public LevelDataController levelData;
     public ExerciseSpriteDictionary exerciseSprites;
-
-    BallData[] ballData;
+    private BallData[] ballData;
 
     // Start is called before the first frame update
     void Start()
     {
+        exerciseSprites = GetComponent<ExerciseSpriteDictionary>();
         ballData = levelData.GetBalls();
         RenderPreviewObjects();
     }
