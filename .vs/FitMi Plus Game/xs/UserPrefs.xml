@@ -17,9 +17,8 @@
       <File FileName="Assets/Scripts/Wind.cs" />
       <File FileName="Assets/Scripts/GameObjectShredder.cs" />
       <File FileName="Assets/Scripts/Tweens.cs" Line="72" Column="2" />
-      <File FileName="Assets/Scripts/Singleton.cs" Line="12" Column="2" />
       <File FileName="Assets/Scripts/UiController.cs" Line="58" Column="63" />
-      <File FileName="Assets/Scripts/DontDestroy.cs" Line="5" Column="25" />
+      <File FileName="Assets/Scripts/DontDestroy.cs" Line="12" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
