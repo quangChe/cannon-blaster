@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton : MonoBehaviour
+public class DontDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
