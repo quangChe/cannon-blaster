@@ -12,9 +12,8 @@ public class Bluetooth : MonoBehaviour
     private string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
     private string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
 
-
+    public bool _connected = false;
     private string _deviceAddress;
-    private bool _connected = false;
     private bool _gameInitialized = false;
     private bool _foundTXUUID = false;
     private bool _foundRXUUID = false;
@@ -150,7 +149,6 @@ public class Bluetooth : MonoBehaviour
                 // it finishes before we try to subscribe
                 if (_foundTXUUID && _foundRXUUID)
                 {
-                    _connected = true;
                     SetState(States.Subscribe, 2f);
                 }
             }
@@ -165,6 +163,7 @@ public class Bluetooth : MonoBehaviour
         {
             BluetoothLEHardwareInterface.Log("Waiting for user action (1)...");
             _state = States.None;
+            _connected = true;
 
             // read the initial state of the button
             BluetoothLEHardwareInterface.ReadCharacteristic(_deviceAddress, ServiceUUID, TXUUID, (characteristic, bytes) =>
@@ -175,7 +174,10 @@ public class Bluetooth : MonoBehaviour
         }, (address, characteristicUUID, bytes) =>
         {
             if (_state != States.None)
+            {
+                _connected = true;
                 _state = States.None;
+            }
 
             // we received some data from the device
             ProcessButton(bytes);

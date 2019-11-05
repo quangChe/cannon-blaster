@@ -40,7 +40,13 @@ public class UiController : MonoBehaviour
         {
             hitObjName = hitObject.collider.name;
         }
-        playButtonRender.material.mainTexture = playButtonTexture[1];
+
+        Debug.Log(hitObjName);
+
+        if (hitObjName == "Play Button(Clone)")
+        {
+            playButtonRender.sharedMaterial.mainTexture = playButtonTexture[1];
+        }
     }
 
     private void Submit()
@@ -53,15 +59,20 @@ public class UiController : MonoBehaviour
             hitObjName = hitObject.collider.name;
         }
 
-        originalTextures();
-        playButtonRender.material.mainTexture = playButtonTexture[0];
-        //iTween.MoveTo(levels, new Vector3(0, 0, 0), 2f);
-        iTween.MoveTo(gameObject, new Vector3(-29, 0, 0), 2f);
-        SceneManager.LoadScene("Game");
+        Debug.Log(hitObjName);
+
+        if (hitObjName == "Play Button(Clone)")
+        {
+            originalTextures();
+            playButtonRender.sharedMaterial.mainTexture = playButtonTexture[0];
+            //iTween.MoveTo(levels, new Vector3(0, 0, 0), 2f);
+            iTween.MoveTo(gameObject, new Vector3(-29, 0, 0), 2f);
+            SceneManager.LoadScene("Game");
+        }
     }
 
     public void originalTextures()
     {
-        playButtonRender.material.mainTexture = playButtonTexture[0];
+        playButtonRender.sharedMaterial.mainTexture = playButtonTexture[0];
     }
 }

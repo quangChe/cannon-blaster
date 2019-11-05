@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
+//using DG.Tweening;
 
 public class Tweens : MonoBehaviour {
 
@@ -11,8 +13,7 @@ public class Tweens : MonoBehaviour {
 		slideFromLeft,
 		slideFromRight,
 		slideFromTop,
-		slideFromBottom
-
+		slideFromBottom,
 	}
 
 	void OnEnable () {
@@ -40,7 +41,7 @@ public class Tweens : MonoBehaviour {
 
 		case Tweenbuttons.slideFromTop:
 			transform.Translate(0,40,0);
-			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
+			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",2.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 			
 
 
@@ -61,6 +62,8 @@ public class Tweens : MonoBehaviour {
 			break;
 
 		}
+
+            
 	
 	}
 	void OnDisable()
