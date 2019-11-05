@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Parachute : MonoBehaviour
 {
-    [SerializeField] GameObject parachute;
-    [SerializeField] Sprite blueParachute;
-    [SerializeField] Sprite greenParachute;
-    [SerializeField] Sprite redParachute;
+    public GameObject parachute;
+    public Sprite blueParachute;
+    public Sprite greenParachute;
+    public Sprite redParachute;
 
     // Start is called before the first frame update
     void Start()

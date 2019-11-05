@@ -10,10 +10,10 @@ public class PreviewExercise : MonoBehaviour
     [Header("Referenced Scripts")]
 
     public LevelDataController levelData;
-    public ExerciseSpriteDictionary exerciseSprites;
+
+    private ExerciseSpriteDictionary exerciseSprites;
     private BallData[] ballData;
 
-    // Start is called before the first frame update
     void Start()
     {
         exerciseSprites = GetComponent<ExerciseSpriteDictionary>();
@@ -40,7 +40,6 @@ public class PreviewExercise : MonoBehaviour
     public void UpdatePreview()
     {
         RectTransform rt = GetComponent<RectTransform>();
-
         rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, (rt.anchoredPosition.y - 165f));
     }
     

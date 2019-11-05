@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour
 {
-    [SerializeField] GameObject windA;
-    [SerializeField] GameObject windB;
-    [SerializeField] GameObject windC;
+    public GameObject windA;
+    public GameObject windB;
+    public GameObject windC;
 
     AreaEffector2D windConfigA;
     AreaEffector2D windConfigB;
