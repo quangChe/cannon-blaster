@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5065488474757663458}
   - component: {fileID: 5012893735642456880}
-  - component: {fileID: 6596365993591481691}
+  - component: {fileID: 8007572188997286823}
   m_Layer: 5
   m_Name: Bluetooth
   m_TagString: Untagged
@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9098817222304445766}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 688.3083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -49,9 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc47632c262b44c1828816edb1a7b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCtrl: {fileID: 0}
-  ButtonCode: -1
---- !u!114 &6596365993591481691
+  _connected: 0
+--- !u!114 &8007572188997286823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,6 +59,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9098817222304445766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ae32c38c032418dbb4cc0e9f1f0ab2, type: 3}
+  m_Script: {fileID: 11500000, guid: d83398801862c4a4797018eb01c65b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
