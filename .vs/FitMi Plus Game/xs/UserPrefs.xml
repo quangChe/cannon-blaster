@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/LevelSelector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs">
     <Files>
-      <File FileName="Assets/Scripts/Bluetooth.cs" Line="177" Column="73" IsPinned="True" />
+      <File FileName="Assets/Scripts/Bluetooth.cs" Line="8" Column="25" IsPinned="True" />
       <File FileName="Assets/Scripts/FireCannon.cs" />
       <File FileName="Assets/Scripts/BallConfigurations.cs" />
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" />
       <File FileName="Assets/Scripts/LevelDataController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelSpawnController.cs" />
-      <File FileName="Assets/Scripts/GameObjectShredder.cs" />
       <File FileName="Assets/Scripts/DontDestroy.cs" />
       <File FileName="Assets/Scripts/HomeUIController.cs" />
-      <File FileName="Assets/Scripts/LevelSelector.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/LevelSelector.cs" Line="78" Column="78" />
+      <File FileName="Assets/Scripts/Utils/PageSwiper.cs" Line="34" Column="31" />
+      <File FileName="Assets/Scripts/Motion&amp;Physics/CannonBallPhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="16" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,8 +19,11 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True">
-                  <Node name="LevelSelector.cs" selected="True" />
+                <Node name="Controllers" expanded="True" />
+                <Node name="Data&amp;Models" expanded="True" />
+                <Node name="Motion&amp;Physics" expanded="True" />
+                <Node name="Utils" expanded="True">
+                  <Node name="ExerciseSpriteDictionary.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
