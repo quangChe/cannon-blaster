@@ -465,6 +465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6010595607184334521, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 1799901608270347144}
     - target: {fileID: 6010595605611453166, guid: 4862117e8685c416bbe4a80620804223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -575,11 +580,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 713582466}
-    - target: {fileID: 6010595607184334521, guid: 4862117e8685c416bbe4a80620804223,
+    - target: {fileID: 6010595605758290748, guid: 4862117e8685c416bbe4a80620804223,
         type: 3}
-      propertyPath: levelData
-      value: 
-      objectReference: {fileID: 1799901608270347144}
+      propertyPath: m_characterSpacing
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4862117e8685c416bbe4a80620804223, type: 3}
 --- !u!1001 &6034009072926580041
