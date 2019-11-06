@@ -24,7 +24,7 @@ public class HomeUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bt._connected)
+        if (bt.connected)
         {
             playButton.SetActive(true);
             loadingSpinner.SetActive(false);

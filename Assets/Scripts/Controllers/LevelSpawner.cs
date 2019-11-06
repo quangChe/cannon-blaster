@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSpawnController : MonoBehaviour
+public class LevelSpawner : MonoBehaviour
 {
     private ExerciseSpriteDictionary exerciseSprites;
     private Bluetooth bt;
