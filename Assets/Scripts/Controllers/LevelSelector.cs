@@ -21,7 +21,7 @@ public class LevelSelector : MonoBehaviour
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         iconDimensions = levelIcon.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt(
-            (panelDimensions.width - 200) / (iconDimensions.width + iconSpacing)
+            (panelDimensions.width - (2 * gridPadding)) / (iconDimensions.width + iconSpacing)
         );
         int maxInACol = Mathf.FloorToInt(
             panelDimensions.height / (iconDimensions.height + iconSpacing)
@@ -34,6 +34,8 @@ public class LevelSelector : MonoBehaviour
     void LoadPanels(int numberOfPanels)
     {
         GameObject panelClone = Instantiate(levelHolder) as GameObject;
+        PageSwiper swiper = levelHolder.AddComponent<PageSwiper>();
+        swiper.totalPages = numberOfPanels;
 
         for (int i = 1; i <= numberOfPanels; i++)
         {
@@ -55,8 +57,8 @@ public class LevelSelector : MonoBehaviour
     { 
         GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>();
         grid.cellSize = new Vector2(iconDimensions.width, iconDimensions.height);
-        grid.spacing = new Vector2(50, 50);
-        grid.padding.right = grid.padding.left = 100;
+        grid.spacing = new Vector2(iconSpacing, iconSpacing);
+        grid.padding.right = grid.padding.left = gridPadding;
         grid.childAlignment = (isLastPanel)
             ? TextAnchor.MiddleLeft
             : TextAnchor.MiddleCenter;
@@ -72,7 +74,8 @@ public class LevelSelector : MonoBehaviour
             icon.name = i.ToString();
             icon.transform.SetParent(gameObject.transform, false);
             icon.transform.SetParent(parentObject.transform);
-            icon.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());   
+            icon.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
+            icon.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Star_count_1");
         }
     }
 
