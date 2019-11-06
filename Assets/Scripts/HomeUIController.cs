@@ -75,7 +75,7 @@ public class HomeUIController : MonoBehaviour
             iTween.MoveTo(playButton, new Vector3(-29, 0, 0), 2f);
             iTween.MoveTo(title, new Vector3(-29, 0, 0), 2f);
             yield return new WaitForSeconds(0.5f);
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Levels");
         }
     }
 
