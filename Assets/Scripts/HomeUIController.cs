@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UiController : MonoBehaviour
+public class HomeUIController : MonoBehaviour
 {
     public Bluetooth bt;
     public Camera uiCam;
-    public GameObject playButton, loadingSpinner;
+    public GameObject playButton, title, loadingSpinner;
     public Renderer playButtonRender;
     public Texture[] playButtonTexture;
 
@@ -24,6 +24,12 @@ public class UiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bt._connected)
+        {
+            playButton.SetActive(true);
+            loadingSpinner.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             AnimateButton();
@@ -31,14 +37,9 @@ public class UiController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            Submit();
+            StartCoroutine(Submit());
         }
 
-        if (bt._connected)
-        {
-            playButton.SetActive(true);
-            loadingSpinner.SetActive(false);
-        }
     }
 
     private void AnimateButton()
@@ -51,15 +52,13 @@ public class UiController : MonoBehaviour
             hitObjName = hitObject.collider.name;
         }
 
-        Debug.Log(hitObjName);
-
         if (hitObjName == "Play Button")
         {
             playButtonRender.material.mainTexture = playButtonTexture[1];
         }
     }
 
-    private void Submit()
+    private IEnumerator Submit()
     {
         RaycastHit hitObject;
         Ray rayObj = uiCam.ScreenPointToRay(Input.mousePosition);
@@ -69,14 +68,13 @@ public class UiController : MonoBehaviour
             hitObjName = hitObject.collider.name;
         }
 
-        Debug.Log(hitObjName);
-
         if (hitObjName == "Play Button")
         {
             originalTextures();
             playButtonRender.material.mainTexture = playButtonTexture[0];
-            //iTween.MoveTo(levels, new Vector3(0, 0, 0), 2f);
-            iTween.MoveTo(gameObject, new Vector3(-29, 0, 0), 2f);
+            iTween.MoveTo(playButton, new Vector3(-29, 0, 0), 2f);
+            iTween.MoveTo(title, new Vector3(-29, 0, 0), 2f);
+            yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene("Game");
         }
     }
