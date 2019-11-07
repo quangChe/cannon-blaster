@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
     public GameObject levelHolder;
     public GameObject levelIcon;
 
-    private int numberOfLevels = 50;
+    private int numberOfLevels = 56;
     private Rect panelDimensions;
     private Rect iconDimensions;
     private int iconsPerPage;
@@ -79,8 +80,8 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
-    void Update()
+    public void StartLevel()
     {
-        
+        SceneManager.LoadScene("Game");
     }
 }

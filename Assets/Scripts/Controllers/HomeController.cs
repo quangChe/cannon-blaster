@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class HomeUIController : MonoBehaviour
+public class HomeController : MonoBehaviour
 {
     public Bluetooth bt;
     public Camera uiCam;
-    public GameObject playButton, title, loadingSpinner;
+    public GameObject playButton, title, loadingSpinner, loadingPrompt;
     public Renderer playButtonRender;
     public Texture[] playButtonTexture;
 
@@ -15,10 +16,9 @@ public class HomeUIController : MonoBehaviour
 
     void Start()
     {
+        IsLoading(true);
         Time.timeScale = 1;
         bt = FindObjectOfType<Bluetooth>();
-        playButton.SetActive(false);
-        loadingSpinner.SetActive(true);
     }
 
     // Update is called once per frame
@@ -26,8 +26,7 @@ public class HomeUIController : MonoBehaviour
     {
         if (bt.connected)
         {
-            playButton.SetActive(true);
-            loadingSpinner.SetActive(false);
+            IsLoading(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -40,6 +39,22 @@ public class HomeUIController : MonoBehaviour
             StartCoroutine(Submit());
         }
 
+    }
+
+    private void IsLoading(bool loading)
+    {
+        if (loading)
+        {
+            playButton.SetActive(false);
+            loadingSpinner.SetActive(true);
+            loadingPrompt.SetActive(true);
+        }
+        else
+        {
+            playButton.SetActive(true);
+            loadingSpinner.SetActive(false);
+            loadingPrompt.SetActive(false);
+        }
     }
 
     private void AnimateButton()
