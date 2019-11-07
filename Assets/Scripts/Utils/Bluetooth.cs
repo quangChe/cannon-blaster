@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bluetooth : MonoBehaviour
 {
-    private LevelSpawner spawnCtrl;
+    private SpawnController spawnCtrl;
 
     private readonly string DeviceName = "fitmi-puck";
     private readonly string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
@@ -62,7 +62,7 @@ public class Bluetooth : MonoBehaviour
         RunBluetoothSequence();
     }
 
-    public void MountToLevel(LevelSpawner controller)
+    public void MountToLevel(SpawnController controller)
     {
         spawnCtrl = controller;
         gameInitialized = true;

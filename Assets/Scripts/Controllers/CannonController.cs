@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireCannon : MonoBehaviour
+public class CannonController : MonoBehaviour
 {
     public GameObject shotBall;
     public GameObject explosion;
     public AudioClip projectile;
 
-    public GameObject NewBall(BallData d, Sprite exercise)
+    public GameObject FireProjectile(BallData d, Sprite exercise)
     {
         GameObject cannonBall = Instantiate(
                 shotBall,

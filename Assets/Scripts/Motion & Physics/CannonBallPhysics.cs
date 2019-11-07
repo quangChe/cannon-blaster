@@ -11,7 +11,7 @@ public class CannonBallPhysics : MonoBehaviour
     public GameObject explosion;
     public AudioClip parachute;
 
-    LevelSpawner spawnCtrl;
+    SpawnController spawnCtrl;
     BallConfigurations ballConfigs;
 
     float parachuteLiftForce;
@@ -26,7 +26,7 @@ public class CannonBallPhysics : MonoBehaviour
     void Start()
     {
         wind = FindObjectOfType<Wind>();
-        spawnCtrl = FindObjectOfType<LevelSpawner>();
+        spawnCtrl = FindObjectOfType<SpawnController>();
 
         startPos = new Vector2(transform.position.x, transform.position.y);
         endPositionX = random.Next(5, 18);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameObjectShredder : MonoBehaviour
 {
-    public LevelSpawner spawnCtrl;
+    public SpawnController spawnCtrl;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

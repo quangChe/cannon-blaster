@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSpawner : MonoBehaviour
+public class SpawnController : MonoBehaviour
 {
     private ExerciseSpriteDictionary exerciseSprites;
     private Bluetooth bt;
@@ -14,7 +14,7 @@ public class LevelSpawner : MonoBehaviour
 
     [Header("Referenced Scripts")]
     public LevelDataController levelData;
-    public FireCannon fireCannon;
+    public CannonController CannonController;
     public PreviewExercise previewPanel;
 
     
@@ -68,7 +68,7 @@ public class LevelSpawner : MonoBehaviour
             int last = ballQueue.Count - 1;
             BallData lastBall = ballQueue[last];
             Sprite exerSprite = exerciseSprites.GetSprite(lastBall.exercise);
-            GameObject cannonBall = fireCannon.NewBall(lastBall, exerSprite);
+            GameObject cannonBall = CannonController.NewBall(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
             CreateActiveObject(cannonBall, lastBall);

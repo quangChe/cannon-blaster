@@ -5,30 +5,30 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LevelSelector : MonoBehaviour
+public class LevelSelectController : MonoBehaviour
 {
     public GameObject levelHolder;
-    public GameObject levelIcon;
+    public GameObject levelButton;
 
     private int numberOfLevels = 56;
     private Rect panelDimensions;
-    private Rect iconDimensions;
-    private int iconsPerPage;
+    private Rect btnDimensions;
+    private int btnsPerPage;
     private int gridPadding = 100;
-    private int iconSpacing = 50;
+    private int btnSpacing = 50;
 
     void Start()
     {
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
-        iconDimensions = levelIcon.GetComponent<RectTransform>().rect;
+        btnDimensions = levelButton.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt(
-            (panelDimensions.width - (2 * gridPadding)) / (iconDimensions.width + iconSpacing)
+            (panelDimensions.width - (2 * gridPadding)) / (btnDimensions.width + btnSpacing)
         );
         int maxInACol = Mathf.FloorToInt(
-            panelDimensions.height / (iconDimensions.height + iconSpacing)
+            panelDimensions.height / (btnDimensions.height + btnSpacing)
         );
-        iconsPerPage = maxInARow * maxInACol;
-        int totalPages = Mathf.CeilToInt((float)numberOfLevels / (float)iconsPerPage);
+        btnsPerPage = maxInARow * maxInACol;
+        int totalPages = Mathf.CeilToInt((float)numberOfLevels / (float)btnsPerPage);
         LoadPanels(totalPages);
     }
 
@@ -48,7 +48,7 @@ public class LevelSelector : MonoBehaviour
                 new Vector2(panelDimensions.width * (i - 1), 0);
             bool lastPanel = i == numberOfPanels;
             SetUpGrid(panel, lastPanel);
-            LoadIcons(iconsPerPage, panel, i);
+            LoadIcons(btnsPerPage, panel, i);
         }
 
         Destroy(panelClone);
@@ -57,8 +57,8 @@ public class LevelSelector : MonoBehaviour
     void SetUpGrid(GameObject panel, bool isLastPanel)
     { 
         GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>();
-        grid.cellSize = new Vector2(iconDimensions.width, iconDimensions.height);
-        grid.spacing = new Vector2(iconSpacing, iconSpacing);
+        grid.cellSize = new Vector2(btnDimensions.width, btnDimensions.height);
+        grid.spacing = new Vector2(btnSpacing, btnSpacing);
         grid.padding.right = grid.padding.left = gridPadding;
         grid.childAlignment = (isLastPanel)
             ? TextAnchor.MiddleLeft
@@ -67,21 +67,17 @@ public class LevelSelector : MonoBehaviour
 
     void LoadIcons(int numberOfIcons, GameObject parentObject, int page)
     {
-        int startIndex = (page - 1) * iconsPerPage;
+        int startIndex = (page - 1) * btnsPerPage;
         for (int i = startIndex + 1; i <= (startIndex + numberOfIcons); i++)
         {
             if (i > numberOfLevels) { break; }
-            GameObject icon = Instantiate(levelIcon) as GameObject;
-            icon.name = i.ToString();
-            icon.transform.SetParent(gameObject.transform, false);
-            icon.transform.SetParent(parentObject.transform);
-            icon.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
-            icon.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Star_count_1");
+            GameObject btn = Instantiate(levelButton) as GameObject;
+            btn.name = i.ToString();
+            btn.transform.SetParent(gameObject.transform, false);
+            btn.transform.SetParent(parentObject.transform);
+            btn.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
+            btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Star_count_1");
+            //btn.GetComponent<Button>().onClick.AddListener();
         }
-    }
-
-    public void StartLevel()
-    {
-        SceneManager.LoadScene("Game");
     }
 }
