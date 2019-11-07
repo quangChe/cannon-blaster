@@ -11,11 +11,12 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void GoToHome(int levelNumber)
+    public void GoToHome()
     {
         SceneManager.LoadScene("Home");
     }
 
+    //public void GoToLevels(int levelNumber)
     public void GoToLevels()
     {
         SceneManager.LoadScene("Levels");

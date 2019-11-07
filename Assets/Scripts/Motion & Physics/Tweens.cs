@@ -40,15 +40,17 @@ public class Tweens : MonoBehaviour {
 
 
 		case Tweenbuttons.slideFromTop:
-			transform.Translate(0,40,0);
-			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",2.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
+			transform.Translate(0, 40, -1);
+            iTween.MoveTo(gameObject, new Vector3(0, 0, 0), 1.5f);
+            //iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",2.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 			
 
 
 			break;
 		case Tweenbuttons.slideFromBottom:
-			transform.Translate(0,-40,0);
-			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
+			transform.Translate(0, -40, 0);
+            iTween.MoveTo(gameObject, new Vector3(0, -1.5f, 0), 1.5f);
+			//iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.linear));
 			
 			
 			

@@ -7,7 +7,6 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     private ExerciseSpriteDictionary exerciseSprites;
-    private BluetoothManager bt;
 
     public GameObject explosion;
     public AudioClip boom;
@@ -24,8 +23,7 @@ public class SpawnController : MonoBehaviour
 
     private void Awake()
     {
-        bt = FindObjectOfType<BluetoothManager>();
-        bt.MountToLevel(this);
+        BluetoothManager.Instance.MountToLevel(this);
     }
 
     void Start()
