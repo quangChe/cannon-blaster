@@ -3,8 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bluetooth : MonoBehaviour
+public class BluetoothManager : MonoBehaviour
 {
+    public static BluetoothManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private SpawnController spawnCtrl;
 
     private readonly string DeviceName = "fitmi-puck";

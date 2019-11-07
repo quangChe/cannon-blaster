@@ -7,7 +7,7 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     private ExerciseSpriteDictionary exerciseSprites;
-    private Bluetooth bt;
+    private BluetoothManager bt;
 
     public GameObject explosion;
     public AudioClip boom;
@@ -24,7 +24,7 @@ public class SpawnController : MonoBehaviour
 
     private void Awake()
     {
-        bt = FindObjectOfType<Bluetooth>();
+        bt = FindObjectOfType<BluetoothManager>();
         bt.MountToLevel(this);
     }
 
@@ -68,7 +68,7 @@ public class SpawnController : MonoBehaviour
             int last = ballQueue.Count - 1;
             BallData lastBall = ballQueue[last];
             Sprite exerSprite = exerciseSprites.GetSprite(lastBall.exercise);
-            GameObject cannonBall = CannonController.NewBall(lastBall, exerSprite);
+            GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
             CreateActiveObject(cannonBall, lastBall);

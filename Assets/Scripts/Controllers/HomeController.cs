@@ -6,7 +6,7 @@ using TMPro;
 
 public class HomeController : MonoBehaviour
 {
-    public Bluetooth bt;
+    public BluetoothManager bt;
     public Camera uiCam;
     public GameObject playButton, title, loadingSpinner, loadingPrompt;
     public Renderer playButtonRender;
@@ -17,7 +17,7 @@ public class HomeController : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        bt = FindObjectOfType<Bluetooth>();
+        bt = FindObjectOfType<BluetoothManager>();
         IsLoading(true);
     }
 
