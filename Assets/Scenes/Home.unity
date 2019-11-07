@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -354.11
+      value: -245
       objectReference: {fileID: 0}
     - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
         type: 3}
@@ -756,6 +756,15 @@ PrefabInstance:
         type: 3}
       propertyPath: buttonTween
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 491202953, guid: 8da23806b99154e22a86698c47501679, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549964250959150119, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da23806b99154e22a86698c47501679, type: 3}

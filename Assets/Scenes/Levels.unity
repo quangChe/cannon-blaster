@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 1518580576}
   - component: {fileID: 1518580575}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 204741347}
         m_MethodName: GoToHome
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -532,5 +532,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1029530007}
+    - target: {fileID: 1804576278479629738, guid: d9aa085fdc6404efcb15209acdc57cdd,
+        type: 3}
+      propertyPath: levelButton
+      value: 
+      objectReference: {fileID: 781211585434802959, guid: efb4a83b00e8547ac8ce0b31eb5aca69,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9aa085fdc6404efcb15209acdc57cdd, type: 3}
