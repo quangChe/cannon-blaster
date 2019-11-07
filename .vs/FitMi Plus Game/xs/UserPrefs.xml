@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utils/PageSwiper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/HomeController.cs">
     <Files>
       <File FileName="Assets/Scripts/Bluetooth.cs" Line="235" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/FireCannon.cs" />
@@ -7,12 +7,12 @@
       <File FileName="Assets/Scripts/AnimationAutoDestroy.cs" />
       <File FileName="Assets/Scripts/LevelDataController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DontDestroy.cs" />
-      <File FileName="Assets/Scripts/HomeUIController.cs" />
-      <File FileName="Assets/Scripts/LevelSelector.cs" Line="84" Column="1" />
+      <File FileName="Assets/Scripts/HomeUIController.cs" Line="20" Column="25" />
+      <File FileName="Assets/Scripts/LevelSelector.cs" Line="88" Column="1" />
       <File FileName="Assets/Scripts/Motion&amp;Physics/CannonBallPhysics.cs" Line="79" Column="1" />
       <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="16" Column="29" />
-      <File FileName="Assets/Scripts/Controllers/LevelSpawner.cs" Line="119" Column="1" />
-      <File FileName="Assets/Scripts/Utils/PageSwiper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/LevelSpawner.cs" Line="27" Column="9" />
+      <File FileName="Assets/Scripts/Utils/PageSwiper.cs" Line="42" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +20,13 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="HomeController.cs" selected="True" />
+                </Node>
                 <Node name="Data&amp;Models" expanded="True" />
                 <Node name="Motion&amp;Physics" expanded="True" />
-                <Node name="Utils" expanded="True">
-                  <Node name="PageSwiper.cs" selected="True" />
-                </Node>
+                <Node name="Utils" expanded="True" />
+                <Node name="Visuals" expanded="True" />
               </Node>
             </Node>
           </Node>

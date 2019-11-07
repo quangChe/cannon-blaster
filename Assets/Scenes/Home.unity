@@ -567,6 +567,71 @@ PrefabInstance:
       propertyPath: m_Name
       value: Home Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -354.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 320.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_text
+      value: Connecting to FitMi Plus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
+        type: 3}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 491202951}
     - target: {fileID: 1549964250959150130, guid: 8da23806b99154e22a86698c47501679,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -687,70 +752,10 @@ PrefabInstance:
       propertyPath: uiCam
       value: 
       objectReference: {fileID: 1029530007}
-    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
+    - target: {fileID: 1549964250959150115, guid: 8da23806b99154e22a86698c47501679,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -354.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 320.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004186, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_text
-      value: Connecting to FitMi Plus
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
+      propertyPath: buttonTween
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_textInfo.materialCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7464994882086004185, guid: 8da23806b99154e22a86698c47501679,
-        type: 3}
-      propertyPath: m_subTextObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 491202951}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da23806b99154e22a86698c47501679, type: 3}

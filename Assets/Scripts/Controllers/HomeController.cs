@@ -16,9 +16,9 @@ public class HomeController : MonoBehaviour
 
     void Start()
     {
-        IsLoading(true);
         Time.timeScale = 1;
         bt = FindObjectOfType<Bluetooth>();
+        IsLoading(true);
     }
 
     // Update is called once per frame
@@ -45,12 +45,14 @@ public class HomeController : MonoBehaviour
     {
         if (loading)
         {
+            title.SetActive(false);
             playButton.SetActive(false);
             loadingSpinner.SetActive(true);
             loadingPrompt.SetActive(true);
         }
         else
         {
+            title.SetActive(true);
             playButton.SetActive(true);
             loadingSpinner.SetActive(false);
             loadingPrompt.SetActive(false);
