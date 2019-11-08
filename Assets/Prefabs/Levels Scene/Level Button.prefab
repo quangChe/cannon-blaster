@@ -119,9 +119,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6246354475055664681, guid: 1c20b5b757ff741159ed0c18be432bb0,
-          type: 3}
-        m_MethodName: GoToGame
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
