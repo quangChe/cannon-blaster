@@ -13,10 +13,10 @@ public class ExerciseSpriteDictionary : MonoBehaviour
 
     private void BuildImageDictionary()
     {
-        imageDict.Add("LS", Resources.Load<Sprite>("lightswitch"));
-        imageDict.Add("DK", Resources.Load<Sprite>("doorknob"));
-        imageDict.Add("ZP", Resources.Load<Sprite>("zipper"));
-        imageDict.Add("CP", Resources.Load<Sprite>("cups"));
+        imageDict.Add("LS", Resources.Load<Sprite>("sprites/lightswitch"));
+        imageDict.Add("DK", Resources.Load<Sprite>("sprites/doorknob"));
+        imageDict.Add("ZP", Resources.Load<Sprite>("sprites/zipper"));
+        imageDict.Add("CP", Resources.Load<Sprite>("sprites/cups"));
     }
 
     public Sprite GetSprite(string key)

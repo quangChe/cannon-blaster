@@ -23,7 +23,7 @@ public class SpawnController : MonoBehaviour
 
     private void Awake()
     {
-        BluetoothManager.Instance.MountToLevel(this);
+        //BluetoothManager.Instance.MountToLevel(this);
     }
 
     void Start()
