@@ -99,56 +99,56 @@ public class BluetoothLEHardwareInterface
 	};
 #endif
 
-//#if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+#if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
 
-//	public delegate void UnitySendMessageCallbackDelegate (IntPtr objectName, IntPtr commandName, IntPtr commandData);
+	public delegate void UnitySendMessageCallbackDelegate (IntPtr objectName, IntPtr commandName, IntPtr commandData);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void ConnectUnitySendMessageCallback ([MarshalAs (UnmanagedType.FunctionPtr)]UnitySendMessageCallbackDelegate callbackMethod);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void ConnectUnitySendMessageCallback ([MarshalAs (UnmanagedType.FunctionPtr)]UnitySendMessageCallbackDelegate callbackMethod);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLELog (string message);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLELog (string message);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEInitialize ([MarshalAs (UnmanagedType.Bool)]bool asCentral, [MarshalAs (UnmanagedType.Bool)]bool asPeripheral);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEInitialize ([MarshalAs (UnmanagedType.Bool)]bool asCentral, [MarshalAs (UnmanagedType.Bool)]bool asPeripheral);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEDeInitialize ();
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEDeInitialize ();
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEPauseMessages (bool isPaused);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEPauseMessages (bool isPaused);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEScanForPeripheralsWithServices (string serviceUUIDsString, bool allowDuplicates, bool rssiOnly, bool clearPeripheralList);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEScanForPeripheralsWithServices (string serviceUUIDsString, bool allowDuplicates, bool rssiOnly, bool clearPeripheralList);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLERetrieveListOfPeripheralsWithServices (string serviceUUIDsString);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLERetrieveListOfPeripheralsWithServices (string serviceUUIDsString);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEStopScan ();
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEStopScan ();
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEConnectToPeripheral (string name);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEConnectToPeripheral (string name);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEDisconnectAll ();
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEDisconnectAll ();
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEDisconnectPeripheral (string name);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEDisconnectPeripheral (string name);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEReadCharacteristic (string name, string service, string characteristic);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEReadCharacteristic (string name, string service, string characteristic);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEWriteCharacteristic (string name, string service, string characteristic, byte[] data, int length, bool withResponse);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEWriteCharacteristic (string name, string service, string characteristic, byte[] data, int length, bool withResponse);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLESubscribeCharacteristic (string name, string service, string characteristic);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLESubscribeCharacteristic (string name, string service, string characteristic);
 
-//	[DllImport ("BluetoothLEOSX")]
-//	private static extern void OSXBluetoothLEUnSubscribeCharacteristic (string name, string service, string characteristic);
+	[DllImport ("BluetoothLEOSX")]
+	private static extern void OSXBluetoothLEUnSubscribeCharacteristic (string name, string service, string characteristic);
 
-//#endif
+#endif
 
 #if UNITY_IOS || UNITY_TVOS
 	[DllImport ("__Internal")]
@@ -291,17 +291,17 @@ public class BluetoothLEHardwareInterface
 		GameObject.DontDestroyOnLoad (bluetoothLEReceiver);
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-		//ConnectUnitySendMessageCallback ((objectName, commandName, commandData) => {
-		//	string name = Marshal.PtrToStringAuto (objectName);
-		//	string command = Marshal.PtrToStringAuto (commandName);
-		//	string data = Marshal.PtrToStringAuto (commandData);
+		ConnectUnitySendMessageCallback ((objectName, commandName, commandData) => {
+			string name = Marshal.PtrToStringAuto (objectName);
+			string command = Marshal.PtrToStringAuto (commandName);
+			string data = Marshal.PtrToStringAuto (commandData);
 
-		//	GameObject foundObject = GameObject.Find (name);
-		//	if (foundObject != null)
-		//		foundObject.SendMessage (command, data);
-		//});
+			GameObject foundObject = GameObject.Find (name);
+			if (foundObject != null)
+				foundObject.SendMessage (command, data);
+		});
 
-		//BluetoothLEHardwareInterface.OSXBluetoothLEInitialize (asCentral, asPeripheral);
+		BluetoothLEHardwareInterface.OSXBluetoothLEInitialize (asCentral, asPeripheral);
 #else
         if (Application.isEditor)
 		{
@@ -334,7 +334,7 @@ public class BluetoothLEHardwareInterface
 			bluetoothDeviceScript.DeinitializedAction = action;
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-		//BluetoothLEHardwareInterface.OSXBluetoothLEDeInitialize ();
+		BluetoothLEHardwareInterface.OSXBluetoothLEDeInitialize ();
 #else
         if (Application.isEditor)
 		{
@@ -400,7 +400,7 @@ public class BluetoothLEHardwareInterface
 	public static void PauseMessages (bool isPaused)
 	{
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-		//OSXBluetoothLEPauseMessages (isPaused);
+		OSXBluetoothLEPauseMessages (isPaused);
 #else
         if (!Application.isEditor)
 		{
@@ -474,7 +474,7 @@ public class BluetoothLEHardwareInterface
 			}
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLEScanForPeripheralsWithServices (serviceUUIDsString, (actionAdvertisingInfo != null), rssiOnly, clearPeripheralList);
+			OSXBluetoothLEScanForPeripheralsWithServices (serviceUUIDsString, (actionAdvertisingInfo != null), rssiOnly, clearPeripheralList);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEScanForPeripheralsWithServices (serviceUUIDsString, (actionAdvertisingInfo != null), rssiOnly, clearPeripheralList);
 #elif UNITY_ANDROID
@@ -514,7 +514,7 @@ public class BluetoothLEHardwareInterface
 			serviceUUIDsString = serviceUUIDsString.Substring (0, serviceUUIDsString.Length - 1);
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLERetrieveListOfPeripheralsWithServices (serviceUUIDsString);
+			OSXBluetoothLERetrieveListOfPeripheralsWithServices (serviceUUIDsString);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLERetrieveListOfPeripheralsWithServices (serviceUUIDsString);
 #elif UNITY_ANDROID
@@ -529,7 +529,7 @@ public class BluetoothLEHardwareInterface
 	public static void StopScan ()
 	{
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-		//OSXBluetoothLEStopScan ();
+		OSXBluetoothLEStopScan ();
 #else
         if (!Application.isEditor)
 		{
@@ -559,7 +559,7 @@ public class BluetoothLEHardwareInterface
 	public static void DisconnectAll ()
 	{
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-		//OSXBluetoothLEDisconnectAll ();
+		OSXBluetoothLEDisconnectAll ();
 #else
         if (!Application.isEditor)
 		{
@@ -588,7 +588,7 @@ public class BluetoothLEHardwareInterface
 			}
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLEConnectToPeripheral (name);
+			OSXBluetoothLEConnectToPeripheral (name);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEConnectToPeripheral (name);
 #elif UNITY_ANDROID
@@ -610,7 +610,7 @@ public class BluetoothLEHardwareInterface
 				bluetoothDeviceScript.DisconnectedPeripheralAction = action;
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLEDisconnectPeripheral (name);
+			OSXBluetoothLEDisconnectPeripheral (name);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEDisconnectPeripheral (name);
 #elif UNITY_ANDROID
@@ -641,7 +641,7 @@ public class BluetoothLEHardwareInterface
 			}
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLEReadCharacteristic (name, service, characteristic);
+			OSXBluetoothLEReadCharacteristic (name, service, characteristic);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEReadCharacteristic (name, service, characteristic);
 #elif UNITY_ANDROID
@@ -663,7 +663,7 @@ public class BluetoothLEHardwareInterface
 				bluetoothDeviceScript.DidWriteCharacteristicAction = action;
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLEWriteCharacteristic (name, service, characteristic, data, length, withResponse);
+			OSXBluetoothLEWriteCharacteristic (name, service, characteristic, data, length, withResponse);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEWriteCharacteristic (name, service, characteristic, data, length, withResponse);
 #elif UNITY_ANDROID
@@ -707,7 +707,7 @@ public class BluetoothLEHardwareInterface
 			}
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLESubscribeCharacteristic (name, service, characteristic);
+			OSXBluetoothLESubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLESubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_ANDROID
@@ -759,7 +759,7 @@ public class BluetoothLEHardwareInterface
 			}
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-			//OSXBluetoothLESubscribeCharacteristic (name, service, characteristic);
+			OSXBluetoothLESubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLESubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_ANDROID
@@ -803,7 +803,7 @@ public class BluetoothLEHardwareInterface
         }
 
 #if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
-        //OSXBluetoothLEUnSubscribeCharacteristic (name, service, characteristic);
+        OSXBluetoothLEUnSubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_IOS || UNITY_TVOS
 			_iOSBluetoothLEUnSubscribeCharacteristic (name, service, characteristic);
 #elif UNITY_ANDROID
