@@ -99,56 +99,56 @@ public class BluetoothLEHardwareInterface
 	};
 #endif
 
-#if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+//#if EXPERIMENTAL_MACOS_EDITOR && (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
 
-	public delegate void UnitySendMessageCallbackDelegate (IntPtr objectName, IntPtr commandName, IntPtr commandData);
+//	public delegate void UnitySendMessageCallbackDelegate (IntPtr objectName, IntPtr commandName, IntPtr commandData);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void ConnectUnitySendMessageCallback ([MarshalAs (UnmanagedType.FunctionPtr)]UnitySendMessageCallbackDelegate callbackMethod);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void ConnectUnitySendMessageCallback ([MarshalAs (UnmanagedType.FunctionPtr)]UnitySendMessageCallbackDelegate callbackMethod);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLELog (string message);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLELog (string message);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEInitialize ([MarshalAs (UnmanagedType.Bool)]bool asCentral, [MarshalAs (UnmanagedType.Bool)]bool asPeripheral);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEInitialize ([MarshalAs (UnmanagedType.Bool)]bool asCentral, [MarshalAs (UnmanagedType.Bool)]bool asPeripheral);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEDeInitialize ();
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEDeInitialize ();
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEPauseMessages (bool isPaused);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEPauseMessages (bool isPaused);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEScanForPeripheralsWithServices (string serviceUUIDsString, bool allowDuplicates, bool rssiOnly, bool clearPeripheralList);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEScanForPeripheralsWithServices (string serviceUUIDsString, bool allowDuplicates, bool rssiOnly, bool clearPeripheralList);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLERetrieveListOfPeripheralsWithServices (string serviceUUIDsString);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLERetrieveListOfPeripheralsWithServices (string serviceUUIDsString);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEStopScan ();
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEStopScan ();
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEConnectToPeripheral (string name);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEConnectToPeripheral (string name);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEDisconnectAll ();
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEDisconnectAll ();
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEDisconnectPeripheral (string name);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEDisconnectPeripheral (string name);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEReadCharacteristic (string name, string service, string characteristic);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEReadCharacteristic (string name, string service, string characteristic);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEWriteCharacteristic (string name, string service, string characteristic, byte[] data, int length, bool withResponse);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEWriteCharacteristic (string name, string service, string characteristic, byte[] data, int length, bool withResponse);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLESubscribeCharacteristic (string name, string service, string characteristic);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLESubscribeCharacteristic (string name, string service, string characteristic);
 
-	[DllImport ("BluetoothLEOSX")]
-	private static extern void OSXBluetoothLEUnSubscribeCharacteristic (string name, string service, string characteristic);
+//	[DllImport ("BluetoothLEOSX")]
+//	private static extern void OSXBluetoothLEUnSubscribeCharacteristic (string name, string service, string characteristic);
 
-#endif
+//#endif
 
 #if UNITY_IOS || UNITY_TVOS
 	[DllImport ("__Internal")]

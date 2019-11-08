@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Example/BluetoothLETest/BLETestScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/BluetoothHardwareInterface.cs">
     <Files>
       <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="19" Column="61" />
       <File FileName="Assets/Scripts/Utils/PageSwiper.cs" />
@@ -16,10 +16,10 @@
       <File FileName="Assets/Scripts/Utils/DontDestroy.cs" Line="18" Column="33" />
       <File FileName="Assets/Scripts/Controllers/InitializationController.cs" Line="10" Column="37" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="52" Column="68" />
-      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="25" Column="19" />
       <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="10" Column="16" />
       <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="79" Column="108" />
       <File FileName="Assets/Example/BluetoothLETest/BLETestScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="106" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,15 +28,14 @@
             <Node name="Assets" expanded="True">
               <Node name="Example" expanded="True">
                 <Node name="ArduinoHM10Test" expanded="True" />
-                <Node name="BluetoothLETest" expanded="True">
-                  <Node name="BLETestScript.cs" selected="True" />
-                </Node>
+                <Node name="BluetoothLETest" expanded="True" />
               </Node>
               <Node name="Plugins" expanded="True">
                 <Node name="BluetoothLE" expanded="True">
                   <Node name="Android" expanded="True" />
                 </Node>
                 <Node name="iTween" expanded="True" />
+                <Node name="BluetoothHardwareInterface.cs" selected="True" />
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Controllers" expanded="True" />
