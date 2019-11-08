@@ -32,9 +32,9 @@ public class BluetoothManager : MonoBehaviour
     private string deviceAddress;
     private bool gameInitialized = false;
     private bool foundTXUUID = false;
-    private bool foundRXUUID = false;
+    //private bool foundRXUUID = false;
     //private bool rssiOnly = false;
-    private int rssi = 0;
+    //private int rssi = 0;
     private float timeout;
 
     enum States
@@ -44,8 +44,8 @@ public class BluetoothManager : MonoBehaviour
         //ScanRSSI,
         Connect,
         Subscribe,
-        Unsubscribe,
-        Disconnect,
+        //Unsubscribe,
+        //Disconnect,
     }
     private States state = States.None;
 
@@ -62,8 +62,8 @@ public class BluetoothManager : MonoBehaviour
         state = States.None;
         deviceAddress = null;
         foundTXUUID = false;
-        foundRXUUID = false;
-        rssi = 0;
+        //foundRXUUID = false;
+        //rssi = 0;
     }
 
     // Start is called before the first frame update
@@ -139,7 +139,7 @@ public class BluetoothManager : MonoBehaviour
             {
                 BluetoothLEHardwareInterface.Log("Found with method 2! " + bytes[0]);
                 BluetoothLEHardwareInterface.StopScan();
-                rssi = deviceRssi;
+                //rssi = deviceRssi;
                 deviceAddress = address;
                 SetState(States.Connect, 0.5f);
             }
@@ -150,25 +150,33 @@ public class BluetoothManager : MonoBehaviour
     {
         BluetoothLEHardwareInterface.Log("Connecting to " + DeviceName);
         foundTXUUID = false;
-        foundRXUUID = false;
+        //foundRXUUID = false;
 
-        BluetoothLEHardwareInterface.ConnectToPeripheral(deviceAddress, null, null, (address, serviceUUID, characteristicUUID) =>
-        {
+        BluetoothLEHardwareInterface.ConnectToPeripheral(deviceAddress, null, null,
+            (address, serviceUUID, characteristicUUID) => { 
+     
             if (IsEqual(serviceUUID, ServiceUUID))
             {
                 BluetoothLEHardwareInterface.Log("Connected to Puck UUID: " + serviceUUID);
-
+                connected = true;
                 foundTXUUID = foundTXUUID || IsEqual(characteristicUUID, TXUUID);
-                foundRXUUID = foundRXUUID || IsEqual(characteristicUUID, RXUUID);
+                //foundRXUUID = foundRXUUID || IsEqual(characteristicUUID, RXUUID);
 
                 // Make sure there is enough timeout that if the device is still enumerating other characteristics
                 // it finishes before we try to subscribe
-                if (foundTXUUID && foundRXUUID)
+                //if (foundTXUUID && foundRXUUID)
+                if (foundTXUUID)
                 {
                     SetState(States.Subscribe, 2f);
                 }
             }
-        });
+        },
+        (err) =>
+        {
+            connected = false;
+            SetState(States.Connect, 2f);
+        }
+        );
     }
 
     private void SubscribeToTargetDevice()
@@ -179,7 +187,6 @@ public class BluetoothManager : MonoBehaviour
         {
             BluetoothLEHardwareInterface.Log("Waiting for user action (1)...");
             state = States.None;
-            connected = true;
 
             // read the initial state of the button
             BluetoothLEHardwareInterface.ReadCharacteristic(deviceAddress, ServiceUUID, TXUUID, (characteristic, bytes) =>
@@ -193,11 +200,10 @@ public class BluetoothManager : MonoBehaviour
 
             if (state != States.None)
             {
-                connected = true;
                 state = States.None;
             }
 
-            // we received some data from the device
+            // we received some data from the puck
             ProcessButton(bytes);
         });
     }
@@ -210,6 +216,11 @@ public class BluetoothManager : MonoBehaviour
             {
                 Debug.Log("CLICKED");
                 spawnCtrl.DestroyActiveObject("LS");
+            }
+            if (bytes[0] == 3)
+            {
+                Debug.Log("CLICKED");
+                spawnCtrl.DestroyActiveObject("DK");
             }
         }
     }
@@ -233,13 +244,13 @@ public class BluetoothManager : MonoBehaviour
         return (uuid1.ToUpper().Equals(uuid2.ToUpper()));
     }
 
-    void SendByte(byte value)
-    {
-        byte[] data = { value, (byte)0x0, (byte)0x2, (byte)0x1 };
-        //byte[] data = { value };
-        BluetoothLEHardwareInterface.WriteCharacteristic(deviceAddress, ServiceUUID, RXUUID, data, data.Length, true, (characteristicUUID) =>
-        {
-            BluetoothLEHardwareInterface.Log("Write Succeeded with characteristic: " + characteristicUUID);
-        });
-    }
+    //void SendByte(byte value)
+    //{
+    //    byte[] data = { value, (byte)0x0, (byte)0x2, (byte)0x1 };
+    //    //byte[] data = { value };
+    //    BluetoothLEHardwareInterface.WriteCharacteristic(deviceAddress, ServiceUUID, RXUUID, data, data.Length, true, (characteristicUUID) =>
+    //    {
+    //        BluetoothLEHardwareInterface.Log("Write Succeeded with characteristic: " + characteristicUUID);
+    //    });
+    //}
 }
