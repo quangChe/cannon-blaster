@@ -19,7 +19,8 @@ public class LevelSelectController : MonoBehaviour
 
     void Start()
     {
-        numberOfLevels = GameManager.Instance.levels.Length;
+        numberOfLevels = 112;
+        //numberOfLevels = GameManager.Instance.levels.Length;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         btnDimensions = levelButton.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt(

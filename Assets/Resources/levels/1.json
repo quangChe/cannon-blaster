@@ -1,7 +1,7 @@
 {
     "balls": [
         {"id": 1, "fallDelay": 300, "exercise": "LS", "timeDelay": 2},
-        {"id": 2, "fallDelay": 140, "exercise": "LS", "timeDelay": 2},
+        {"id": 2, "fallDelay": 140, "exercise": "DK", "timeDelay": 2},
         {"id": 3, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
         {"id": 4, "fallDelay": 60, "exercise": "LS", "timeDelay": 2},
         {"id": 5, "fallDelay": 20, "exercise": "LS", "timeDelay": 2},

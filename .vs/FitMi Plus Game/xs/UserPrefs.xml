@@ -1,26 +1,27 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/levels/1.json">
     <Files>
       <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="19" Column="61" />
-      <File FileName="Assets/Scripts/Utils/PageSwiper.cs" />
-      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="14" Column="25" />
+      <File FileName="Assets/Scripts/Utils/PageSwiper.cs" Line="51" Column="5" />
+      <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" Line="37" Column="72" />
+      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="15" Column="6" />
       <File FileName="Assets/Scripts/Controllers/SceneController.cs" Line="15" Column="6" />
       <File FileName="Assets/Editor/BluetoothPostProcessBuild.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/SaveData.cs" Line="113" Column="1" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" Line="76" Column="28" />
       <File FileName="Assets/Scripts/Visuals/GameObjectShredder.cs" Line="13" Column="36" />
       <File FileName="Assets/Scripts/Controllers/CannonController.cs" Line="17" Column="16" />
-      <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" Line="28" Column="1" />
       <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="26" Column="54" />
       <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="178" Column="78" />
       <File FileName="Assets/Scripts/Utils/DontDestroy.cs" Line="18" Column="33" />
       <File FileName="Assets/Scripts/Controllers/InitializationController.cs" Line="10" Column="37" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="52" Column="68" />
       <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="10" Column="16" />
-      <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="79" Column="108" />
+      <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="22" Column="29" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="32" Column="56" />
       <File FileName="Assets/Example/BluetoothLETest/BLETestScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="151" Column="9" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="7" Column="10" />
+      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="102" Column="1" />
+      <File FileName="Assets/Resources/levels/1.json" Line="4" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,12 +38,13 @@
                 </Node>
                 <Node name="iTween" expanded="True" />
               </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="levels" selected="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Controllers" expanded="True" />
                 <Node name="Data &amp; Models" expanded="True" />
-                <Node name="Managers" expanded="True">
-                  <Node name="GameManager.cs" selected="True" />
-                </Node>
+                <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
                 <Node name="Visuals" expanded="True" />

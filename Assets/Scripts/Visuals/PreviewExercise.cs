@@ -31,16 +31,29 @@ public class PreviewExercise : MonoBehaviour
             RectTransform objDimensions = previewObject.GetComponent<RectTransform>();
             objDimensions.SetParent(gameObject.transform);
             previewObject.GetComponent<Image>().sprite = exerciseSprites.GetSprite(ballData[i].exercise);
-            objDimensions.anchoredPosition = new Vector2(0, positionY);
             objDimensions.localScale = new Vector3(1, 1, 0);
+            objDimensions.localPosition = new Vector2(0, positionY);
             positionY += 165f;
+        }
+    }
+
+    IEnumerator SmoothScroll(RectTransform obj, Vector3 start, Vector3 end, float seconds)
+    {
+        float t = 0f;
+        while (t <= 1.0)
+        {
+            t += Time.deltaTime / seconds;
+            obj.localPosition = Vector3.Lerp(start, end, Mathf.SmoothStep(0f, 1f, t));
+            yield return null;
         }
     }
 
     public void UpdatePreview()
     {
         RectTransform rt = GetComponent<RectTransform>();
-        rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, (rt.anchoredPosition.y - 165f));
+        Vector3 start = rt.localPosition;
+        Vector3 end = new Vector3(0, (rt.localPosition.y - 165f), 0);
+        StartCoroutine(SmoothScroll(rt, start, end, 0.5f));
     }
     
 }
