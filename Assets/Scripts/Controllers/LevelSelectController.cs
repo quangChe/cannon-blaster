@@ -79,15 +79,25 @@ public class LevelSelectController : MonoBehaviour
             btn.transform.SetParent(parentObject.transform);
             btn.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
 
-            // Load star data here
-            btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
-
-            int levelNumber = i;
-            btn.GetComponent<Button>().onClick.AddListener(() =>
+            if (i > GameManager.Instance.levels.Length)
             {
-                GameManager.Instance.LoadLevel(levelNumber);
-                SceneManager.LoadScene("Game");
-            });
+                btn.GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/locked_stage");
+                Destroy(btn.transform.GetChild(1).GetComponent<Image>());
+            }
+            else
+            {
+
+                // Load star data here
+                btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
+
+                int levelNumber = i;
+                btn.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    GameManager.Instance.LoadLevel(levelNumber);
+                    SceneManager.LoadScene("Game");
+                });
+            }
+
         }
     }
 }
