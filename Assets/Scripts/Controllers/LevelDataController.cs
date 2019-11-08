@@ -6,23 +6,20 @@ using UnityEngine;
 public class LevelDataController : MonoBehaviour 
 {
     private BallData[] levelBalls;
-    private string levelDataFileName = "levels/1";
+    private TextAsset levelScript;
 
 
     private void Awake()
     {
         LoadLevelData();
     }
-    private void Start()
-    {
-    }
 
     private void LoadLevelData()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>(levelDataFileName);
-        if (jsonFile)
+        levelScript = GameManager.Instance.loadedLevel;
+        if (levelScript)
         {
-            string dataAsJson = jsonFile.ToString();
+            string dataAsJson = levelScript.ToString();
             LevelData loadedData = JsonUtility.FromJson<LevelData>(dataAsJson);
             levelBalls = loadedData.balls;
         }

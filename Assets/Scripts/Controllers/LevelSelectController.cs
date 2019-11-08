@@ -10,15 +10,16 @@ public class LevelSelectController : MonoBehaviour
     public GameObject levelHolder;
     public GameObject levelButton;
 
-    private int numberOfLevels = 56;
+    private int numberOfLevels;
     private Rect panelDimensions;
     private Rect btnDimensions;
     private int btnsPerPage;
-    private int gridPadding = 100;
-    private int btnSpacing = 50;
+    private readonly int gridPadding = 100;
+    private readonly int btnSpacing = 50;
 
     void Start()
     {
+        numberOfLevels = GameManager.Instance.levels.Length;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         btnDimensions = levelButton.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt(
@@ -76,8 +77,16 @@ public class LevelSelectController : MonoBehaviour
             btn.transform.SetParent(gameObject.transform, false);
             btn.transform.SetParent(parentObject.transform);
             btn.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
+
+            // Load star data here
             btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
-            //btn.GetComponent<Button>().onClick.AddListener();
+
+            int levelNumber = i;
+            btn.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GameManager.Instance.LoadLevel(levelNumber);
+                SceneManager.LoadScene("Game");
+            });
         }
     }
 }
