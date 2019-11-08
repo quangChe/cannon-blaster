@@ -7,7 +7,7 @@ using TMPro;
 public class InitializationController : MonoBehaviour
 {
     public SceneController scene;
-    public GameObject spinner, note;
+    public GameObject popup;
 
     void Update()
     {
@@ -20,8 +20,7 @@ public class InitializationController : MonoBehaviour
 
     private IEnumerator StartHomeScene()
     {
-        iTween.MoveTo(note, new Vector3(0, -10, 0), 2f);
-        iTween.MoveTo(spinner, new Vector3(0, -10, 0), 2f);
+        iTween.MoveTo(popup, new Vector3(0, -10, 0), 2f);
         yield return new WaitForSeconds(0.5f);
         scene.GoToHome();
     }
