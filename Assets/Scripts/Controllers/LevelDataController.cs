@@ -6,7 +6,7 @@ using UnityEngine;
 public class LevelDataController : MonoBehaviour 
 {
     private BallData[] levelBalls;
-    private string levelDataFileName = "data.json";
+    private string levelDataFileName = "levels/1";
 
 
     private void Awake()
@@ -19,11 +19,10 @@ public class LevelDataController : MonoBehaviour
 
     private void LoadLevelData()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, levelDataFileName);
-
-        if (File.Exists(filePath))
+        TextAsset jsonFile = Resources.Load<TextAsset>(levelDataFileName);
+        if (jsonFile)
         {
-            string dataAsJson = File.ReadAllText(filePath);
+            string dataAsJson = jsonFile.ToString();
             LevelData loadedData = JsonUtility.FromJson<LevelData>(dataAsJson);
             levelBalls = loadedData.balls;
         }

@@ -212,10 +212,6 @@ public class BluetoothManager : MonoBehaviour
                 spawnCtrl.DestroyActiveObject("LS");
             }
         }
-        else
-        {
-            Debug.LogError("Game has not started yet!");
-        }
     }
 
     string FullUUID(string uuid)

@@ -76,7 +76,7 @@ public class LevelSelectController : MonoBehaviour
             btn.transform.SetParent(gameObject.transform, false);
             btn.transform.SetParent(parentObject.transform);
             btn.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
-            btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Star_count_1");
+            btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
             //btn.GetComponent<Button>().onClick.AddListener();
         }
     }
