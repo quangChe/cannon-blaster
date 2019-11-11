@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/AnimateText.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/ScaleBall.cs">
     <Files>
       <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="19" Column="61" />
       <File FileName="Assets/Scripts/Utils/PageSwiper.cs" Line="51" Column="5" />
@@ -17,12 +17,13 @@
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="52" Column="68" />
       <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="73" Column="55" />
       <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="85" Column="73" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="53" Column="1" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="30" Column="20" />
       <File FileName="Assets/Resources/levels/1.json" Line="17" Column="70" />
       <File FileName="Assets/Scripts/Controllers/GamplayController.cs" Line="9" Column="28" />
-      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="28" Column="6" />
+      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="36" Column="1" />
       <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" Line="20" Column="41" />
-      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="13" Column="29" />
+      <File FileName="Assets/Scripts/Visuals/ScaleBall.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -47,7 +48,7 @@
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
                 <Node name="Visuals" expanded="True">
-                  <Node name="AnimateText.cs" selected="True" />
+                  <Node name="ScaleBall.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

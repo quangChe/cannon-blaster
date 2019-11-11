@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1409796439}
   - component: {fileID: 1409796438}
   m_Layer: 5
-  m_Name: Loading Popup
+  m_Name: Bluetooth Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1215309016}
   - component: {fileID: 1215309015}
   m_Layer: 5
-  m_Name: Loading Canvas
+  m_Name: Bluetooth Popup Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 1624852276719714108}
   - component: {fileID: 4932629297631895815}
   m_Layer: 5
-  m_Name: Loading Note
+  m_Name: Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
