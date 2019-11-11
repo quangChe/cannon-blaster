@@ -24,7 +24,7 @@ public class BluetoothManager : MonoBehaviour
 
     private readonly string DeviceName = "fitmi-puck";
     private readonly string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
-    private readonly string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
+    //private readonly string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
     private readonly string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
 
     public bool connected = false;

@@ -9,22 +9,20 @@ public class GameManager : MonoBehaviour
     public Object[] levels;
     public TextAsset loadedLevel;
 
+    public bool paused = false;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            levels = Resources.LoadAll("levels", typeof(TextAsset));
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        levels = Resources.LoadAll("levels", typeof(TextAsset));
     }
 
     public void LoadLevel(int levelNumber)
