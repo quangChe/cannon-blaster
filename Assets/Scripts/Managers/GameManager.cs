@@ -29,4 +29,16 @@ public class GameManager : MonoBehaviour
     {
         loadedLevel = (TextAsset)levels[levelNumber - 1];
     }
+
+    public void Pause()
+    {
+        paused = true;
+        Time.timeScale = 0;
+    }
+
+    public void Unpause()
+    {
+        paused = false;
+        Time.timeScale = 1;
+    }
 }

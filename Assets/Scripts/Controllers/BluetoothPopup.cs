@@ -30,18 +30,16 @@ public class BluetoothPopup : MonoBehaviour
     }
 
     private void PopUpConnectionNotice()
-    { 
-        Game.paused = true;
+    {
+        Game.Pause();
         popUpActive = true;
-        Time.timeScale = 0;
         activePopUp = Instantiate(bluetoothPopup, new Vector3(0, 0, -9), transform.rotation);
     }
 
     private void ClosePopUp()
     {
-        Game.paused = false;
+        Game.Unpause();
         popUpActive = false;
         Destroy(activePopUp);
-        Time.timeScale = 1;
     }
 }

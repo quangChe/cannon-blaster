@@ -10,13 +10,12 @@
       <File FileName="Assets/Scripts/Visuals/GameObjectShredder.cs" Line="13" Column="36" />
       <File FileName="Assets/Scripts/Controllers/CannonController.cs" Line="17" Column="16" />
       <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="26" Column="54" />
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="27" Column="79" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="29" Column="1" />
       <File FileName="Assets/Scripts/Utils/DontDestroy.cs" Line="18" Column="33" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="52" Column="68" />
       <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="85" Column="73" />
       <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="12" Column="23" />
       <File FileName="Assets/Resources/levels/1.json" Line="17" Column="70" />
-      <File FileName="Assets/Scripts/Controllers/GamplayController.cs" Line="9" Column="28" />
       <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="34" Column="14" />
       <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" Line="20" Column="41" />
       <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="13" Column="29" />
