@@ -103,7 +103,7 @@ public class BluetoothManager : MonoBehaviour
     {
         if (timeout > 0f)
         {
-            timeout -= Time.deltaTime;
+            timeout -= Time.fixedDeltaTime;
 
             if (timeout <= 0f)
             {

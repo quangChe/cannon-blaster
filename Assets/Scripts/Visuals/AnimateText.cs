@@ -19,9 +19,7 @@ public class AnimateText : MonoBehaviour
         while(true)
         {
             GetComponent<TextMeshProUGUI>().SetText(transitionStates[stateCounter]);
-            yield return new WaitForSeconds(timeDelay);
-            Debug.Log(stateCounter);
-            Debug.Log(transitionStates.Length);
+            yield return new WaitForSecondsRealtime(timeDelay);
             stateCounter = (stateCounter == (transitionStates.Length - 1))
                 ? 0 : stateCounter + 1;
         }

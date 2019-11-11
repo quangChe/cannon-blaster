@@ -3,26 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadingSpinner : MonoBehaviour {
-    public RectTransform _mainIcon;
-    public float _timeStep = 0.05f;
-    public float _oneStepAngle = 36;
+    public RectTransform mainIcon;
+    public float timeStep = 0.05f;
+    public float oneStepAngle = 36;
 
-    float _startTime;
-	// Use this for initialization
+    float startTime;
+
 	void Start () {
-        _startTime = Time.time;
+        startTime = Time.unscaledTime;
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        if(Time.time - _startTime >= _timeStep)
+        if(Time.unscaledTime - startTime >= timeStep)
         {
-            Vector3 iconAngle = _mainIcon.localEulerAngles;
-            iconAngle.z += _oneStepAngle;
-
-            _mainIcon.localEulerAngles = iconAngle;
-
-            _startTime = Time.time;
+            Vector3 iconAngle = mainIcon.localEulerAngles;
+            iconAngle.z += oneStepAngle;
+            mainIcon.localEulerAngles = iconAngle;
+            startTime = Time.unscaledTime;
         }
 	}
 }
