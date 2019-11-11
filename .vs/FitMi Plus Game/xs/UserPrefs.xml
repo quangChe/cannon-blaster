@@ -7,23 +7,22 @@
       <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="15" Column="6" />
       <File FileName="Assets/Scripts/Controllers/SceneController.cs" Line="15" Column="6" />
       <File FileName="Assets/Editor/BluetoothPostProcessBuild.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Data &amp; Models/SaveData.cs" Line="113" Column="1" />
-      <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" Line="76" Column="28" />
+      <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" Line="55" Column="6" />
       <File FileName="Assets/Scripts/Visuals/GameObjectShredder.cs" Line="13" Column="36" />
       <File FileName="Assets/Scripts/Controllers/CannonController.cs" Line="17" Column="16" />
       <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="26" Column="54" />
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="157" Column="6" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="102" Column="40" />
       <File FileName="Assets/Scripts/Utils/DontDestroy.cs" Line="18" Column="33" />
-      <File FileName="Assets/Scripts/Controllers/InitializationController.cs" Line="21" Column="38" />
+      <File FileName="Assets/Scripts/Controllers/InitializationController.cs" Line="13" Column="45" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="52" Column="68" />
       <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="73" Column="55" />
       <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="85" Column="73" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="32" Column="56" />
-      <File FileName="Assets/Example/BluetoothLETest/BLETestScript.cs" Line="24" Column="58" />
-      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="576" Column="31" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="53" Column="1" />
       <File FileName="Assets/Resources/levels/1.json" Line="17" Column="70" />
       <File FileName="Assets/Scripts/Controllers/GamplayController.cs" Line="9" Column="28" />
-      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="7" Column="6" />
+      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="28" Column="6" />
+      <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" Line="20" Column="41" />
+      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
