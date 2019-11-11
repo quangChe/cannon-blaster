@@ -28,6 +28,7 @@ public class BluetoothManager : MonoBehaviour
     private readonly string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
 
     public bool connected = false;
+    public GameManager Game;
 
     private string deviceAddress;
     private bool gameInitialized = false;
@@ -210,7 +211,7 @@ public class BluetoothManager : MonoBehaviour
 
     private void ProcessButton(byte[] bytes)
     {
-        if (gameInitialized)
+        if (gameInitialized && !Game.paused)
         {
             if (bytes[0] == 1)
             {
