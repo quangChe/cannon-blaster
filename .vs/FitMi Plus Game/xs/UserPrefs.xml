@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/BluetoothDeviceScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="17" Column="6" />
+      <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="110" Column="60" IsPinned="True" />
+      <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="18" Column="9" />
       <File FileName="Assets/Scripts/Utils/PageSwiper.cs" />
       <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" />
-      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="17" Column="41" />
+      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="55" Column="42" />
       <File FileName="Assets/Scripts/Controllers/SceneController.cs" Line="15" Column="6" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" Line="62" Column="69" />
       <File FileName="Assets/Scripts/Visuals/GameObjectShredder.cs" />
       <File FileName="Assets/Scripts/Controllers/CannonController.cs" />
-      <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="44" Column="30" />
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="219" Column="48" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="224" Column="53" />
       <File FileName="Assets/Scripts/Utils/DontDestroy.cs" />
       <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="60" Column="39" />
       <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="85" Column="73" />
@@ -22,8 +22,7 @@
       <File FileName="Assets/Scripts/Visuals/ScaleBall.cs" Line="15" Column="6" />
       <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="48" Column="40" />
       <File FileName="Assets/Scripts/Data &amp; Models/BallData.cs" Line="11" Column="10" />
-      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="400" Column="21" />
-      <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="73" Column="89" />
+      <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="65" Column="49" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,7 +39,6 @@
               <Node name="Resources" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="Controllers" expanded="True" />
-                <Node name="Data &amp; Models" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
