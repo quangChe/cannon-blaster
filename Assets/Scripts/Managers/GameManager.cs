@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextAsset loadedLevel;
 
     public bool paused = false;
+    public bool doublePaused = false;
 
     private void Awake()
     {
@@ -33,13 +34,19 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        paused = true;
-        Time.timeScale = 0;
+        if (paused) { doublePaused = true; }
+        else {
+            paused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void Unpause()
     {
-        paused = false;
-        Time.timeScale = 1;
+        if (doublePaused) { doublePaused = false; }
+        else {
+            paused = false;
+            Time.timeScale = 1;
+        }
     }
 }
