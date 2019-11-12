@@ -1058,6 +1058,20 @@ PrefabInstance:
       propertyPath: levelData
       value: 
       objectReference: {fileID: 1799901608270347144}
+    - target: {fileID: 788640440, guid: 4862117e8685c416bbe4a80620804223, type: 3}
+      propertyPath: m_Name
+      value: Level Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1349881741}
+    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: confirmMenu
+      value: 
+      objectReference: {fileID: 1347353935}
     - target: {fileID: 6010595605611453166, guid: 4862117e8685c416bbe4a80620804223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1163,16 +1177,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 1349881741}
-    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
-        type: 3}
-      propertyPath: confirmMenu
-      value: 
-      objectReference: {fileID: 1347353935}
     - target: {fileID: 6010595605611453167, guid: 4862117e8685c416bbe4a80620804223,
         type: 3}
       propertyPath: m_Camera
@@ -1239,10 +1243,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 788640440, guid: 4862117e8685c416bbe4a80620804223, type: 3}
-      propertyPath: m_Name
-      value: Level Stats
-      objectReference: {fileID: 0}
     - target: {fileID: 484197346, guid: 4862117e8685c416bbe4a80620804223, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -1298,6 +1298,10 @@ PrefabInstance:
     - target: {fileID: 1630362792, guid: 4862117e8685c416bbe4a80620804223, type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484197348, guid: 4862117e8685c416bbe4a80620804223, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4862117e8685c416bbe4a80620804223, type: 3}
