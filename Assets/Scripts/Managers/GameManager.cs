@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
+    public string[] AllExercises = { "LS", "DK", "ZP", "CP" };
     public Object[] levels;
     public TextAsset loadedLevel;
 

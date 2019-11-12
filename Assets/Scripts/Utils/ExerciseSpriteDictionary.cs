@@ -6,6 +6,8 @@ public class ExerciseSpriteDictionary : MonoBehaviour
 {
     Dictionary<string, Sprite> imageDict = new Dictionary<string, Sprite>();
 
+    private GameManager Game = GameManager.Instance;
+
     void Awake()
     {
         BuildImageDictionary();
@@ -13,10 +15,10 @@ public class ExerciseSpriteDictionary : MonoBehaviour
 
     private void BuildImageDictionary()
     {
-        imageDict.Add("LS", Resources.Load<Sprite>("sprites/lightswitch"));
-        imageDict.Add("DK", Resources.Load<Sprite>("sprites/doorknob"));
-        imageDict.Add("ZP", Resources.Load<Sprite>("sprites/zipper"));
-        imageDict.Add("CP", Resources.Load<Sprite>("sprites/cups"));
+        foreach (string exercise in Game.AllExercises)
+        {
+            imageDict.Add(exercise, Resources.Load<Sprite>("sprites/" + exercise));
+        }
     }
 
     public Sprite GetSprite(string key)
