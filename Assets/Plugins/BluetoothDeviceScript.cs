@@ -70,7 +70,7 @@ public class BluetoothDeviceScript : MonoBehaviour
 			string[] parts = message.Split (delim);
 
 			for (int i = 0; i < parts.Length; ++i)
-				BluetoothLEHardwareInterface.Log (string.Format ("Part: {0} - {1}", i, parts[i]));
+				//BluetoothLEHardwareInterface.Log (string.Format ("Part: {0} - {1}", i, parts[i]));
 
 			if (message.Length >= deviceInitializedString.Length && message.Substring (0, deviceInitializedString.Length) == deviceInitializedString)
 			{

@@ -6,7 +6,8 @@ using TMPro;
 public class Tweens : MonoBehaviour {
 
 	Vector3 startPos;
-	public  Tweenbuttons buttonTween;
+    public float timeDelay;
+	public Tweenbuttons buttonTween;
 	public enum Tweenbuttons{
 	 
 		inGameEndScroller,
@@ -40,13 +41,13 @@ public class Tweens : MonoBehaviour {
 
 
 		case Tweenbuttons.slideFromTop:
-			transform.Translate(0, 40, -1);
-            iTween.MoveTo(gameObject, new Vector3(0, 0, 0), 1.5f);
-            //iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",2.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
-			
+			transform.Translate(0, 10, -1);
+            float t = (timeDelay > 0f) ? timeDelay : 1f;
+            iTween.MoveTo(gameObject, iTween.Hash("position", startPos, "time", timeDelay, "isLocal", true, "easetype", iTween.EaseType.easeInQuad));
 
 
-			break;
+
+                break;
 		case Tweenbuttons.slideFromBottom:
 			transform.Translate(0, -40, 0);
             iTween.MoveTo(gameObject, new Vector3(0, -1.5f, 0), 1.5f);
@@ -57,10 +58,7 @@ public class Tweens : MonoBehaviour {
 			break;
 
 		case Tweenbuttons.inGameEndScroller:
-
 			iTween.MoveTo(gameObject,iTween.Hash("position",Vector3.zero,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
-			
-
 			break;
 
 		}
