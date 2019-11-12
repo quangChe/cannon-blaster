@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameplayController : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject confirmMenu;
 
     private GameManager Game;
 
@@ -13,6 +14,7 @@ public class GameplayController : MonoBehaviour
     {
         Game = GameManager.Instance;
         pauseMenu.SetActive(false);
+        confirmMenu.SetActive(false);
     }
 
     public void PauseGame()
@@ -34,10 +36,22 @@ public class GameplayController : MonoBehaviour
         Game.Unpause();
     }
 
-    public void GoToMenu()
+    public void GoHome()
     {
         pauseMenu.SetActive(false);
+        confirmMenu.SetActive(true);
+    }
+
+    public void ConfirmExit()
+    {
+        confirmMenu.SetActive(false);
         SceneManager.LoadScene("Home");
+        Game.Unpause();
+    }
+
+    public void CancelExit()
+    {
+        confirmMenu.SetActive(false);
         Game.Unpause();
     }
 }
