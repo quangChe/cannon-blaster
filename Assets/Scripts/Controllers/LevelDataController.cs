@@ -10,7 +10,8 @@ public class LevelDataController : MonoBehaviour
     private TextAsset levelScript;
     private GameManager Game = GameManager.Instance;
 
-    public int[] successRate = { 0, 0 };
+    public float[] successRate = { 0, 0 };
+    public float successPercent;
     public Dictionary<string, int> successfulActivityRecord = new Dictionary<string, int>();
 
     private void Awake()
@@ -46,5 +47,10 @@ public class LevelDataController : MonoBehaviour
     public BallData[] GetBalls()
     {
         return levelBalls;
+    }
+
+    private void Update()
+    {
+        successPercent = Mathf.Round((successRate[0] / successRate[1]) * 100);
     }
 }
