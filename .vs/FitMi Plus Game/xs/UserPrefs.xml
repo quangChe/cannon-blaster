@@ -20,7 +20,7 @@
       <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" />
       <File FileName="Assets/Scripts/Visuals/AnimateText.cs" />
       <File FileName="Assets/Scripts/Visuals/ScaleBall.cs" />
-      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="42" Column="37" />
+      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="48" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -16,8 +16,7 @@ public class SpawnController : MonoBehaviour
     public CannonController CannonController;
     public PreviewExercise previewPanel;
 
-    
-    string[] AllExercises = {"LS", "DK", "ZP", "CP"};
+    GameManager Game = GameManager.Instance;
     List<BallData> ballQueue = new List<BallData>();
     public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
@@ -41,7 +40,7 @@ public class SpawnController : MonoBehaviour
 
     private void CompileActiveQueueLists()
     {
-        foreach (string e in AllExercises)
+        foreach (string e in Game.AllExercises)
         {
             List<ActiveBall> queue = new List<ActiveBall>();
             activeQueue.Add(e, queue);
@@ -94,15 +93,21 @@ public class SpawnController : MonoBehaviour
     public void DestroyActiveObject(string exercise)
     {
         List<ActiveBall> q = activeQueue[exercise];
-        //if (!queue.isFiring && queue.instances[0].data.id == d.id)
+       
         if (q.Count > 0)
         {
+            // Animate explosion, destroy object, and play audio
             ActiveBall target = q[0];
             Rigidbody2D ball = target.gameObject.transform.GetChild(1).gameObject.GetComponent<Rigidbody2D>();
             Instantiate(explosion, new Vector2(ball.transform.position.x, ball.transform.position.y), Quaternion.identity);
             Destroy(target.gameObject);
             AudioSource.PlayClipAtPoint(boom, Camera.main.transform.position, 0.7f);
+
+            // Remove from queue, update level data successRate, and record successful
+            // activity
             q.RemoveAt(0);
+            levelData.successRate[0]++;
+            levelData.successfulActivityRecord[exercise]++;
         }
     }
 
