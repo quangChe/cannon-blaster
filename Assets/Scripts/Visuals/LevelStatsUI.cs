@@ -9,13 +9,17 @@ public class LevelStatsUI : MonoBehaviour
     public LevelDataController levelData;
     public GameObject star1, star2, star3, hitRate;
 
-    private Dictionary<string, bool> acquired = new Dictionary<string, bool>();
     private float hitPoint = 0f;
+    private Dictionary<string, bool> acquired = new Dictionary<string, bool>()
+        {
+            {"star1", false},
+            {"star2", false},
+            {"star3", false}
+        };
 
-    private void Awake()
+    private void Start()
     {
         SetHitPoints();
-        for (int i = 0; i < 3; i++) { acquired.Add("star" + i, false); }
     }
 
     void Update()
@@ -24,6 +28,40 @@ public class LevelStatsUI : MonoBehaviour
         {
             hitPoint++;
             SetHitPoints();
+        }
+
+        CheckStars();
+    }
+
+    private void CheckStars()
+    {
+        float percent = levelData.successPercent;
+        if (!acquired["star1"] && percent >= 50f && percent < 75f)
+        {
+            StartCoroutine(AnimateAndAdd(star1));
+        }
+        else if (!acquired["star2"] && percent >= 75f && percent < 95f)
+        {
+            StartCoroutine(AnimateAndAdd(star2));
+        }
+        else if (!acquired["star3"] && percent >= 95f)
+        {
+            StartCoroutine(AnimateAndAdd(star3));
+        }
+    }
+
+    private IEnumerator AnimateAndAdd(GameObject star)
+    {
+        while (star.transform.localScale.x <= 1.2f)
+        {
+            star.transform.localScale = new Vector3(star.transform.localScale.x + 0.02f, star.transform.localScale.y + 0.02f);
+            yield return null;
+        }
+        star.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("sprites/fill_star");
+        while (star.transform.localScale.x >= 0.9f)
+        {
+            star.transform.localScale = new Vector3(star.transform.localScale.x - 0.02f, star.transform.localScale.y - 0.02f);
+            yield return null;
         }
 
     }
