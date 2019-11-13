@@ -288,6 +288,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1518580575, guid: d9aa085fdc6404efcb15209acdc57cdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 204741347}
+    - target: {fileID: 58945064487157125, guid: d9aa085fdc6404efcb15209acdc57cdd,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1029530007}
     - target: {fileID: 6428885403729651227, guid: d9aa085fdc6404efcb15209acdc57cdd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -393,14 +402,5 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 58945064487157125, guid: d9aa085fdc6404efcb15209acdc57cdd,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1029530007}
-    - target: {fileID: 1518580575, guid: d9aa085fdc6404efcb15209acdc57cdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 204741347}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9aa085fdc6404efcb15209acdc57cdd, type: 3}
