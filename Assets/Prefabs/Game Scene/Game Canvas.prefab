@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484197345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -0.2, z: 0}
+  m_LocalPosition: {x: -1.2, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 788640441}
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702569444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -0.2, z: 0}
+  m_LocalPosition: {x: 1.2, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 788640441}
@@ -328,8 +328,9 @@ GameObject:
   m_Component:
   - component: {fileID: 788640441}
   - component: {fileID: 788640442}
+  - component: {fileID: 1789636050}
   m_Layer: 0
-  m_Name: Stars
+  m_Name: Level Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,8 +356,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 491.5009}
-  m_SizeDelta: {x: 3.5, y: 0.9}
+  m_AnchoredPosition: {x: 1.8, y: 435}
+  m_SizeDelta: {x: 3.6, y: 1.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &788640442
 CanvasRenderer:
@@ -366,6 +367,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788640440}
   m_CullTransparentMesh: 0
+--- !u!114 &1789636050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788640440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b370709e70044f44a45fee8609fe2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData: {fileID: 0}
+  star1: {fileID: 484197345}
+  star2: {fileID: 1953640820}
+  star3: {fileID: 702569444}
+  hitRate: {fileID: 1630362790}
+  gainStar: {fileID: 8300000, guid: 0dc836d84482f4bb996df799e3a2ed6e, type: 3}
 --- !u!1 &1630362790
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +412,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630362790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.009262085}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_Children: []
   m_Father: {fileID: 788640441}
@@ -401,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.68981934}
+  m_AnchoredPosition: {x: 0, y: -0.4}
   m_SizeDelta: {x: 229.2, y: 90.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1630362793
@@ -430,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/15
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee52d27a04e1d40ed9faa2eefa833df9, type: 2}
   m_sharedMaterial: {fileID: -7612142623050889350, guid: ee52d27a04e1d40ed9faa2eefa833df9,
@@ -500,13 +519,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -2.5420904}
   m_textInfo:
     textComponent: {fileID: 1630362792}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -563,7 +582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953640820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 788640441}
@@ -747,8 +766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668cb7b8307894a4d8959a3fc4b7a74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 0}
   pauseMenu: {fileID: 0}
   confirmMenu: {fileID: 0}
+  gameEndMenu: {fileID: 0}
+  menuState: 0
 --- !u!1 &6010595605758290738
 GameObject:
   m_ObjectHideFlags: 0

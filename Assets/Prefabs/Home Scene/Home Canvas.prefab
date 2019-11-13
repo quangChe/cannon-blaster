@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeDelay: 0
   buttonTween: 1
 --- !u!114 &6105289960605318779
 MonoBehaviour:
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeDelay: 0
   buttonTween: 2
 --- !u!1 &6105289961165013475
 GameObject:

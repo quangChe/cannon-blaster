@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connected: 0
+  Game: {fileID: 0}
 --- !u!114 &1124270655
 MonoBehaviour:
   m_ObjectHideFlags: 0
