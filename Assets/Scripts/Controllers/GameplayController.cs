@@ -40,6 +40,13 @@ public class GameplayController : MonoBehaviour
         Game.Unpause();
     }
 
+    public void ToLevels()
+    {
+        menuCanvas.SetActive(false);
+        SceneManager.LoadScene("Levels");
+        Game.Unpause();
+    }
+
     public void ToMenu()
     {
         menuState = States.Confirm;
@@ -49,7 +56,7 @@ public class GameplayController : MonoBehaviour
     public void ConfirmExit()
     {
         menuCanvas.SetActive(false);
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("Home");
         Game.Unpause();
     }
 

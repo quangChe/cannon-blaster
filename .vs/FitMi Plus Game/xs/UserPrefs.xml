@@ -1,29 +1,30 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/LevelStatsUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/levels/2.json">
     <Files>
-      <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="110" Column="60" IsPinned="True" />
-      <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" />
+      <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="21" Column="63" IsPinned="True" />
+      <File FileName="Assets/Scripts/Utils/ExerciseSpriteDictionary.cs" Line="7" Column="44" />
       <File FileName="Assets/Scripts/Utils/PageSwiper.cs" />
       <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" />
-      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="8" Column="2" />
+      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="15" Column="63" />
       <File FileName="Assets/Scripts/Controllers/SceneController.cs" />
-      <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" />
+      <File FileName="Assets/Scripts/Motion &amp; Physics/CannonBallPhysics.cs" Line="68" Column="86" />
       <File FileName="Assets/Scripts/Visuals/GameObjectShredder.cs" />
       <File FileName="Assets/Scripts/Controllers/CannonController.cs" />
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" />
-      <File FileName="Assets/Scripts/Utils/DontDestroy.cs" />
-      <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" />
-      <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" />
-      <File FileName="Assets/Resources/levels/1.json" />
-      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" />
-      <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" />
-      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" />
-      <File FileName="Assets/Scripts/Visuals/ScaleBall.cs" />
-      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" />
-      <File FileName="Assets/Scripts/Data &amp; Models/BallData.cs" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="214" Column="39" />
+      <File FileName="Assets/Scripts/Utils/DontDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="34" Column="3" />
+      <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="36" Column="1" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="49" Column="13" />
+      <File FileName="Assets/Resources/levels/1.json" Line="3" Column="7" />
+      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="34" Column="14" />
+      <File FileName="Assets/Scripts/Visuals/LoadingSpinner.cs" Line="20" Column="41" />
+      <File FileName="Assets/Scripts/Visuals/AnimateText.cs" Line="13" Column="29" />
+      <File FileName="Assets/Scripts/Visuals/ScaleBall.cs" Line="16" Column="20" />
+      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="46" Column="22" />
+      <File FileName="Assets/Scripts/Data &amp; Models/BallData.cs" Line="11" Column="10" />
       <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" />
-      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="7" Column="17" />
+      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="73" Column="10" />
+      <File FileName="Assets/Resources/levels/2.json" Line="5" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -38,14 +39,14 @@
               </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="SpawnController.cs" selected="True" />
+                </Node>
                 <Node name="Data &amp; Models" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
-                <Node name="Visuals" expanded="True">
-                  <Node name="LevelStatsUI.cs" selected="True" />
-                </Node>
+                <Node name="Visuals" expanded="True" />
               </Node>
             </Node>
           </Node>
