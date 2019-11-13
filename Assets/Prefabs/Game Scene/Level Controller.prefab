@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e237010b6f904e36899501a3888adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  successRate:
+  - 0
+  - 0
+  successPercent: 0
 --- !u!114 &5109963791177651726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   boom: {fileID: 8300000, guid: 33bcd0c03e14d465ea58e7e119ffe79b, type: 3}
-  exerciseSprites: {fileID: 0}
-  levelData: {fileID: 5109963791177651724}
-  fireCannon: {fileID: 0}
+  gameSprites: {fileID: 0}
+  CannonController: {fileID: 0}
   previewPanel: {fileID: 0}
