@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExerciseSpriteDictionary : MonoBehaviour
+public class SpriteDictionary : MonoBehaviour
 {
     Dictionary<string, Sprite> imageDict = new Dictionary<string, Sprite>();
 

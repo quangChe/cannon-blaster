@@ -6,23 +6,25 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    private ExerciseSpriteDictionary exerciseSprites;
 
     public GameObject explosion;
     public AudioClip boom;
 
     [Header("Referenced Scripts")]
-    public LevelDataController levelData;
+    public SpriteDictionary gameSprites;
     public CannonController CannonController;
     public PreviewExercise previewPanel;
 
+    public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
+
+    LevelDataController levelData;
     GameManager Game = GameManager.Instance;
     List<BallData> ballQueue = new List<BallData>();
-    public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
     private void Awake()
     {
         BluetoothManager.Instance.MountToLevel(this);
+        levelData = GetComponent<LevelDataController>();
     }
 
     void Start()
@@ -32,9 +34,13 @@ public class SpawnController : MonoBehaviour
         SpawnGameBalls();
     }
 
+    private void Update()
+    {
+        Debug.Log(Time.deltaTime);
+    }
+
     private void SpawnGameBalls()
     {
-        exerciseSprites = GetComponent<ExerciseSpriteDictionary>();
         StartCoroutine(SpawnBall(1f));
     }
 
@@ -64,7 +70,7 @@ public class SpawnController : MonoBehaviour
         {
             int last = ballQueue.Count - 1;
             BallData lastBall = ballQueue[last];
-            Sprite exerSprite = exerciseSprites.GetSprite(lastBall.exercise);
+            Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
             GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
             ballQueue.RemoveAt(last);
             previewPanel.UpdatePreview();
@@ -108,6 +114,8 @@ public class SpawnController : MonoBehaviour
             q.RemoveAt(0);
             levelData.successRate[0]++;
             levelData.successfulActivityRecord[exercise]++;
+
+            // Manually spawn new ball and reset delay timer;
         }
     }
 

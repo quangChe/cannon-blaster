@@ -8,15 +8,14 @@ public class PreviewExercise : MonoBehaviour
     public GameObject previewImage;
 
     [Header("Referenced Scripts")]
-
     public LevelDataController levelData;
+    public SpriteDictionary gameSprites;
 
-    private ExerciseSpriteDictionary exerciseSprites;
+
     private BallData[] ballData;
 
     void Start()
     {
-        exerciseSprites = GetComponent<ExerciseSpriteDictionary>();
         ballData = levelData.GetBalls();
         RenderPreviewObjects();
     }
@@ -30,7 +29,7 @@ public class PreviewExercise : MonoBehaviour
             GameObject previewObject = Instantiate(previewImage, new Vector3(0, 0, 0), Quaternion.identity);
             RectTransform objDimensions = previewObject.GetComponent<RectTransform>();
             objDimensions.SetParent(gameObject.transform);
-            previewObject.GetComponent<Image>().sprite = exerciseSprites.GetSprite(ballData[i].exercise);
+            previewObject.GetComponent<Image>().sprite = gameSprites.GetSprite(ballData[i].exercise);
             objDimensions.localScale = new Vector3(1, 1, 0);
             objDimensions.localPosition = new Vector2(0, positionY);
             positionY += 165f;
