@@ -5,53 +5,79 @@ using UnityEngine.SceneManagement;
 
 public class GameplayController : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public GameObject confirmMenu;
-
     private GameManager Game;
+
+    public GameObject menuCanvas;
+    public GameObject pauseMenu, confirmMenu, gameEndMenu;
+
+    public enum States { Pause, Confirm, GameEnd }
+    public States menuState;
 
     void Start()
     {
         Game = GameManager.Instance;
-        pauseMenu.SetActive(false);
-        confirmMenu.SetActive(false);
+        menuCanvas.SetActive(false);
     }
 
     public void PauseGame()
     {
         Game.Pause();
-        pauseMenu.SetActive(true);
+        menuCanvas.SetActive(true);
+        menuState = States.Pause;
+        RenderMenu();
     }
 
     public void UnpauseGame()
     {
         Game.Unpause();
-        pauseMenu.SetActive(false);
+        menuCanvas.SetActive(false);
     }
 
     public void RestartLevel()
     {
-        pauseMenu.SetActive(false);
+        menuCanvas.SetActive(false);
         SceneManager.LoadScene("Game");
         Game.Unpause();
     }
 
-    public void GoHome()
+    public void ToMenu()
     {
-        pauseMenu.SetActive(false);
-        confirmMenu.SetActive(true);
+        menuState = States.Confirm;
+        RenderMenu();
     }
 
     public void ConfirmExit()
     {
-        confirmMenu.SetActive(false);
-        SceneManager.LoadScene("Home");
+        menuCanvas.SetActive(false);
+        SceneManager.LoadScene("Levels");
         Game.Unpause();
     }
 
     public void CancelExit()
     {
-        confirmMenu.SetActive(false);
+        menuCanvas.SetActive(false);
         Game.Unpause();
+    }
+
+    private void RenderMenu()
+    {
+        switch(menuState)
+        {
+            case States.Confirm:
+                pauseMenu.SetActive(false);
+                gameEndMenu.SetActive(false);
+                confirmMenu.SetActive(true);
+                break;
+            case States.Pause:
+                pauseMenu.SetActive(true);
+                gameEndMenu.SetActive(false);
+                confirmMenu.SetActive(false);
+                break;
+            case States.GameEnd:
+                pauseMenu.SetActive(false);
+                gameEndMenu.SetActive(true);
+                confirmMenu.SetActive(false);
+                break;
+        }
     }
 }
