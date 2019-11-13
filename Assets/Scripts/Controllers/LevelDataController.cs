@@ -17,15 +17,6 @@ public class LevelDataController : MonoBehaviour
     private void Awake()
     {
         LoadLevelData();
-        BuildActivityLibrary();
-    }
-
-    private void BuildActivityLibrary()
-    {
-        foreach (string exercise in Game.AllExercises)
-        {
-            successfulActivityRecord.Add(exercise, 0);
-        }
     }
 
     private void LoadLevelData()
@@ -37,10 +28,27 @@ public class LevelDataController : MonoBehaviour
             LevelData loadedData = JsonUtility.FromJson<LevelData>(dataAsJson);
             levelBalls = loadedData.balls;
             successRate[1] = levelBalls.Length;
+            BuildExerciseDictionary();
         }
         else
         {
             Debug.LogError("Cannot load level data.");
+        }
+    }
+
+    private void BuildExerciseDictionary()
+    {
+        foreach (BallData data in levelBalls)
+        {
+            if (!successfulActivityRecord.ContainsKey(data.exercise))
+            {
+                successfulActivityRecord.Add(data.exercise, 0);
+            }
+        }
+
+        foreach (string key in successfulActivityRecord.Keys)
+        {
+            Debug.Log(key);
         }
     }
 

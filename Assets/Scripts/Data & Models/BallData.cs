@@ -8,10 +8,10 @@ public class BallData
     /*
         Shortened exercise values:
 
-        "LS": "light switch",
-        "CUP": "pouring cup",
-        "DK": "door knob",
-        "ZIP": "zipper",
+        Light switch: "LS",
+        Pouring cup: "CP",
+        Doorknob: "DK",
+        Zipper: "ZP",
     */
     public int id;
     public float fallDelay;

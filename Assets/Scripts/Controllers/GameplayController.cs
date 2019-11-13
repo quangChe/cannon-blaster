@@ -15,8 +15,8 @@ public class GameplayController : MonoBehaviour
 
     void Start()
     {
-        Game = GameManager.Instance;
-        menuCanvas.SetActive(false);
+        //Game = GameManager.Instance;
+        //menuCanvas.SetActive(false);
     }
 
     public void PauseGame()
