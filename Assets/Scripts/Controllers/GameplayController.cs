@@ -8,23 +8,22 @@ public class GameplayController : MonoBehaviour
     private GameManager Game;
 
     public GameObject menuCanvas;
-    public GameObject pauseMenu, confirmMenu, gameEndMenu;
+    public GameObject pauseMenu, confirmMenu, gameOverMenu, levelClearedMenu;
 
-    public enum States { Pause, Confirm, GameEnd }
+    public enum States { Pause, Confirm, GameOver, LevelCleared }
     public States menuState;
 
     void Start()
     {
-        //Game = GameManager.Instance;
-        //menuCanvas.SetActive(false);
+        Game = GameManager.Instance;
+        menuCanvas.SetActive(false);
     }
 
     public void PauseGame()
     {
         Game.Pause();
-        menuCanvas.SetActive(true);
         menuState = States.Pause;
-        RenderMenu();
+        OpenMenu();
     }
 
     public void UnpauseGame()
@@ -40,17 +39,17 @@ public class GameplayController : MonoBehaviour
         Game.Unpause();
     }
 
-    public void ToLevels()
+    public void ToLevelMenu()
     {
         menuCanvas.SetActive(false);
         SceneManager.LoadScene("Levels");
         Game.Unpause();
     }
 
-    public void ToMenu()
+    public void ToMainMenu()
     {
         menuState = States.Confirm;
-        RenderMenu();
+        OpenMenu();
     }
 
     public void ConfirmExit()
@@ -64,26 +63,45 @@ public class GameplayController : MonoBehaviour
     {
         menuCanvas.SetActive(false);
         Game.Unpause();
+    } 
+
+    public void EndLevel(bool success)
+    {
+        //Game.Pause();
+        menuState = (success) ? States.LevelCleared : States.GameOver;
+        OpenMenu();
     }
 
-    private void RenderMenu()
+    private void OpenMenu()
     {
-        switch(menuState)
+        menuCanvas.SetActive(true);
+
+        switch (menuState)
         {
             case States.Confirm:
-                pauseMenu.SetActive(false);
-                gameEndMenu.SetActive(false);
                 confirmMenu.SetActive(true);
+                pauseMenu.SetActive(false);
+                gameOverMenu.SetActive(false);
+                levelClearedMenu.SetActive(false);
                 break;
             case States.Pause:
                 pauseMenu.SetActive(true);
-                gameEndMenu.SetActive(false);
+                gameOverMenu.SetActive(false);
                 confirmMenu.SetActive(false);
+                levelClearedMenu.SetActive(false);
                 break;
-            case States.GameEnd:
+            case States.GameOver:
+                gameOverMenu.SetActive(true);
                 pauseMenu.SetActive(false);
-                gameEndMenu.SetActive(true);
                 confirmMenu.SetActive(false);
+                levelClearedMenu.SetActive(false);
+                break;
+            case States.LevelCleared:
+                levelClearedMenu.SetActive(true);
+                gameOverMenu.SetActive(false);
+                pauseMenu.SetActive(false);
+                confirmMenu.SetActive(false);
+                levelClearedMenu.GetComponent<LevelClearedUI>().StartUIAnimation();
                 break;
         }
     }
