@@ -35,11 +35,6 @@ public class SpawnController : MonoBehaviour
         SpawnGameBalls();
     }
 
-    private void Update()
-    {
-        Debug.Log(Time.deltaTime);
-    }
-
     private void SpawnGameBalls()
     {
         StartCoroutine(SpawnBall(1f));
@@ -79,7 +74,8 @@ public class SpawnController : MonoBehaviour
             yield return new WaitForSeconds(lastBall.timeDelay);
         }
 
-        gamePlay.EndLevel();
+        bool success = levelData.StarsWon() > 0;
+        gamePlay.EndLevel(success);
     }
 
     private void CreateActiveObject(GameObject gObj, BallData data)

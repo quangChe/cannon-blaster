@@ -13,35 +13,30 @@ public class LevelClearedUI : MonoBehaviour
     public GameObject hiddenDetails;
     public AudioClip starSound, praiseSound;
 
-    void Start()
-    {
-        StartUIAnimation();
-    }
-
-    private void StartUIAnimation()
+    public void StartUIAnimation()
     {
         List<IEnumerator> starsToAnimate = new List<IEnumerator>();
         string praise = null;
+        int starsWon = levelData.StarsWon();
 
-        switch(levelData.StarsWon())
+        if (starsWon == 1)
         {
-            case 1:
-                starsToAnimate.Add(AnimateStars(star1));
-                praise = "Nice Job!";
-                break;
-            case 2:
-                starsToAnimate.Add(AnimateStars(star1));
-                starsToAnimate.Add(AnimateStars(star2));
-                praise = "Excellent!";
-                break;
-            case 3:
-                starsToAnimate.Add(AnimateStars(star1));
-                starsToAnimate.Add(AnimateStars(star2));
-                starsToAnimate.Add(AnimateStars(star3));
-                praise = "You're Amazing!";
-                break;
+            praise = "Nice Job!";
+            starsToAnimate.Add(AnimateStars(star1));
         }
-
+        if (starsWon == 2)
+        {
+            praise = "Excellent!";
+            starsToAnimate.Add(AnimateStars(star1));
+            starsToAnimate.Add(AnimateStars(star2));
+        }
+        if (starsWon == 3)
+        {
+            praise = "You're Amazing!";
+            starsToAnimate.Add(AnimateStars(star1));
+            starsToAnimate.Add(AnimateStars(star2));
+            starsToAnimate.Add(AnimateStars(star3));
+        }
         StartCoroutine(AnimateUI(starsToAnimate, praise));
     }
 
