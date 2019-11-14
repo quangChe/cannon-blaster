@@ -29,6 +29,7 @@ public class BluetoothManager : MonoBehaviour
 
     public bool connected = false;
     public GameManager Game;
+    public GameObject deinitializeButton;
 
     private string deviceAddress;
     private bool gameInitialized = false;
@@ -70,6 +71,7 @@ public class BluetoothManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deinitializeButton.SetActive(Application.isEditor);
         InitializeBluetooth();
     }
 
@@ -254,4 +256,12 @@ public class BluetoothManager : MonoBehaviour
     //        BluetoothLEHardwareInterface.Log("Write Succeeded with characteristic: " + characteristicUUID);
     //    });
     //}
+
+    public void DeinitializeBluetooth()
+    {
+        BluetoothLEHardwareInterface.DeInitialize(() =>
+        {
+            Debug.Log("Bluetooth has shut down.");
+        });
+    }
 }

@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/LevelClearedUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/BluetoothManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Visuals/LevelClearedUI.cs" Line="24" Column="28" />
-      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="52" Column="40" />
-      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="19" Column="39" />
+      <File FileName="Assets/Scripts/Visuals/LevelClearedUI.cs" Line="16" Column="17" />
+      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" />
+      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +21,12 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Controllers" expanded="True" />
                 <Node name="Data &amp; Models" expanded="True" />
-                <Node name="Managers" expanded="True" />
+                <Node name="Managers" expanded="True">
+                  <Node name="BluetoothManager.cs" selected="True" />
+                </Node>
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
-                <Node name="Visuals" expanded="True">
-                  <Node name="LevelClearedUI.cs" selected="True" />
-                </Node>
+                <Node name="Visuals" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -35,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="35d3fee5-5bce-4e76-b1d1-142bc5b70ed5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dd8c1637-f02d-492f-8e9d-e921d7d87278" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
