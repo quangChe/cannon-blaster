@@ -69,10 +69,10 @@ public class BluetoothDeviceScript : MonoBehaviour
 			char[] delim = new char[] { '~' };
 			string[] parts = message.Split (delim);
 
-			//for (int i = 0; i < parts.Length; ++i)
-			//	BluetoothLEHardwareInterface.Log (string.Format ("Part: {0} - {1}", i, parts[i]));
+            for (int i = 0; i < parts.Length; ++i)
+                BluetoothLEHardwareInterface.Log(string.Format("Part: {0} - {1}", i, parts[i]));
 
-			if (message.Length >= deviceInitializedString.Length && message.Substring (0, deviceInitializedString.Length) == deviceInitializedString)
+            if (message.Length >= deviceInitializedString.Length && message.Substring (0, deviceInitializedString.Length) == deviceInitializedString)
 			{
 				if (InitializedAction != null)
 					InitializedAction ();

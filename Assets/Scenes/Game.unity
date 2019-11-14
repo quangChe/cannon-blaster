@@ -1140,6 +1140,11 @@ PrefabInstance:
       propertyPath: levelData
       value: 
       objectReference: {fileID: 1799901608270347144}
+    - target: {fileID: 8669848808344276990, guid: bf24e1ce67495437ea1b055b20cee026,
+        type: 3}
+      propertyPath: sprites
+      value: 
+      objectReference: {fileID: 1879007330909679481}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf24e1ce67495437ea1b055b20cee026, type: 3}
 --- !u!1 &8669848808344276989 stripped
