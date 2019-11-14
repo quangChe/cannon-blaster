@@ -11,7 +11,6 @@ public class LevelDataController : MonoBehaviour
     private GameManager Game = GameManager.Instance;
 
     public float[] successRate = { 0, 0 };
-    //public float successPercent;
     public Dictionary<string, int> successfulActivityRecord = new Dictionary<string, int>();
 
     private void Awake()

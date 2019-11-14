@@ -8,9 +8,12 @@ using TMPro;
 public class LevelClearedUI : MonoBehaviour
 {
     public LevelDataController levelData;
+    public SpriteDictionary sprites;
     public GameObject star1, star2, star3;
     public GameObject praiseText;
     public GameObject hiddenDetails;
+    public GameObject statsPanel;
+    public GameObject stat;
     public AudioClip starSound, praiseSound;
 
     public void StartUIAnimation()
@@ -89,6 +92,7 @@ public class LevelClearedUI : MonoBehaviour
 
     private IEnumerator AnimateHiddenDetails()
     {
+        GenerateStats();
         RectTransform detailTransform = hiddenDetails.GetComponent<RectTransform>();
         while (detailTransform.localScale.x < 1f)
         {
@@ -100,4 +104,16 @@ public class LevelClearedUI : MonoBehaviour
         }
     }
 
+    private void GenerateStats()
+    {
+        Dictionary<string, int> activities = levelData.successfulActivityRecord;
+        foreach (string activity in activities.Keys)
+        {
+            GameObject statItem = Instantiate(stat) as GameObject;
+            statItem.transform.GetChild(0).GetComponent<Image>().sprite = sprites.GetSprite(activity);
+            string countLabel = "x" + activities[activity];
+            statItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText(countLabel);
+            statItem.transform.SetParent(statsPanel.transform, false);
+        }
+    }
 }

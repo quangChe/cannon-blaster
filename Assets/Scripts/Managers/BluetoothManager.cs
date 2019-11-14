@@ -161,7 +161,6 @@ public class BluetoothManager : MonoBehaviour
             if (IsEqual(serviceUUID, ServiceUUID))
             {
                 BluetoothLEHardwareInterface.Log("Connected to Puck UUID: " + serviceUUID);
-                connected = true;
                 foundTXUUID = foundTXUUID || IsEqual(characteristicUUID, TXUUID);
                 //foundRXUUID = foundRXUUID || IsEqual(characteristicUUID, RXUUID);
 
@@ -188,7 +187,10 @@ public class BluetoothManager : MonoBehaviour
 
         BluetoothLEHardwareInterface.SubscribeCharacteristicWithDeviceAddress(deviceAddress, ServiceUUID, TXUUID, (notifyAddress, notifyCharacteristic) =>
         {
+
             BluetoothLEHardwareInterface.Log("Waiting for user action (1)...");
+            connected = true;
+
             state = States.None;
 
             // read the initial state of the button
@@ -200,6 +202,7 @@ public class BluetoothManager : MonoBehaviour
         }, (address, characteristicUUID, bytes) =>
         {
             BluetoothLEHardwareInterface.Log("Waiting for user action (2)...");
+            connected = true;
 
             if (state != States.None)
             {

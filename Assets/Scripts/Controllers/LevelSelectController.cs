@@ -19,8 +19,7 @@ public class LevelSelectController : MonoBehaviour
 
     void Start()
     {
-        numberOfLevels = 112;
-        //numberOfLevels = GameManager.Instance.levels.Length;
+        numberOfLevels = GameManager.Instance.levels.Length;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         btnDimensions = levelButton.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt(
@@ -79,24 +78,15 @@ public class LevelSelectController : MonoBehaviour
             btn.transform.SetParent(parentObject.transform);
             btn.GetComponentInChildren<TextMeshProUGUI>().SetText(i.ToString());
 
-            if (i > GameManager.Instance.levels.Length)
-            {
-                btn.GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/locked_stage");
-                Destroy(btn.transform.GetChild(1).GetComponent<Image>());
-            }
-            else
-            {
+            // Load star data here
+            btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
 
-                // Load star data here
-                btn.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/stars1");
-
-                int levelNumber = i;
-                btn.GetComponent<Button>().onClick.AddListener(() =>
-                {
-                    GameManager.Instance.LoadLevel(levelNumber);
-                    SceneManager.LoadScene("Game");
-                });
-            }
+            int levelNumber = i;
+            btn.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GameManager.Instance.LoadLevel(levelNumber);
+                SceneManager.LoadScene("Game");
+            });
 
         }
     }
