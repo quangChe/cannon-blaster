@@ -6,5 +6,5 @@ using UnityEngine;
 public class LevelData 
 {
     public BallData[] balls;
-
+    public int starsRequired;
 }
