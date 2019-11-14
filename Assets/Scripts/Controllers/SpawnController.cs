@@ -129,8 +129,7 @@ public class SpawnController : MonoBehaviour
             levelData.successfulActivityRecord[exercise]++;
 
             // Spawn new ball if no active ball (to not keep player waiting)
-            bool hasActiveBall = CheckActiveQueue();
-            timeout = (hasActiveBall) ? timeout : 0f;
+            timeout = CheckActiveQueue() ? timeout : 0f;
 
             CheckForGameEnd();
         }
@@ -159,7 +158,7 @@ public class SpawnController : MonoBehaviour
     private void CheckForGameEnd()
     {
         bool queueing = ballQueue.Count > 0;
-        queueing = CheckActiveQueue();
+        queueing = CheckActiveQueue() ? true : queueing;
 
         if (!queueing) { StartCoroutine(EndLevel()); }
     }
