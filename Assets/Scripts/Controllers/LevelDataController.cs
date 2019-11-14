@@ -11,7 +11,7 @@ public class LevelDataController : MonoBehaviour
     private GameManager Game = GameManager.Instance;
 
     public float[] successRate = { 0, 0 };
-    public float successPercent;
+    //public float successPercent;
     public Dictionary<string, int> successfulActivityRecord = new Dictionary<string, int>();
 
     private void Awake()
@@ -57,8 +57,30 @@ public class LevelDataController : MonoBehaviour
         return levelBalls;
     }
 
-    private void Update()
+    public int StarsWon()
     {
-        successPercent = Mathf.Round((successRate[0] / successRate[1]) * 100);
+        float percent = Mathf.Round((successRate[0] / successRate[1]) * 100);
+
+        if (percent >= 30f && percent < 60f)
+        {
+            return 1;
+        }
+        else if (percent >= 60f && percent < 95f)
+        {
+            return 2;
+        }
+        else if (percent >= 95f)
+        {
+            return 3;
+        }
+        else
+        {
+            return 0;
+        }
     }
+
+    //private void Update()
+    //{
+    //    successPercent = Mathf.Round((successRate[0] / successRate[1]) * 100);
+    //}
 }

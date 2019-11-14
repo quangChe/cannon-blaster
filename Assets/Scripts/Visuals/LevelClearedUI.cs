@@ -20,29 +20,26 @@ public class LevelClearedUI : MonoBehaviour
 
     private void StartUIAnimation()
     {
-        //float percent = levelData.successPercent;
-        float percent = 95f;
         List<IEnumerator> starsToAnimate = new List<IEnumerator>();
         string praise = null;
 
-        if (percent >= 30f && percent < 60f)
+        switch(levelData.StarsWon())
         {
-            starsToAnimate.Add(AnimateStars(star1));
-            praise = "Nice Job!";
-        }
-        else if (percent >= 60f && percent < 95f)
-        {
-            starsToAnimate.Add(AnimateStars(star1));
-            starsToAnimate.Add(AnimateStars(star2));
-            praise = "Excellent!";
-        }
-
-        else if (percent >= 95f)
-        {
-            starsToAnimate.Add(AnimateStars(star1));
-            starsToAnimate.Add(AnimateStars(star2));
-            starsToAnimate.Add(AnimateStars(star3));
-            praise = "You're Amazing!";
+            case 1:
+                starsToAnimate.Add(AnimateStars(star1));
+                praise = "Nice Job!";
+                break;
+            case 2:
+                starsToAnimate.Add(AnimateStars(star1));
+                starsToAnimate.Add(AnimateStars(star2));
+                praise = "Excellent!";
+                break;
+            case 3:
+                starsToAnimate.Add(AnimateStars(star1));
+                starsToAnimate.Add(AnimateStars(star2));
+                starsToAnimate.Add(AnimateStars(star3));
+                praise = "You're Amazing!";
+                break;
         }
 
         StartCoroutine(AnimateUI(starsToAnimate, praise));

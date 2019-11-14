@@ -36,23 +36,18 @@ public class LevelStatsUI : MonoBehaviour
 
     private void CheckStars()
     {
-        float percent = levelData.successPercent;
-        if (!acquired["star1"] && percent >= 30f && percent < 60f)
-        {
-            Debug.Log(percent);
+        int starsWon = levelData.StarsWon();
 
+        if (!acquired["star1"] && starsWon == 1)
+        {
             StartCoroutine(AnimateAndAdd(star1));
         }
-        else if (!acquired["star2"] && percent >= 60f && percent < 95f)
+        else if (!acquired["star2"] && starsWon == 2)
         {
-            Debug.Log(percent);
-
             StartCoroutine(AnimateAndAdd(star2));
         }
-        else if (!acquired["star3"] && percent >= 95f)
+        else if (!acquired["star3"] && starsWon == 3)
         {
-            Debug.Log(percent);
-
             StartCoroutine(AnimateAndAdd(star3));
         }
     }

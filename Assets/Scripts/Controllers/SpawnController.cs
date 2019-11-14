@@ -14,6 +14,7 @@ public class SpawnController : MonoBehaviour
     public SpriteDictionary gameSprites;
     public CannonController CannonController;
     public PreviewExercise previewPanel;
+    public GameplayController gamePlay;
 
     public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
@@ -78,8 +79,7 @@ public class SpawnController : MonoBehaviour
             yield return new WaitForSeconds(lastBall.timeDelay);
         }
 
-        // Do something here to end level
-        Debug.Log("DONE!");
+        gamePlay.EndLevel();
     }
 
     private void CreateActiveObject(GameObject gObj, BallData data)
