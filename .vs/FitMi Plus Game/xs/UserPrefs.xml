@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/GameplayController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/LevelClearedUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/Visuals/LevelClearedUI.cs" Line="38" Column="113" />
-      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="60" Column="4" />
+      <File FileName="Assets/Scripts/Visuals/LevelClearedUI.cs" Line="24" Column="28" />
+      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="52" Column="40" />
       <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="19" Column="39" />
     </Files>
     <Pads>
@@ -18,14 +18,14 @@
               </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True">
-                  <Node name="GameplayController.cs" selected="True" />
-                </Node>
+                <Node name="Controllers" expanded="True" />
                 <Node name="Data &amp; Models" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
-                <Node name="Visuals" expanded="True" />
+                <Node name="Visuals" expanded="True">
+                  <Node name="LevelClearedUI.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
