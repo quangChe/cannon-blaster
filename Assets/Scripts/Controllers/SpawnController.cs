@@ -127,7 +127,10 @@ public class SpawnController : MonoBehaviour
             q.RemoveAt(0);
             levelData.successRate[0]++;
             levelData.successfulActivityRecord[exercise]++;
-            timeout = 0f;
+
+            // Spawn new ball if no active ball (to not keep player waiting)
+            bool hasActiveBall = CheckActiveQueue();
+            timeout = (hasActiveBall) ? timeout : 0f;
 
             CheckForGameEnd();
         }
@@ -141,21 +144,24 @@ public class SpawnController : MonoBehaviour
         CheckForGameEnd();
     }
 
-    private void CheckForGameEnd()
+    private bool CheckActiveQueue()
     {
         bool queueing = false;
-
-        if (ballQueue.Count > 0) { queueing = true;  }
 
         foreach (List<ActiveBall> list in activeQueue.Values)
         {
             if (list.Count > 0) { queueing = true; }
         }
 
-        if (!queueing)
-        {
-            StartCoroutine(EndLevel());
-        }
+        return queueing;
+    }
+
+    private void CheckForGameEnd()
+    {
+        bool queueing = ballQueue.Count > 0;
+        queueing = CheckActiveQueue();
+
+        if (!queueing) { StartCoroutine(EndLevel()); }
     }
 
     private IEnumerator EndLevel()
