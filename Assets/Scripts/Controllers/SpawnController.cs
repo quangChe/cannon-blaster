@@ -16,11 +16,12 @@ public class SpawnController : MonoBehaviour
     public PreviewExercise previewPanel;
     public GameplayController gamePlay;
 
-    public Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
 
+    float timeout = 3f;
+    List<BallData> ballQueue = new List<BallData>();
+    Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
     LevelDataController levelData;
     GameManager Game = GameManager.Instance;
-    List<BallData> ballQueue = new List<BallData>();
 
     private void Awake()
     {
@@ -32,12 +33,16 @@ public class SpawnController : MonoBehaviour
     {
         CompileBallData();
         CompileActiveQueueLists();
-        SpawnGameBalls();
     }
 
-    private void SpawnGameBalls()
+    void Update()
     {
-        StartCoroutine(SpawnBall(1f));
+        timeout -= Time.deltaTime;
+
+        if (timeout <= 0f && ballQueue.Count > 0)
+        {
+            SpawnBall();
+        }
     }
 
     private void CompileActiveQueueLists()
@@ -58,24 +63,36 @@ public class SpawnController : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnBall(float delay)
+    //private IEnumerator SpawnBall(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+
+    //    while (ballQueue.Count > 0)
+    //    {
+    //        int last = ballQueue.Count - 1;
+    //        BallData lastBall = ballQueue[last];
+    //        Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
+    //        GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
+    //        ballQueue.RemoveAt(last);
+    //        previewPanel.UpdatePreview();
+    //        CreateActiveObject(cannonBall, lastBall);
+    //        yield return new WaitForSeconds(lastBall.timeDelay);
+    //    }
+
+    //    bool success = levelData.StarsWon() > 0;
+    //    gamePlay.EndLevel(success);
+    //}
+
+    private void SpawnBall()
     {
-        yield return new WaitForSeconds(delay);
-
-        while (ballQueue.Count > 0)
-        {
-            int last = ballQueue.Count - 1;
-            BallData lastBall = ballQueue[last];
-            Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
-            GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
-            ballQueue.RemoveAt(last);
-            previewPanel.UpdatePreview();
-            CreateActiveObject(cannonBall, lastBall);
-            yield return new WaitForSeconds(lastBall.timeDelay);
-        }
-
-        bool success = levelData.StarsWon() > 0;
-        gamePlay.EndLevel(success);
+        int last = ballQueue.Count - 1;
+        BallData lastBall = ballQueue[last];
+        Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
+        GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
+        ballQueue.RemoveAt(last);
+        previewPanel.UpdatePreview();
+        CreateActiveObject(cannonBall, lastBall);
+        timeout = lastBall.timeDelay;
     }
 
     private void CreateActiveObject(GameObject gObj, BallData data)
@@ -110,8 +127,9 @@ public class SpawnController : MonoBehaviour
             q.RemoveAt(0);
             levelData.successRate[0]++;
             levelData.successfulActivityRecord[exercise]++;
+            timeout = 0f;
 
-            // Manually spawn new ball and reset delay timer;
+            CheckForGameEnd();
         }
     }
 
@@ -120,6 +138,31 @@ public class SpawnController : MonoBehaviour
         List<ActiveBall> q = activeQueue[data.exercise];
         ActiveBall target = q.Single(t => t.data.id == data.id);
         q.Remove(target);
+        CheckForGameEnd();
+    }
+
+    private void CheckForGameEnd()
+    {
+        bool queueing = false;
+
+        if (ballQueue.Count > 0) { queueing = true;  }
+
+        foreach (List<ActiveBall> list in activeQueue.Values)
+        {
+            if (list.Count > 0) { queueing = true; }
+        }
+
+        if (!queueing)
+        {
+            StartCoroutine(EndLevel());
+        }
+    }
+
+    private IEnumerator EndLevel()
+    {
+        yield return new WaitForSeconds(1f);
+        bool success = levelData.StarsWon() > 0;
+        gamePlay.EndLevel(success);
     }
 }
 
