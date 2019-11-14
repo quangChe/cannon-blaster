@@ -177,7 +177,7 @@ public class BluetoothManager : MonoBehaviour
         (err) =>
         {
             connected = false;
-            SetState(States.Connect, 2f);
+            SetState(States.Connect, 0.5f);
         }
         );
     }

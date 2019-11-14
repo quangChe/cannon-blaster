@@ -40,14 +40,17 @@ public class LevelStatsUI : MonoBehaviour
 
         if (!acquired["star1"] && starsWon == 1)
         {
+            acquired["star1"] = true;
             StartCoroutine(AnimateAndAdd(star1));
         }
-        else if (!acquired["star2"] && starsWon == 2)
+        if (!acquired["star2"] && starsWon == 2)
         {
+            acquired["star2"] = true;
             StartCoroutine(AnimateAndAdd(star2));
         }
-        else if (!acquired["star3"] && starsWon == 3)
+        if (!acquired["star3"] && starsWon == 3)
         {
+            acquired["star3"] = true;
             StartCoroutine(AnimateAndAdd(star3));
         }
     }

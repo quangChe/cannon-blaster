@@ -498,6 +498,11 @@ PrefabInstance:
       propertyPath: previewPanel
       value: 
       objectReference: {fileID: 53393996}
+    - target: {fileID: 5109963791177651726, guid: de7735f1190174be68cf4ab0d27dafc2,
+        type: 3}
+      propertyPath: gamePlay
+      value: 
+      objectReference: {fileID: 1886047779}
     - target: {fileID: 5109963791177651727, guid: de7735f1190174be68cf4ab0d27dafc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -609,6 +614,21 @@ PrefabInstance:
       propertyPath: gameEndMenu
       value: 
       objectReference: {fileID: 5631624422319078949}
+    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 1799901608270347144}
+    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 5631624422319078949}
+    - target: {fileID: 3964569977780286892, guid: 4862117e8685c416bbe4a80620804223,
+        type: 3}
+      propertyPath: levelClearedMenu
+      value: 
+      objectReference: {fileID: 8669848808344276989}
     - target: {fileID: 6010595605611453166, guid: 4862117e8685c416bbe4a80620804223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1087,11 +1107,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1886047779}
-    - target: {fileID: 1553299802608474897, guid: bf24e1ce67495437ea1b055b20cee026,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToMainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 6659736867911127150, guid: bf24e1ce67495437ea1b055b20cee026,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1112,11 +1127,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1886047779}
-    - target: {fileID: 1166458529135921892, guid: bf24e1ce67495437ea1b055b20cee026,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToLevelMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 1269980718, guid: bf24e1ce67495437ea1b055b20cee026, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1125,21 +1135,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1886047779}
-    - target: {fileID: 710775907593790609, guid: bf24e1ce67495437ea1b055b20cee026,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 710775907593790609, guid: bf24e1ce67495437ea1b055b20cee026,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 710775907593790609, guid: bf24e1ce67495437ea1b055b20cee026,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8669848808344276990, guid: bf24e1ce67495437ea1b055b20cee026,
         type: 3}
       propertyPath: levelData
@@ -1147,6 +1142,12 @@ PrefabInstance:
       objectReference: {fileID: 1799901608270347144}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf24e1ce67495437ea1b055b20cee026, type: 3}
+--- !u!1 &8669848808344276989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 806060086, guid: bf24e1ce67495437ea1b055b20cee026,
+    type: 3}
+  m_PrefabInstance: {fileID: 8669848808344276988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8835721095674787522
 PrefabInstance:
   m_ObjectHideFlags: 0

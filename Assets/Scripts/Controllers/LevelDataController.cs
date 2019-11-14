@@ -65,22 +65,16 @@ public class LevelDataController : MonoBehaviour
         {
             return 1;
         }
-        else if (percent >= 60f && percent < 95f)
+        if (percent >= 60f && percent < 95f)
         {
             return 2;
         }
-        else if (percent >= 95f)
+        if (percent >= 95f)
         {
             return 3;
         }
-        else
-        {
-            return 0;
-        }
+
+        return 0;
     }
 
-    //private void Update()
-    //{
-    //    successPercent = Mathf.Round((successRate[0] / successRate[1]) * 100);
-    //}
 }
