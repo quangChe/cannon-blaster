@@ -9,7 +9,7 @@ public class GameObjectShredder : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject target = other.gameObject.transform.parent.gameObject;
-        BallData data = target.GetComponent<BallConfigurations>().data;
+        BallObject data = target.GetComponent<BallConfigurations>().data;
         spawnCtrl.RemoveFromActive(data);
         Destroy(target);
     }

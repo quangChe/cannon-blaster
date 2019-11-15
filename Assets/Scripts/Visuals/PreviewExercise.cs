@@ -12,7 +12,7 @@ public class PreviewExercise : MonoBehaviour
     public SpriteDictionary gameSprites;
 
 
-    private BallData[] ballData;
+    private BallObject[] ballData;
 
     void Start()
     {

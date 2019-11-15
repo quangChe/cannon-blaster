@@ -18,7 +18,7 @@ public class SpawnController : MonoBehaviour
 
 
     float timeout = 3f;
-    List<BallData> ballQueue = new List<BallData>();
+    List<BallObject> ballQueue = new List<BallObject>();
     Dictionary<string, List<ActiveBall>> activeQueue = new Dictionary<string, List<ActiveBall>>();
     LevelDataController levelData;
     GameManager Game = GameManager.Instance;
@@ -56,37 +56,17 @@ public class SpawnController : MonoBehaviour
 
     private void CompileBallData()
     {
-        BallData[] data = levelData.GetBalls();
+        BallObject[] data = levelData.GetBalls();
         for (int i = data.Length - 1; i > -1; i--)
         {
             ballQueue.Add(data[i]);
         }
     }
 
-    //private IEnumerator SpawnBall(float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-
-    //    while (ballQueue.Count > 0)
-    //    {
-    //        int last = ballQueue.Count - 1;
-    //        BallData lastBall = ballQueue[last];
-    //        Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
-    //        GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
-    //        ballQueue.RemoveAt(last);
-    //        previewPanel.UpdatePreview();
-    //        CreateActiveObject(cannonBall, lastBall);
-    //        yield return new WaitForSeconds(lastBall.timeDelay);
-    //    }
-
-    //    bool success = levelData.StarsWon() > 0;
-    //    gamePlay.EndLevel(success);
-    //}
-
     private void SpawnBall()
     {
         int last = ballQueue.Count - 1;
-        BallData lastBall = ballQueue[last];
+        BallObject lastBall = ballQueue[last];
         Sprite exerSprite = gameSprites.GetSprite(lastBall.exercise);
         GameObject cannonBall = CannonController.FireProjectile(lastBall, exerSprite);
         ballQueue.RemoveAt(last);
@@ -95,7 +75,7 @@ public class SpawnController : MonoBehaviour
         timeout = lastBall.timeDelay;
     }
 
-    private void CreateActiveObject(GameObject gObj, BallData data)
+    private void CreateActiveObject(GameObject gObj, BallObject data)
     {
         ActiveBall newBall = new ActiveBall();
         newBall.data = data;
@@ -103,7 +83,7 @@ public class SpawnController : MonoBehaviour
         activeQueue[data.exercise].Add(newBall);
     }
 
-    public void UpdateActiveObject(GameObject newObj, BallData d)
+    public void UpdateActiveObject(GameObject newObj, BallObject d)
     {
         ActiveBall target = activeQueue[d.exercise].First(x => x.data.id == d.id);
         target.gameObject = newObj;
@@ -122,8 +102,7 @@ public class SpawnController : MonoBehaviour
             Destroy(target.gameObject);
             AudioSource.PlayClipAtPoint(boom, Camera.main.transform.position, 0.7f);
 
-            // Remove from queue, update level data successRate, and record successful
-            // activity
+            // Remove from queue, update level data
             q.RemoveAt(0);
             levelData.successRate[0]++;
             levelData.successfulActivityRecord[exercise]++;
@@ -131,16 +110,17 @@ public class SpawnController : MonoBehaviour
             // Spawn new ball if no active ball (to not keep player waiting)
             timeout = CheckActiveQueue() ? timeout : 0f;
 
-            CheckForGameEnd();
+            CheckLevelEnd();
         }
     }
 
-    public void RemoveFromActive(BallData data)
+    public void RemoveFromActive(BallObject data)
     {
         List<ActiveBall> q = activeQueue[data.exercise];
         ActiveBall target = q.Single(t => t.data.id == data.id);
         q.Remove(target);
-        CheckForGameEnd();
+
+        CheckLevelEnd();
     }
 
     private bool CheckActiveQueue()
@@ -155,12 +135,15 @@ public class SpawnController : MonoBehaviour
         return queueing;
     }
 
-    private void CheckForGameEnd()
+    private void CheckLevelEnd()
     {
         bool queueing = ballQueue.Count > 0;
         queueing = CheckActiveQueue() ? true : queueing;
 
-        if (!queueing) { StartCoroutine(EndLevel()); }
+        if (!queueing) {
+            // Also need to store data here;
+            StartCoroutine(EndLevel());
+        }
     }
 
     private IEnumerator EndLevel()
@@ -178,6 +161,6 @@ public struct ActiveBallQueue
 
 public class ActiveBall
 {
-    public BallData data;
+    public BallObject data;
     public GameObject gameObject;
 }

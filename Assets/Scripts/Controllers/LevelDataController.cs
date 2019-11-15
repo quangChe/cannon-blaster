@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LevelDataController : MonoBehaviour 
 {
-    private BallData[] levelBalls;
+    private BallObject[] levelBalls;
     private TextAsset levelScript;
     private GameManager Game = GameManager.Instance;
 
@@ -24,7 +24,7 @@ public class LevelDataController : MonoBehaviour
         if (levelScript)
         {
             string dataAsJson = levelScript.ToString();
-            LevelData loadedData = JsonUtility.FromJson<LevelData>(dataAsJson);
+            LevelObject loadedData = JsonUtility.FromJson<LevelObject>(dataAsJson);
             levelBalls = loadedData.balls;
             successRate[1] = levelBalls.Length;
             BuildExerciseDictionary();
@@ -37,7 +37,7 @@ public class LevelDataController : MonoBehaviour
 
     private void BuildExerciseDictionary()
     {
-        foreach (BallData data in levelBalls)
+        foreach (BallObject data in levelBalls)
         {
             if (!successfulActivityRecord.ContainsKey(data.exercise))
             {
@@ -51,7 +51,7 @@ public class LevelDataController : MonoBehaviour
         }
     }
 
-    public BallData[] GetBalls()
+    public BallObject[] GetBalls()
     {
         return levelBalls;
     }

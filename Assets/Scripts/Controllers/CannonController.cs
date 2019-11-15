@@ -9,7 +9,7 @@ public class CannonController : MonoBehaviour
     public GameObject explosion;
     public AudioClip projectile;
 
-    public GameObject FireProjectile(BallData d, Sprite exercise)
+    public GameObject FireProjectile(BallObject d, Sprite exercise)
     {
         GameObject cannonBall = Instantiate(
                 shotBall,

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallConfigurations : MonoBehaviour
 {
     public GameObject ExerciseObject;
-    public BallData data;
+    public BallObject data;
     public Sprite targetExercise;
 
     float parachuteLiftForce;
