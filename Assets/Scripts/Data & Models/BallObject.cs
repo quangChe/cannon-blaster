@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BallData
+public class BallObject
 {
     /*
         Shortened exercise values:
