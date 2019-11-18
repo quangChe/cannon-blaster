@@ -9,13 +9,13 @@ public class DatabaseTest : MonoBehaviour
 {
     void Start()
     {
-        //LevelsData levelData = new LevelsData();
+        LevelsData levelData = new LevelsData();
 
-        //levelData.addData(new LevelsModel(1, 2, 3, 4));
-        //levelData.addData(new LevelsModel(2, 3, 4, 5));
-        //levelData.addData(new LevelsModel(2, 4, 5, 6));
+        levelData.addData(new LevelsModel(1, 2, 3, 4));
+        levelData.addData(new LevelsModel(2, 3, 4, 5));
+        levelData.addData(new LevelsModel(2, 4, 5, 6));
 
-        //levelData.close();
+        levelData.close();
 
         LevelsData levelData2 = new LevelsData();
 
