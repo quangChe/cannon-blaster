@@ -61,7 +61,7 @@ public class LevelClearedUI : MonoBehaviour
         RectTransform starTransform = star.GetComponent<RectTransform>();
         while (starTransform.localScale.x <= 1.6f)
         {
-            starTransform.localScale = new Vector3(starTransform.localScale.x + 0.04f, starTransform.localScale.y + 0.04f);
+            starTransform.localScale = new Vector3(starTransform.localScale.x + 0.08f, starTransform.localScale.y + 0.08f);
             yield return null;
         }
 
@@ -70,7 +70,7 @@ public class LevelClearedUI : MonoBehaviour
 
         while (starTransform.localScale.x >= 1.2f)
         {
-            starTransform.localScale = new Vector3(starTransform.localScale.x - 0.04f, starTransform.localScale.y - 0.04f);
+            starTransform.localScale = new Vector3(starTransform.localScale.x - 0.08f, starTransform.localScale.y - 0.08f);
             yield return null;
         }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class LevelStatsUI : MonoBehaviour
@@ -59,14 +60,14 @@ public class LevelStatsUI : MonoBehaviour
     {
         while (star.transform.localScale.x <= 1.2f)
         {
-            star.transform.localScale = new Vector3(star.transform.localScale.x + 0.02f, star.transform.localScale.y + 0.02f);
+            star.transform.localScale = new Vector3(star.transform.localScale.x + 0.04f, star.transform.localScale.y + 0.04f);
             yield return null;
         }
-        star.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("sprites/fill_star");
+        star.GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/fill_star");
         AudioSource.PlayClipAtPoint(gainStar, Camera.main.transform.position, 1f);
         while (star.transform.localScale.x >= 0.9f)
         {
-            star.transform.localScale = new Vector3(star.transform.localScale.x - 0.02f, star.transform.localScale.y - 0.02f);
+            star.transform.localScale = new Vector3(star.transform.localScale.x - 0.04f, star.transform.localScale.y - 0.04f);
             yield return null;
         }
 
