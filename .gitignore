@@ -6,6 +6,8 @@ Obj/
 UnityGenerated/
 Library/
 Assets/AssetStoreTools*
+Builds/
+Plugins/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -33,8 +35,3 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-
-# ====== #
-# Builds #
-# ====== #
-Builds
