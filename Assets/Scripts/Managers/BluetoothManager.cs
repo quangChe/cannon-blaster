@@ -91,7 +91,6 @@ public class BluetoothManager : MonoBehaviour
         Reset();
         BluetoothLEHardwareInterface.Initialize(true, false, () =>
         {
-            Debug.Log("HELLO!!!");
             SetState(States.Scan, 0.1f);
 
         }, (error) =>
@@ -142,30 +141,29 @@ public class BluetoothManager : MonoBehaviour
         // Seems to stop here...
 
         BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(null, (address, name) =>
-        /*
-           This doesn't work either:
-           =========================
-
-           string[] target = { "12df61e4-139a-4004-81cd-18fc7c163f4b" };
-           BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(target, (address, name) =>
-        */
         {
             Debug.Log("This is not running...");
-            BluetoothLEHardwareInterface.Log("****1" + address);
-            BluetoothLEHardwareInterface.Log("****2" + name);
-        }, (address, name, deviceRssi, bytes) =>
-        {
-            Debug.Log("This is not running...");
-            BluetoothLEHardwareInterface.Log("****3" + address);
             if (name.Contains(DeviceName))
             {
-                BluetoothLEHardwareInterface.Log("Found with method 2! " + bytes[0]);
                 BluetoothLEHardwareInterface.StopScan();
-                //rssi = deviceRssi;
                 deviceAddress = address;
                 SetState(States.Connect, 0.5f);
             }
-        });
+        }
+        //, (address, name, deviceRssi, bytes) =>
+        //{
+        //    Debug.Log("This is not running...");
+        //    BluetoothLEHardwareInterface.Log("****3" + address);
+        //    if (name.Contains(DeviceName))
+        //    {
+        //        BluetoothLEHardwareInterface.Log("Found with method 2! " + bytes[0]);
+        //        BluetoothLEHardwareInterface.StopScan();
+        //        //rssi = deviceRssi;
+        //        deviceAddress = address;
+        //        SetState(States.Connect, 0.5f);
+        //    }
+        //}
+        );
     }
 
     private void ConnectToTargetDevice()

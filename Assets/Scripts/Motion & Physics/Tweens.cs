@@ -41,7 +41,7 @@ public class Tweens : MonoBehaviour {
 
 
 		case Tweenbuttons.slideFromTop:
-			transform.Translate(0, 10, -1);
+			GetComponent<RectTransform>().transform.Translate(0, 500, -1);
             float t = (timeDelay > 0f) ? timeDelay : 1f;
             iTween.MoveTo(gameObject, iTween.Hash("position", startPos, "time", timeDelay, "isLocal", true, "easetype", iTween.EaseType.easeInQuad));
 
