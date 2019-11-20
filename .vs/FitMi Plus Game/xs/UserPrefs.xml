@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/PreviewExercise.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/SpawnController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="270" Column="1" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="265" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/BallObject.cs" Line="6" Column="24" />
       <File FileName="Assets/Scripts/Data &amp; Models/BallConfigurations.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/SqliteHelper.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Data &amp; Models/DatabaseTest.cs" />
+      <File FileName="Assets/Scripts/Data &amp; Models/DatabaseTest.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/LevelsData.cs" />
       <File FileName="Assets/Scripts/Data &amp; Models/LevelsModel.cs" />
       <File FileName="Assets/Plugins/Android/AndroidManifest.xml" />
@@ -20,7 +20,9 @@
       <File FileName="Assets/Scripts/Controllers/SceneController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="40" Column="40" />
       <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="28" Column="13" />
-      <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" Line="6" Column="14" />
+      <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" Line="56" Column="32" />
+      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="243" Column="3" />
+      <File FileName="Assets/Scripts/Controllers/SpawnController.cs" Line="97" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,14 +32,14 @@
               <Node name="Editor" expanded="True" />
               <Node name="Plugins" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="SpawnController.cs" selected="True" />
+                </Node>
                 <Node name="Data &amp; Models" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
                 <Node name="Utils" expanded="True" />
-                <Node name="Visuals" expanded="True">
-                  <Node name="PreviewExercise.cs" selected="True" />
-                </Node>
+                <Node name="Visuals" expanded="True" />
               </Node>
             </Node>
           </Node>

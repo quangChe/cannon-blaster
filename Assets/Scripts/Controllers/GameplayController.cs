@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameplayController : MonoBehaviour
 {
     private GameManager Game;
+    private BluetoothManager _bt;
 
     public GameObject menuCanvas;
     public GameObject pauseMenu, confirmMenu, gameOverMenu, levelClearedMenu;
@@ -16,6 +17,7 @@ public class GameplayController : MonoBehaviour
     void Start()
     {
         Game = GameManager.Instance;
+        _bt = BluetoothManager.Instance;
         menuCanvas.SetActive(false);
     }
 
@@ -43,6 +45,7 @@ public class GameplayController : MonoBehaviour
     {
         menuCanvas.SetActive(false);
         SceneManager.LoadScene("Levels");
+        _bt.gameInitialized = false;
         Game.Unpause();
     }
 
@@ -56,6 +59,7 @@ public class GameplayController : MonoBehaviour
     {
         menuCanvas.SetActive(false);
         SceneManager.LoadScene("Home");
+        _bt.gameInitialized = false;
         Game.Unpause();
     }
 
@@ -67,7 +71,6 @@ public class GameplayController : MonoBehaviour
 
     public void EndLevel(bool success)
     {
-        //Game.Pause();
         menuState = (success) ? States.LevelCleared : States.GameOver;
         OpenMenu();
     }

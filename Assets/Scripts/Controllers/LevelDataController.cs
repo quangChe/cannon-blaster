@@ -44,11 +44,6 @@ public class LevelDataController : MonoBehaviour
                 successfulActivityRecord.Add(data.exercise, 0);
             }
         }
-
-        foreach (string key in successfulActivityRecord.Keys)
-        {
-            Debug.Log(key);
-        }
     }
 
     public BallObject[] GetBalls()
