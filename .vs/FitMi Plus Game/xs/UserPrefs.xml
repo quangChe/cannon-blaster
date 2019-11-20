@@ -1,22 +1,26 @@
 ﻿<Properties StartupConfiguration="{030B23AD-ED6E-4A24-07CF-18AFE9D5A6D6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/BluetoothHardwareInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Visuals/PreviewExercise.cs">
     <Files>
-      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="141" Column="33" />
+      <File FileName="Assets/Scripts/Managers/BluetoothManager.cs" Line="270" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/BallObject.cs" Line="6" Column="24" />
-      <File FileName="Assets/Scripts/Data &amp; Models/BallConfigurations.cs" />
-      <File FileName="Assets/Scripts/Data &amp; Models/SqliteHelper.cs" />
+      <File FileName="Assets/Scripts/Data &amp; Models/BallConfigurations.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Data &amp; Models/SqliteHelper.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Data &amp; Models/DatabaseTest.cs" />
       <File FileName="Assets/Scripts/Data &amp; Models/LevelsData.cs" />
       <File FileName="Assets/Scripts/Data &amp; Models/LevelsModel.cs" />
       <File FileName="Assets/Plugins/Android/AndroidManifest.xml" />
       <File FileName="Assets/Resources/levels/1.json" />
       <File FileName="Assets/Resources/levels/2.json" />
-      <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="134" Column="126" />
+      <File FileName="Assets/Plugins/BluetoothDeviceScript.cs" Line="66" Column="3" />
       <File FileName="Assets/Editor/BluetoothPostProcessBuild.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="63" Column="124" />
-      <File FileName="Assets/Scripts/Visuals/LevelClearedUI.cs" Line="73" Column="85" />
-      <File FileName="Assets/Scripts/Motion &amp; Physics/Tweens.cs" Line="44" Column="59" />
-      <File FileName="Assets/Plugins/BluetoothHardwareInterface.cs" Line="460" Column="31" />
+      <File FileName="Assets/Scripts/Visuals/LevelStatsUI.cs" Line="85" Column="109" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="5" Column="14" />
+      <File FileName="Assets/Scripts/Controllers/LevelDataController.cs" Line="7" Column="14" />
+      <File FileName="Assets/Scripts/Controllers/LevelSelectController.cs" Line="8" Column="14" />
+      <File FileName="Assets/Scripts/Controllers/SceneController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/GameplayController.cs" Line="40" Column="40" />
+      <File FileName="Assets/Scripts/Controllers/BluetoothPopup.cs" Line="28" Column="13" />
+      <File FileName="Assets/Scripts/Visuals/PreviewExercise.cs" Line="6" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,14 +28,16 @@
           <Node name="FitMi Plus Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Editor" expanded="True" />
-              <Node name="Plugins" expanded="True">
-                <Node name="BluetoothHardwareInterface.cs" selected="True" />
-              </Node>
+              <Node name="Plugins" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="Controllers" expanded="True" />
+                <Node name="Data &amp; Models" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Motion &amp; Physics" expanded="True" />
-                <Node name="Visuals" expanded="True" />
+                <Node name="Utils" expanded="True" />
+                <Node name="Visuals" expanded="True">
+                  <Node name="PreviewExercise.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

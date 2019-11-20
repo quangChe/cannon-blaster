@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6176636824781162320}
   - component: {fileID: 7164611392229698379}
   - component: {fileID: 1179444082924234872}
+  - component: {fileID: 1720433888}
   m_Layer: 0
   m_Name: Star 1
   m_TagString: Untagged
@@ -73,6 +74,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1720433888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484197345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDelay: 0.5
+  buttonTween: 3
 --- !u!1 &702569444
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +99,7 @@ GameObject:
   - component: {fileID: 8681400989436047057}
   - component: {fileID: 3121895004335880515}
   - component: {fileID: 7752562681615495402}
+  - component: {fileID: 1263824605}
   m_Layer: 0
   m_Name: Star 3
   m_TagString: Untagged
@@ -146,6 +162,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1263824605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702569444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDelay: 1
+  buttonTween: 3
 --- !u!1 &739456196
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +330,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788640440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.43867552}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 47.362503, y: 47.362503, z: 47.362503}
   m_Children:
   - {fileID: 6176636824781162320}
@@ -352,6 +382,7 @@ GameObject:
   - component: {fileID: 1630362791}
   - component: {fileID: 1630362793}
   - component: {fileID: 1630362792}
+  - component: {fileID: 1169219952}
   m_Layer: 5
   m_Name: Hit Rate
   m_TagString: Untagged
@@ -497,6 +528,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1169219952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630362790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDelay: 0.25
+  buttonTween: 3
 --- !u!1 &1953640820
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +553,7 @@ GameObject:
   - component: {fileID: 8521446137376912557}
   - component: {fileID: 7464471517843698862}
   - component: {fileID: 7867451250851791086}
+  - component: {fileID: 786650293}
   m_Layer: 0
   m_Name: Star 2
   m_TagString: Untagged
@@ -570,6 +616,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &786650293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953640820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d67e2f5605346298490b2bc029a519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDelay: 0.75
+  buttonTween: 3
 --- !u!1 &2037623878047969575
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,8 +669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014038, y: -0.00067139}
-  m_SizeDelta: {x: 842, y: 473.76}
+  m_AnchoredPosition: {x: 0.00008618, y: 0.0023232}
+  m_SizeDelta: {x: 842, y: 526.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2913863190287449346
 Canvas:

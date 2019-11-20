@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4880493039078265919}
   - component: {fileID: 4880493039078265918}
+  - component: {fileID: 694010903}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb643f53960d44f2691fa62e358ef8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllExercises:
+  - LS
+  - DK
+  - ZP
+  - CP
   levels: []
   loadedLevel: {fileID: 0}
+  paused: 0
+  doublePaused: 0
+--- !u!114 &694010903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880493039078265888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5919f969b6a4bd4a0a861234b5e3a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
