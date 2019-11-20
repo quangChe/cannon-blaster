@@ -11,15 +11,7 @@ public class DatabaseTest : MonoBehaviour
     {
         LevelsData levelData = new LevelsData();
 
-        levelData.addData(new LevelsModel(1, 2, 3, 4));
-        levelData.addData(new LevelsModel(2, 3, 4, 5));
-        levelData.addData(new LevelsModel(2, 4, 5, 6));
-
-        levelData.close();
-
-        LevelsData levelData2 = new LevelsData();
-
-        IDataReader reader = levelData2.getAllData();
+        IDataReader reader = levelData.getAllData();
         List<LevelsModel> levelsList = new List<LevelsModel>();
 
         while (reader.Read())
@@ -35,16 +27,56 @@ public class DatabaseTest : MonoBehaviour
             );
         }
 
-        levelData2.close();
 
-        foreach (LevelsModel level in levelsList)
+        if (levelsList.Count > 0)
         {
-            Debug.Log("Level Number: " + level._levelNumber);
-            Debug.Log("Stars: " + level._starsCollected);
-            Debug.Log("Success: " + level._successCount);
-            Debug.Log("Total: " + level._totalCount);
-            Debug.Log("Date: " + level._date);
+            Debug.Log("SHOWING EXISTING DATA!");
+            foreach (LevelsModel level in levelsList)
+            {
+                Debug.Log("========================================");
+                Debug.Log("Level Number: " + level._levelNumber);
+                Debug.Log("Stars: " + level._starsCollected);
+                Debug.Log("Success: " + level._successCount);
+                Debug.Log("Total: " + level._totalCount);
+                Debug.Log("Date: " + level._date);
+                Debug.Log("========================================");
+            }
         }
-        
+        else
+        {
+            Debug.Log("SHOWING NEW DATA!");
+            levelData.addData(new LevelsModel(1, 2, 3, 4));
+            levelData.addData(new LevelsModel(2, 3, 4, 5));
+            levelData.addData(new LevelsModel(2, 4, 5, 6));
+
+            reader = levelData.getAllData();
+            levelsList = new List<LevelsModel>();
+
+            while (reader.Read())
+            {
+                levelsList.Add(
+                    new LevelsModel(
+                        //Convert.ToInt32(reader[0]), <-- This is the id
+                        Convert.ToInt32(reader[1]),
+                        Convert.ToInt32(reader[2]),
+                        Convert.ToInt32(reader[3]),
+                        Convert.ToInt32(reader[4]),
+                        reader[5].ToString())
+                );
+            }
+
+            foreach (LevelsModel level in levelsList)
+            {
+                Debug.Log("========================================");
+                Debug.Log("Level Number: " + level._levelNumber);
+                Debug.Log("Stars: " + level._starsCollected);
+                Debug.Log("Success: " + level._successCount);
+                Debug.Log("Total: " + level._totalCount);
+                Debug.Log("Date: " + level._date);
+                Debug.Log("========================================");
+            }
+        }
+
+        levelData.close();
     }
 }

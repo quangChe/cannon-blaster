@@ -380,10 +380,19 @@ PrefabInstance:
       propertyPath: Game
       value: 
       objectReference: {fileID: 2082027290}
+    - target: {fileID: 5012893735642456880, guid: 9bc3790946d544e57b03083df0049fc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1604201935, guid: 9bc3790946d544e57b03083df0049fc3, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1029530007}
+    - target: {fileID: 1124270655, guid: 9bc3790946d544e57b03083df0049fc3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc3790946d544e57b03083df0049fc3, type: 3}
 --- !u!20 &1029530007 stripped
@@ -457,6 +466,10 @@ PrefabInstance:
     - target: {fileID: 4880493039078265919, guid: e47518241bd284fdfa3bc72eac4b7de1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 694010903, guid: e47518241bd284fdfa3bc72eac4b7de1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
