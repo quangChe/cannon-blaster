@@ -52,7 +52,8 @@ public class PreviewExercise : MonoBehaviour
         RectTransform rt = GetComponent<RectTransform>();
         Vector3 start = rt.localPosition;
         Vector3 end = new Vector3(0, (rt.localPosition.y - 165f), 0);
-        StartCoroutine(SmoothScroll(rt, start, end, 0.5f));
+        //Too slow is user rapid firing inputs: StartCoroutine(SmoothScroll(rt, start, end, 0.5f));
+        rt.localPosition = end;
     }
-    
+
 }

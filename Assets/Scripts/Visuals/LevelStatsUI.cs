@@ -58,16 +58,31 @@ public class LevelStatsUI : MonoBehaviour
 
     private IEnumerator AnimateAndAdd(GameObject star)
     {
-        while (star.transform.localScale.x <= 1.2f)
+        //while (star.transform.localScale.x <= 1.2f)
+        //{
+        //    star.transform.localScale = new Vector3(star.transform.localScale.x + 0.06f, star.transform.localScale.y + 0.04f);
+        //    yield return null;
+        //}
+
+        float t = 0f;
+        while (t <= 1.0)
         {
-            star.transform.localScale = new Vector3(star.transform.localScale.x + 0.04f, star.transform.localScale.y + 0.04f);
+            t += Time.deltaTime / 0.2f;
+            star.transform.localScale = Vector3.Lerp(star.transform.localScale, new Vector3(1.2f, 1.2f, 1.2f), Mathf.SmoothStep(0f, 1f, t));
             yield return null;
         }
         star.GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/fill_star");
         AudioSource.PlayClipAtPoint(gainStar, Camera.main.transform.position, 1f);
-        while (star.transform.localScale.x >= 0.9f)
+        //while (star.transform.localScale.x >= 0.9f)
+        //{
+        //    star.transform.localScale = new Vector3(star.transform.localScale.x - 0.06f, star.transform.localScale.y - 0.04f);
+        //    yield return null;
+        //}
+        t = 0f;
+        while (t <= 1.0)
         {
-            star.transform.localScale = new Vector3(star.transform.localScale.x - 0.04f, star.transform.localScale.y - 0.04f);
+            t += Time.deltaTime / 0.2f;
+            star.transform.localScale = Vector3.Lerp(star.transform.localScale, new Vector3(0.9f, 0.9f, 0.9f), Mathf.SmoothStep(0f, 1f, t));
             yield return null;
         }
 

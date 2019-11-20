@@ -59,18 +59,33 @@ public class LevelClearedUI : MonoBehaviour
     private IEnumerator AnimateStars(GameObject star)
     {
         RectTransform starTransform = star.GetComponent<RectTransform>();
-        while (starTransform.localScale.x <= 1.6f)
+        //while (starTransform.localScale.x <= 1.6f)
+        //{
+        //    starTransform.localScale = new Vector3(starTransform.localScale.x + 0.04f, starTransform.localScale.y + 0.04f);
+        //    yield return null;
+        //}
+        float t = 0f;
+        while (t <= 1.0)
         {
-            starTransform.localScale = new Vector3(starTransform.localScale.x + 0.08f, starTransform.localScale.y + 0.08f);
+            t += Time.deltaTime / 0.2f;
+            starTransform.localScale = Vector3.Lerp(starTransform.localScale, new Vector3(1.6f, 1.6f, 1.6f), Mathf.SmoothStep(0f, 1f, t));
             yield return null;
         }
 
         star.GetComponent<Image>().sprite = Resources.Load<Sprite>("sprites/fill_star");
         AudioSource.PlayClipAtPoint(starSound, Camera.main.transform.position, 1f);
 
-        while (starTransform.localScale.x >= 1.2f)
+        //while (starTransform.localScale.x >= 1.2f)
+        //{
+        //    starTransform.localScale = new Vector3(starTransform.localScale.x - 0.04f, starTransform.localScale.y - 0.04f);
+        //    yield return null;
+        //}
+
+        t = 0f;
+        while (t <= 1.0)
         {
-            starTransform.localScale = new Vector3(starTransform.localScale.x - 0.08f, starTransform.localScale.y - 0.08f);
+            t += Time.deltaTime / 0.2f;
+            starTransform.localScale = Vector3.Lerp(starTransform.localScale, new Vector3(1.2f, 1.2f, 1.2f), Mathf.SmoothStep(0f, 1f, t));
             yield return null;
         }
 
