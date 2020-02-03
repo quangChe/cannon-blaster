@@ -56,3 +56,6 @@ TagManager:
   - name: Explosion
     uniqueID: 3234361811
     locked: 0
+  - name: Popup
+    uniqueID: 3916315227
+    locked: 0
