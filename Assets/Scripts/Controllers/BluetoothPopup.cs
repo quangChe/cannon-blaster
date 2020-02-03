@@ -40,7 +40,8 @@ public class BluetoothPopup : MonoBehaviour
     {
         Game.Unpause();
         popUpActive = false;
-        bt.BlinkSuccess();
+        int[] deviceNumbers = { 0, 1, 2, 3 };
+        StartCoroutine(bt.BlinkSuccess(1, deviceNumbers));
         Destroy(activePopUp);
     }
 }

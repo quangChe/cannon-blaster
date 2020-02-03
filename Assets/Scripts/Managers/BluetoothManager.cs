@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class BluetoothManager : MonoBehaviour
 
     private SpawnController spawnCtrl;
 
-    private readonly string DeviceName = "fitmi-puck";
+    private readonly string DeviceName = "fitmi-plus";
     private readonly string ServiceUUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
     private readonly string RXUUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
     private readonly string TXUUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
@@ -38,6 +39,10 @@ public class BluetoothManager : MonoBehaviour
     //private bool rssiOnly = false;
     //private int rssi = 0;
     private float timeout;
+
+
+    private bool deltaChangeStarted;
+    private float deltaChangeTimer = 0;
 
     enum States
     {
@@ -71,13 +76,17 @@ public class BluetoothManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deinitializeButton.SetActive(Application.isEditor);
+        //deinitializeButton.SetActive(Application.isEditor);
         InitializeBluetooth();
     }
 
     void Update()
     {
         RunBluetoothSequence();
+        if (deltaChangeStarted)
+        {
+  
+        }
     }
 
     public void MountToLevel(SpawnController controller)
@@ -182,51 +191,47 @@ public class BluetoothManager : MonoBehaviour
     {
         BluetoothLEHardwareInterface.Log("Subscribing to characteristics...");
 
-        BluetoothLEHardwareInterface.SubscribeCharacteristicWithDeviceAddress(deviceAddress, ServiceUUID, TXUUID, (notifyAddress, notifyCharacteristic) =>
-        {
-
-            BluetoothLEHardwareInterface.Log("Waiting for user action (1)...");
-            connected = true;
-
-            state = States.None;
-
-            // read the initial state of the button
-            if (Application.platform != RuntimePlatform.Android)
+        BluetoothLEHardwareInterface.SubscribeCharacteristicWithDeviceAddress(deviceAddress, ServiceUUID, TXUUID, null,
+            (address, characteristicUUID, bytes) =>
             {
-                BluetoothLEHardwareInterface.ReadCharacteristic(deviceAddress, ServiceUUID, TXUUID, (characteristic, bytes) =>
+                BluetoothLEHardwareInterface.Log("Waiting for user action (2)...");
+                connected = true;
+
+                if (state != States.None)
                 {
-                    ProcessButton(bytes[0]);
-                });
-            }
+                    state = States.None;
+                }
 
-        }, (address, characteristicUUID, bytes) =>
-        {
-            BluetoothLEHardwareInterface.Log("Waiting for user action (2)...");
-            connected = true;
-
-            if (state != States.None)
-            {
-                state = States.None;
-            }
-
-            // we received some data from the puck
-            ProcessButton(bytes[0]);
-        });
+                // we received some data from the puck
+                ProcessButton(bytes);
+            });
     }
 
-    private void ProcessButton(byte input)
+    private void ProcessButton(byte[] input)
     {
-        if (!gameInitialized || Game.paused) return;
-
-        switch(input)
+        //if (!gameInitialized || Game.paused) return;
+        switch (input[0])
         {
-            case 1:
+            case 16:
                 spawnCtrl.DestroyActiveObject("LS");
                 break;
-            case 3:
-                spawnCtrl.DestroyActiveObject("DK");
+            case 2:
+
+                float rotationDelta = BitConverter.ToSingle(input, 4);
+                Debug.Log("!!!" + rotationDelta);
+                if (rotationDelta >= 320f && !deltaChangeStarted)
+                    deltaChangeStarted = true;
+                else if (rotationDelta <= 310f && deltaChangeStarted)
+                {
+                    deltaChangeStarted = false;
+                    spawnCtrl.DestroyActiveObject("DK");
+                }
+                break;
+            default:
                 break;
         }
+
+        Debug.Log(input[0]);
     }
 
     string FullUUID(string uuid)
@@ -248,24 +253,43 @@ public class BluetoothManager : MonoBehaviour
         return (uuid1.ToUpper().Equals(uuid2.ToUpper()));
     }
 
-    public void BlinkSuccess()
+    public IEnumerator BlinkSuccess(int numberOfblinks, int[] deviceNumber)
     {
-        int blinkDuration = 1000; // milliseconds
-
-        List<byte> data = new List<byte>() { 
-            (byte)0x02, /* Blink Green */
-            (byte)0x00, /* Blue Puck */
-            (byte)0x02, /* Type of UINT32 */
-            (byte)0x04, /* Number of items sent */
+        List<byte> data = new List<byte>() {
+            6, /* Message code to set LED */
+            3, /* Fitmi Plus Device Code */
+            6, /* Type of UINT8 */
+            4, /* Number of items sent */
             //(byte)0xe8, /* LSB */
             //(byte)0x03, /* LSB 2*/
             //(byte)0x00, /* LSB 3*/
             //(byte)0x00,  /* MSB */
         };
-
-        data.AddRange(BitConverter.GetBytes(blinkDuration));
         
-        BluetoothLEHardwareInterface.WriteCharacteristic(deviceAddress, ServiceUUID, RXUUID, data.ToArray(), data.Count, true, (characteristicUUID) =>
+        data.Add(0);
+        data.Add(255);
+        data.Add(0);
+        data.Add(0);
+
+        foreach (int number in deviceNumber)
+        {
+            for (var i = 0; i < numberOfblinks; i++)
+            {
+                data[5] = 255;
+                data[8] = (byte)number;
+                WriteCharacteristic(data.ToArray());
+                yield return new WaitForSeconds(.2f);
+                data[5] = 0;
+                WriteCharacteristic(data.ToArray());
+            }
+        }
+
+        
+    }
+
+    private void WriteCharacteristic(byte[] data)
+    {
+        BluetoothLEHardwareInterface.WriteCharacteristic(deviceAddress, ServiceUUID, RXUUID, data.ToArray(), data.Length, true, (characteristicUUID) =>
         {
             BluetoothLEHardwareInterface.Log("Write Succeeded with characteristic: " + characteristicUUID);
         });
@@ -277,5 +301,37 @@ public class BluetoothManager : MonoBehaviour
         {
             Debug.Log("Bluetooth has shut down.");
         });
+    }
+
+    private void OnApplicationQuit()
+    {
+        BluetoothLEHardwareInterface.StopScan();
+        BluetoothLEHardwareInterface.DisconnectAll();
+        BluetoothLEHardwareInterface.DeInitialize(() =>
+        {
+            Debug.Log("Bluetooth has shut down on application quit.");
+        });
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("BluetoothManager - OnDestroy()");
+
+        if (Instance == this)
+        {
+            try
+            {
+                BluetoothLEHardwareInterface.StopScan();
+                BluetoothLEHardwareInterface.DisconnectAll();
+                BluetoothLEHardwareInterface.DeInitialize(() => {
+                    Debug.Log("Bluetooth has shut down on destroy.");
+                });
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Bluetooth has already shut down: " + e.Message);
+            }
+
+        }
     }
 }

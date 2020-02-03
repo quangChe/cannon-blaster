@@ -26,14 +26,14 @@ public class Tweens : MonoBehaviour {
 
 		case Tweenbuttons.slideFromRight:
 
-			transform.Translate(20,0,0);
+			transform.Translate(50,0,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 
 			break;
 
 		case Tweenbuttons.slideFromLeft:
 			 
-			transform.Translate(-20,0,0);
+			transform.Translate(-50,0,0);
 			iTween.MoveTo(gameObject,iTween.Hash("position",startPos,"time",1.0,"isLocal",true,"easetype",iTween.EaseType.easeInOutBack));
 
 
