@@ -218,10 +218,9 @@ public class BluetoothManager : MonoBehaviour
             case 2:
 
                 float rotationDelta = BitConverter.ToSingle(input, 4);
-                Debug.Log("!!!" + rotationDelta);
                 if (rotationDelta >= 320f && !deltaChangeStarted)
                     deltaChangeStarted = true;
-                else if (rotationDelta <= 310f && deltaChangeStarted)
+                else if (rotationDelta <= 320f && deltaChangeStarted)
                 {
                     deltaChangeStarted = false;
                     spawnCtrl.DestroyActiveObject("DK");
@@ -253,7 +252,7 @@ public class BluetoothManager : MonoBehaviour
         return (uuid1.ToUpper().Equals(uuid2.ToUpper()));
     }
 
-    public IEnumerator BlinkSuccess(int numberOfblinks, int[] deviceNumber)
+    public IEnumerator BlinkSuccess(int deviceNumber, int numberOfblinks = 1, float duration = 0.5f)
     {
         List<byte> data = new List<byte>() {
             6, /* Message code to set LED */
@@ -266,25 +265,20 @@ public class BluetoothManager : MonoBehaviour
             //(byte)0x00,  /* MSB */
         };
         
-        data.Add(0);
-        data.Add(255);
-        data.Add(0);
-        data.Add(0);
-
-        foreach (int number in deviceNumber)
-        {
-            for (var i = 0; i < numberOfblinks; i++)
-            {
-                data[5] = 255;
-                data[8] = (byte)number;
-                WriteCharacteristic(data.ToArray());
-                yield return new WaitForSeconds(.2f);
-                data[5] = 0;
-                WriteCharacteristic(data.ToArray());
-            }
-        }
+        data.Add(0); // red
+        data.Add(255); // green 
+        data.Add(0); // blue
+        data.Add((byte)deviceNumber); // device number
 
         
+        for (var i = 0; i < numberOfblinks; i++)
+        {
+            data[5] = 255;
+            WriteCharacteristic(data.ToArray());
+            yield return new WaitForSeconds(duration);
+            data[5] = 0;
+            WriteCharacteristic(data.ToArray());
+        }
     }
 
     private void WriteCharacteristic(byte[] data)

@@ -47,7 +47,6 @@ MonoBehaviour:
   successRate:
   - 0
   - 0
-  successPercent: 0
 --- !u!114 &5109963791177651726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,3 +64,4 @@ MonoBehaviour:
   gameSprites: {fileID: 0}
   CannonController: {fileID: 0}
   previewPanel: {fileID: 0}
+  gamePlay: {fileID: 0}

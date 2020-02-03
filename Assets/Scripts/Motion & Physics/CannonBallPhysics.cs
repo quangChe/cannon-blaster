@@ -59,7 +59,6 @@ public class CannonBallPhysics : MonoBehaviour
         wind.SetWind();
         Destroy(gameObject);
         GameObject parachutedBall = Instantiate(parachuteBall, p, r);
-        //InputMapper.MountScript(parachutedBall, ballConfigs.data);
         BallConfigurations newBallConfigs = parachutedBall.GetComponent<BallConfigurations>();
         newBallConfigs.data = ballConfigs.data;
         newBallConfigs.SetExercise(ballConfigs.targetExercise);
